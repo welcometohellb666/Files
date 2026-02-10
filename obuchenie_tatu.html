@@ -3,177 +3,91 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Обучение тату в Первоуральске — Курсы Марины Морро</title>
-    <meta name="description" content="Профессиональное обучение татуировке в Первоуральске. Курсы от Марины Морро. Теория и практика. Сертификат." />
+    
+    <title>BLACK MARK — Обучение Тату | Курсы Первоуральск</title>
+    <meta name="description" content="Обучение искусству татуировки в Первоуральске. Курсы от Марины Морро. Базовый, углубленный и VIP тарифы. Диплом, практика." />
     
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 
     <style>
-        /* --- 1. ПЕРВЫЙ БЛОК (ФОТО КАК ДИАГОНАЛЬНАЯ ЛЕНТА) --- */
-        .edu-intro {
-            background-color: #fff;
-            color: #000;
-            padding: 0; /* Убираем отступы, чтобы лента касалась краев */
-            overflow: hidden;
-            display: flex;
-            align-items: stretch; /* Растягиваем на всю высоту */
-            min-height: 600px;
-        }
+        /* --- СТИЛИ ДЛЯ СТРАНИЦЫ ОБУЧЕНИЯ --- */
         
-        /* Текст слева */
-        .edu-text-col {
-            flex: 1;
-            padding: 100px 50px;
+        /* Повторяем стиль Героя с Пирсинга (Ромб) */
+        .hero-section-learn {
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            z-index: 2;
-        }
-        .edu-title {
-            font-size: 32px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            line-height: 1.3;
-            font-family: 'Georgia', serif;
-        }
-        .edu-desc {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #333;
-            margin-bottom: 30px;
-        }
-        .edu-desc ul {
-            list-style: none; padding: 0; margin: 20px 0;
-        }
-        .edu-desc li {
-            margin-bottom: 10px; padding-left: 20px; position: relative;
-        }
-        .edu-desc li::before {
-            content: '•'; color: var(--pink); position: absolute; left: 0; font-weight: bold;
-        }
-
-        /* Фото справа (ЛЕНТА / РОМБ) */
-        .edu-img-col {
-            flex: 1;
+            align-items: center;
+            padding: 0 0 0 5%;
+            padding-top: 80px;
             position: relative;
-            min-height: 400px;
-        }
-        .ribbon-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            /* Форма диагональной ленты (параллелограмм) */
-            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            overflow: hidden;
         }
 
-        /* Адаптив для мобилок */
-        @media (max-width: 900px) {
-            .edu-intro { flex-direction: column-reverse; }
-            .edu-img-col { min-height: 350px; }
-            .ribbon-img { clip-path: none; } /* На телефоне просто прямоугольник */
-            .edu-text-col { padding: 50px 20px; }
-        }
-
-        /* --- 2. БЛОК С ЦЕНАМИ И ФОТО --- */
-        .pricing-section {
-            background-color: #111;
-            padding: 80px 0;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .price-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 10px;
-            overflow: hidden; /* Чтобы фото не вылезало */
-            display: flex;
-            flex-direction: column;
-            transition: 0.3s;
-        }
-        .price-card:hover {
-            border-color: var(--pink);
-            transform: translateY(-5px);
+        .hero-text-col {
+            flex: 1;
+            padding-right: 20px;
+            z-index: 2;
+            max-width: 650px;
         }
         
-        /* Фото внутри карточки */
-        .course-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-bottom: 1px solid #333;
+        .learn-title {
+            margin-bottom: 30px; font-size: 50px; white-space: nowrap;
         }
 
-        .price-content {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
+        .hero-photo-col {
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 45%;
+            height: 100%;
+        }
+        
+        .rhombus-img-container {
+            width: 100%; height: 100%;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            overflow: hidden;
+            display: flex; justify-content: center; align-items: center;
+        }
+        
+        .rhombus-placeholder {
+            width: 100%; height: 100%;
+            background: #222;
+            display: flex; justify-content: center; align-items: center;
+            color: #555; font-weight: 900; font-size: 24px; text-transform: uppercase;
         }
 
-        .price-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .price-box {
+        /* Стили цен для тарифов */
+        .price-block {
             margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
         }
         .old-price {
-            display: block;
-            font-size: 18px;
-            color: #777;
             text-decoration: line-through;
-            margin-bottom: 5px;
+            color: #666;
+            font-size: 20px;
+            font-weight: 700;
+            margin-right: 15px;
         }
         .new-price {
-            display: block;
+            color: var(--pink);
             font-size: 32px;
             font-weight: 900;
-            color: var(--pink);
-        }
-        .price-desc {
-            color: #ccc;
-            margin-bottom: 30px;
-            flex-grow: 1;
-            font-size: 15px;
-            line-height: 1.6;
+            text-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
         }
 
-        /* --- ИНФОБЛОК (5 ОВАЛОВ) --- */
-        .info-bg {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
-            background-size: cover; background-position: center; text-align: center; color: #fff; padding: 80px 20px; position: relative;
+        /* АДАПТИВ */
+        @media (max-width: 900px) {
+            .hero-section-learn { 
+                flex-direction: column; 
+                padding: 120px 20px 40px 20px; 
+                height: auto; 
+            }
+            .hero-text-col { padding-right: 0; max-width: 100%; }
+            .learn-title { font-size: 34px !important; white-space: normal; text-align: center; }
+            .hero-photo-col {
+                position: relative; width: 100%; height: 400px; top: auto; right: auto; bottom: auto; margin-top: 40px;
+            }
+            .rhombus-img-container { clip-path: none; border-radius: 20px; }
         }
-        .info-bg-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-        .info-text-intro { font-size: 16px; line-height: 1.5; margin-bottom: 30px; max-width: 700px; color: #fff; }
-        .info-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0 30px; }
-        .info-oval {
-            display: flex; align-items: center; justify-content: center; width: 100%; max-width: 600px; height: 55px;
-            border-radius: 50px; margin-bottom: 15px; padding: 0 20px; font-size: 16px; font-weight: bold; text-align: center;
-            line-height: 1.2; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .oval-static { background: #ffffff; color: #000000; border: 2px solid #fff; }
-        .oval-link { background: rgba(20, 20, 20, 0.9); border: 1px solid var(--pink); color: #fff; text-decoration: none; transition: 0.3s; cursor: pointer; }
-        .oval-link:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
-        a.oval-link { display: flex; }
-
-        /* --- КОНТАКТЫ --- */
-        .contacts-flex { display: flex; flex-wrap: wrap; background: #292929; }
-        .map-wrapper { flex: 1; min-width: 300px; height: 500px; }
-        .map-wrapper iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) invert(100%); }
-        .contact-data { flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
-        .contact-row { margin-bottom: 25px; }
-        .phone-link { font-size: 24px; font-weight: bold; display: block; text-decoration: none; }
-        .phone-desc { font-size: 14px; color: #aaa; margin-top: 5px; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -182,8 +96,8 @@
     <div class="sidebar" id="sidebar">
         <ul class="menu-list">
             <li><a href="index.html">Главная</a></li>
-            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
-            <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио тату</a></li>
+            <li><a href="portfolio_pirsing.html">Портфолио пирсинг</a></li>
             <li><a href="uhod_tatu.html">Уход за тату</a></li>
             <li><a href="healer.html">Уход за пирсингом</a></li>
             <li><a href="obuchenie_tatu.html" style="color:var(--pink);">Обучение тату</a></li>
@@ -191,172 +105,253 @@
             <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
             <li><a href="lazernoye-udaleniye.html">Лазерное удаление</a></li>
             <li><a href="contakty.html">Контакты</a></li>
-            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-запись</a></li>
         </ul>
     </div>
 
     <header>
-        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-        <a href="index.html" class="logo">BLACKMARK</a>
         <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </header>
 
-    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
+    <div class="fab-wrapper" id="fabMenu">
+        
+        <div class="fab-options">
+            <a href="https://dikidi.net/#widget=165223" target="_blank" class="fab-item dikidi" data-tooltip="Онлайн запись">
+                <svg viewBox="0 0 24 24"><path d="M9 7v10h4.5c2.5 0 4.5-2 4.5-5s-2-4.5-4.5-5H9zm0-2h4.5C17.65 5 21 8.35 21 12s-3.35 7-7 7H7V5h2z"/></svg>
+            </a>
+            
+            <a href="https://vk.com/black_mark_pvk" target="_blank" class="fab-item vk" data-tooltip="ВКонтакте">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 72.9-72.5 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.4-21.7-16.9-21.7h-92.6c-9.4 0-15 6.9-15 13.7 0 14.4 21.7 17.5 23.9 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.7-73.4-97.4-157.4-5.8-11.7-11.5-16.7-26.7-16.7H18.7c-16.9 0-20 7.9-20 16.7 0 15.6 20 93.1 93.1 195.5C140.9 432.3 207.8 480 268.4 480c35.9 0 40.3-7.9 40.3-21.7v-50c0-15 3.2-18.1 13.9-18.1 7.9 0 21.7 4 53.7 35.9 37.1 37.1 43.1 41.8 63.9 41.8h58.9c16.9 0 25.3-8.4 20.4-25-5.3-16.9-24.4-41.8-49.7-71.8-13.7-15.6-34-32.5-40.3-40.9-8.9-11.7-6.4-16.9 0-27.2 0 0 71.2-100.3 78.3-135.3z"/></svg>
+            </a>
+            
+            <a href="tel:+79956762408" class="fab-item call" data-tooltip="Позвонить">
+                <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.26-.26.35-.62.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3.3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .69-.63.69-1.19v-3.43c0-.54-.45-.99-.99-.99z"/></svg>
+            </a>
+        </div>
 
+        <div class="fab-main" onclick="toggleFab()">
+            <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.26-.26.35-.62.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3.3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .69-.63.69-1.19v-3.43c0-.54-.45-.99-.99-.99z"/></svg>
+        </div>
+    </div>
 
-    <section class="edu-intro">
-        <div class="edu-text-col">
-            <h1 class="edu-title">Я, Марина Морро, а это мои обучающие курсы тату в Первоуральске!</h1>
-            <div class="edu-desc">
-                <p>Если вы давно мечтаете научиться делать татуировки, мои курсы — это ваш шанс! Я предлагаем профессиональное обучение тату, где опытные мастера помогут вам освоить все тонкости этого искусства.</p>
-                
-                <p><strong>Что вы получите:</strong></p>
-                <ul>
-                    <li>Индивидуальный подход и поддержка тату-мастеров, которые обучают с вниманием к каждому ученику.</li>
-                    <li>Практические навыки, которые помогут уверенно начать карьеру в индустрии.</li>
+    <script>
+        function toggleFab() {
+            document.getElementById('fabMenu').classList.toggle('active');
+        }
+    </script>
+        
+    </script>
+
+    <section class="hero-section-learn">
+        
+        <div class="hero-text-col">
+            <h1 class="hero-title learn-title">BLACK MARK <span style="color:var(--pink);">LEARN</span></h1>
+            
+            <div style="font-size: 16px; color: #ddd; line-height: 1.6; font-family: 'Nunito', sans-serif; margin-bottom: 30px;">
+                <p style="margin-bottom: 15px; font-weight: 700;">
+                    Я, Марина Морро, а это мои обучающие курсы тату в Первоуральске!
+                </p>
+                <p style="margin-bottom: 15px;">
+                    Если вы давно мечтаете научиться делать татуировки, мои курсы — это ваш шанс! Я предлагаю профессиональное обучение тату, где опытные мастера помогут вам освоить все тонкости этого искусства.
+                </p>
+                <p style="margin-bottom: 10px;"><strong>Что вы получите:</strong></p>
+                <ul style="padding-left: 20px; margin-bottom: 15px;">
+                    <li>Индивидуальный подход и поддержка тату-мастеров.</li>
+                    <li>Практические навыки для уверенного старта карьеры.</li>
                     <li>Сертифицированное обучение тату в Первоуральске.</li>
                 </ul>
+                <p>
+                    Зачем ждать? Если вы говорите: "Хочу делать тату!" — значит, действуйте уже сегодня! Запишитесь на наши курсы и сделайте первый шаг к мечте!
+                </p>
+            </div>
+            
+            <a href="https://vk.com/gim105478249" target="_blank" class="btn-pink">Хочу на курс</a>
+        </div>
+
+        <div class="hero-photo-col">
+            <div class="rhombus-img-container">
+                <div class="rhombus-placeholder">ФОТО МАРИНЫ (ОБУЧЕНИЕ)</div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+        </div>
+    </div>
+
+
+    <section class="container" style="padding: 100px 15px;">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <h2 class="hero-title" style="font-size: 40px; margin-bottom: 10px;">ВЫБЕРИ СВОЙ ПУТЬ</h2>
+            <p style="color: #ccc; font-size: 18px;">Три программы обучения для разного уровня погружения.</p>
+        </div>
+
+        <div class="master-row">
+            <div class="master-text">
+                <h3 style="color: var(--pink); font-size: 28px; margin-bottom: 10px;">БАЗОВЫЙ ТАРИФ</h3>
                 
-                <p>Зачем ждать? Если вы говорите: "Хочу делать тату!" — значит, действуйте уже сегодня! Запишитесь на наши курсы тату в Первоуральске и сделайте первый шаг к осуществлению своей мечты!</p>
+                <div class="price-block">
+                    <span class="old-price">28 000 ₽</span>
+                    <span class="new-price">25 000 ₽</span>
+                </div>
+
+                <div class="master-quote">
+                    Вводный курс для новичков. Основы безопасности, оборудование, контур и закрас. Идеально для старта и понимания профессии.
+                </div>
+                <a href="https://vk.com/gim105478249" target="_blank" class="btn-pink">Записаться на курс</a>
             </div>
-            
-            <a href="https://vk.com/m.morro" target="_blank" class="btn btn-pink" style="align-self: flex-start;">НАПИСАТЬ МАСТЕРУ</a>
+            <div class="master-photo">
+                <div class="placeholder-circle">ИКОНКА ТАРИФА 1</div>
+            </div>
         </div>
 
-        <div class="edu-img-col">
-            <img src="https://static.tildacdn.com/tild3365-3662-4665-a530-353937646661/noroot.png" class="ribbon-img" alt="Марина Морро">
-        </div>
-    </section>
-
-
-    <div class="marquee-wrap">
-        <div class="marquee-text">ОБУЧЕНИЕ ТАТУ &nbsp;&nbsp; • &nbsp;&nbsp; СТАНЬ МАСТЕРОМ &nbsp;&nbsp; • &nbsp;&nbsp; ТЕОРИЯ И ПРАКТИКА</div>
-    </div>
-
-
-    <section class="pricing-section">
-        <div class="container">
-            <h2 style="text-align: center; color: #fff; font-size: 36px; margin-bottom: 50px;">ТАРИФЫ НА ОБУЧЕНИЕ</h2>
-            
-            <div class="pricing-grid">
+        <div class="master-row">
+            <div class="master-text">
+                <h3 style="color: var(--pink); font-size: 28px; margin-bottom: 10px;">БАЗА + ПРАКТИКА</h3>
                 
-                <div class="price-card">
-                    <img src="https://static.tildacdn.com/tild6533-3366-4530-a437-313966666563/GEM5-gOsJHI.jpg" class="course-img" alt="Базовый курс">
-                    
-                    <div class="price-content">
-                        <div class="price-title">БАЗОВЫЙ ТАРИФ</div>
-                        <div class="price-box">
-                            <span class="old-price">28 000 ₽</span>
-                            <span class="new-price">25 000 ₽</span>
-                        </div>
-                        <div class="price-desc">
-                            Вводный курс для новичков. Основы безопасности, оборудование, контур и закрас. Идеально для старта.
-                        </div>
-                        <a href="https://vk.com/m.morro" target="_blank" class="btn btn-pink" style="width:100%">ЗАПИСАТЬСЯ</a>
-                    </div>
+                <div class="price-block">
+                    <span class="old-price">50 000 ₽</span>
+                    <span class="new-price">45 000 ₽</span>
                 </div>
 
-                <div class="price-card">
-                    <img src="https://static.tildacdn.com/tild6231-3865-4336-b430-636131373536/BEZucW6wIT4.jpg" class="course-img" alt="База + Практика">
-                    
-                    <div class="price-content">
-                        <div class="price-title">БАЗА + ПРАКТИКА</div>
-                        <div class="price-box">
-                            <span class="old-price">50 000 ₽</span>
-                            <span class="new-price">45 000 ₽</span>
-                        </div>
-                        <div class="price-desc">
-                            Расширенный курс. Больше практики на моделях, сложные техники, работа с тенями и цветом. Портфолио по итогу.
-                        </div>
-                        <a href="https://vk.com/m.morro" target="_blank" class="btn btn-pink" style="width:100%">ЗАПИСАТЬСЯ</a>
-                    </div>
+                <div class="master-quote">
+                    Расширенный курс. Больше практики на моделях, сложные техники, работа с тенями и цветом. Выпускник получает готовое портфолио по итогу.
+                </div>
+                <a href="https://vk.com/gim105478249" target="_blank" class="btn-pink">Записаться на курс</a>
+            </div>
+            <div class="master-photo">
+                <div class="placeholder-circle">ИКОНКА ТАРИФА 2</div>
+            </div>
+        </div>
+
+        <div class="master-row">
+            <div class="master-text">
+                <h3 style="color: var(--purple); font-size: 28px; margin-bottom: 10px;">INSIDER</h3>
+                
+                <div class="price-block">
+                    <span class="old-price">80 000 ₽</span>
+                    <span class="new-price">55 000 ₽</span>
                 </div>
 
-                <div class="price-card" style="border-color: var(--pink);">
-                    <img src="https://static.tildacdn.com/tild3365-3662-4665-a530-353937646661/noroot.png" class="course-img" alt="INSIDER">
-                    
-                    <div class="price-content">
-                        <div class="price-title" style="color: var(--pink);">INSIDER</div>
-                        <div class="price-box">
-                            <span class="old-price">80 000 ₽</span>
-                            <span class="new-price">55 000 ₽</span>
-                        </div>
-                        <div class="price-desc">
-                            Полное погружение. Все секреты мастерства, продвижение, личное наставничество и поддержка после курса.
-                        </div>
-                        <a href="https://vk.com/m.morro" target="_blank" class="btn btn-pink" style="width:100%">ЗАПИСАТЬСЯ</a>
-                    </div>
+                <div class="master-quote">
+                    Полное погружение. Все секреты мастерства, продвижение личного бренда, личное наставничество от Марины Морро и поддержка после курса.
                 </div>
-
+                <a href="https://vk.com/gim105478249" target="_blank" class="btn-pink">Записаться на курс</a>
+            </div>
+            <div class="master-photo">
+                <div class="placeholder-circle">ИКОНКА ТАРИФА 3</div>
             </div>
         </div>
     </section>
 
 
-    <div class="marquee-wrap">
-        <div class="marquee-text">ЛУЧШИЕ УЧЕНИКИ ОСТАЮТСЯ РАБОТАТЬ В СТУДИИ &nbsp;&nbsp; • &nbsp;&nbsp; ТВОЯ НОВАЯ ПРОФЕССИЯ</div>
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+        </div>
     </div>
 
 
-    <section class="info-bg">
-        <div class="info-bg-content">
-            
-            <div class="info-text-intro">
-                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно. Мы уделяем особое внимание каждому клиенту и стараемся сделать процесс нанесения татуировки или пирсинга максимально приятным и безболезненным.
+    <section class="info-section-wrapper">
+        <div class="info-bg-placeholder">LEARN INFO</div>
+        
+        <div class="info-content">
+            <div class="info-text-main">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый ученик чувствует себя комфортно и уверенно. Мы уделяем особое внимание каждому и стараемся сделать процесс обучения максимально эффективным.
             </div>
-            
-            <div class="info-divider"></div>
-            
-            <div class="info-oval oval-static">Работаем для вас: с 11:00-20:00</div>
-            <div class="info-oval oval-static">Все сеансы проходят по предварительной записи</div>
-            <a href="https://vk.com/gim105478249" target="_blank" class="info-oval oval-link">НАПИСАТЬ В VK (СТУДИЯ)</a>
-            <a href="https://vk.com/id819592651" target="_blank" class="info-oval oval-link">Егор Хэлл (Пирсинг)</a>
-            <a href="https://vk.com/m.morro" target="_blank" class="info-oval oval-link">Марина Морро (Тату)</a>
+
+            <div class="oval-list">
+                <div class="c-oval static">РАБОТАЕМ ДЛЯ ВАС<br>С 11:00 ДО 21:00</div>
+                <div class="c-oval static">РАБОТАЕМ ТОЛЬКО<br>ПО ПРЕДВАРИТЕЛЬНОЙ ЗАПИСИ</div>
+                <a href="https://vk.com/gim105478249" target="_blank" class="c-oval">НАПИСАТЬ В СООБЩЕСТВО VK</a>
+                <a href="https://vk.com/m.morro" target="_blank" class="c-oval">МАРИНА МОРРО — НАСТАВНИК</a>
+            </div>
         </div>
     </section>
 
 
-    <div class="contacts-flex">
-        <div class="map-wrapper">
-             <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" style="filter: grayscale(100%) invert(100%);"></iframe>
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
         </div>
-        <div class="contact-data">
-            <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
-            
-            <div class="contact-row">
-                <a href="tel:+79935245578" class="phone-link" style="color: #fff;">+7 993 524 55 78</a>
-                <span class="phone-desc">Тату / Обучение</span>
-            </div>
-
-            <div class="contact-row">
-                <a href="tel:+79956763408" class="phone-link" style="color: var(--pink);">+7 995 676 34 08</a>
-                <span class="phone-desc">Пирсинг</span>
-            </div>
-
-            <div class="contact-row">
-                <a href="tel:+79025010782" class="phone-link" style="color: #ccc; text-decoration: underline;">+7 902 501 07 82</a>
-                <span class="phone-desc">Лазерное удаление</span>
-            </div>
-
-            <div style="font-size: 18px; line-height: 1.5; margin-top: 10px;">
-                г. Первоуральск, ул. Вайнера 45В<br>
-                <span style="font-size: 14px; color: #777;">Встаете лицом к магазину «ПРИЗМА», вход слева за углом, 2 этаж.</span>
-            </div>
+        <div class="marquee-track">
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
+            <div class="marquee-item">ХОЧУ ДЕЛАТЬ ТАТУ • ОБУЧЕНИЕ • СТАРТ • КАРЬЕРА •</div>
         </div>
     </div>
 
+
+    <section class="container" style="padding: 80px 15px 40px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 30px;">Наши контакты</h2>
+                <div class="glass-panel" style="padding: 30px; margin-bottom: 30px;">
+                    <p style="font-size: 18px; margin-bottom: 15px; color: #fff;">📍 <strong>г. Первоуральск, ул. Вайнера 45В</strong></p>
+                    <a href="tel:+79956762408" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #fff;">
+                        📞 +7 995 676 24 08 <span style="color:var(--pink); font-size: 14px;">(Пирсинг)</span>
+                    </a>
+                    <a href="tel:+79935245578" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #fff;">
+                        📞 +7 993 524 55 78 <span style="color:var(--purple); font-size: 14px;">(Тату)</span>
+                    </a>
+                    <a href="tel:+79025010782" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #fff;">
+                        📞 +7 902 501 07 82 <span style="color:#aaa; font-size: 14px;">(Удаление)</span>
+                    </a>
+                </div>
+                <div style="height: 350px; border-radius: 20px; overflow: hidden; filter: grayscale(100%) invert(100%); border: 1px solid #555;">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 30px;">Что говорят люди</h2>
+                <div class="map-widget-container" style="height: 600px;">
+                    <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/234036698257?comments"></iframe>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://yandex.ru/maps/org/black_mark/234036698257/reviews/" target="_blank" class="btn-pink">Оставить отзыв</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+        <div class="footer-copyright">© 2016 Black Mark Studio | Первоуральск</div>
+        <div class="footer-credit">Разработка — Егор Хэлл</div>
     </footer>
 
     <script>
         function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
-            document.querySelector('.burger-btn').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar) sidebar.classList.toggle('active');
+            
+            const overlay = document.getElementById('overlay');
+            if (overlay) overlay.classList.toggle('active');
+            
+            const burgerBtn = document.querySelector('.burger-btn');
+            if (burgerBtn) burgerBtn.classList.toggle('active');
         }
     </script>
-
 </body>
 </html>

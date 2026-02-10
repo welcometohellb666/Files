@@ -3,138 +3,119 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Лазерное удаление тату и татуажа — Олеся Семерская | Black Mark</title>
-    <meta name="description" content="Лазерное удаление татуировок и перманентного макияжа в Первоуральске. Мастер Олеся Семерская. Безопасно и эффективно." />
+    
+    <title>BLACK MARK — Лазерное удаление тату | Олеся Семера</title>
+    <meta name="description" content="Безопасное удаление татуировок и перманентного макияжа лазером в Первоуральске. Без шрамов и ожогов." />
     
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 
     <style>
-        /* --- 1. ПЕРВЫЙ БЛОК (БЕЛЫЙ, НА ВЕСЬ ЭКРАН) --- */
-        .laser-intro {
-            background-color: #fff;
-            color: #000;
-            padding: 0;
-            overflow: hidden;
+        /* --- СТИЛИ ДЛЯ ЛАЗЕРА (На базе стиля Пирсинга) --- */
+        
+        /* 1 БЛОК: ГЕРОЙ */
+        .hero-section-laser {
+            min-height: 100vh;
             display: flex;
-            align-items: stretch;
-            height: 100vh; /* Высота экрана */
-            min-height: 600px;
+            align-items: center;
+            padding: 0 0 0 5%;
+            padding-top: 80px;
             position: relative;
-            margin-top: -60px; /* Компенсация меню */
-            padding-top: 60px;
+            overflow: hidden;
         }
-        
-        /* Текст слева */
-        .laser-text-col {
+
+        .hero-text-col {
             flex: 1;
-            padding: 0 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding-right: 20px;
             z-index: 2;
-        }
-        
-        .laser-intro-content {
-            font-size: 15px; /* Компактный шрифт */
-            line-height: 1.5;
-            color: #333;
             max-width: 650px;
         }
-        .laser-intro-content h1 {
-            font-size: 24px; /* Компактный заголовок */
-            font-weight: 900;
-            color: #000;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            font-family: 'Georgia', serif;
-            line-height: 1.3;
-        }
-        .laser-intro-content p {
-            margin-bottom: 10px;
+        
+        .laser-title {
+            margin-bottom: 30px; font-size: 50px; white-space: nowrap;
         }
 
-        /* Фото справа (ЛЕНТА) */
-        .laser-img-col {
-            flex: 1;
-            position: relative;
+        .hero-photo-col {
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 45%;
             height: 100%;
         }
-        .ribbon-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-            /* Форма ленты */
-            clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+        
+        .rhombus-img-container {
+            width: 100%; height: 100%;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            overflow: hidden;
+            display: flex; justify-content: center; align-items: center;
+        }
+        
+        .rhombus-placeholder {
+            width: 100%; height: 100%;
+            background: #222;
+            display: flex; justify-content: center; align-items: center;
+            color: #555; font-weight: 900; font-size: 24px; text-transform: uppercase;
         }
 
-        /* Адаптив */
-        @media (max-width: 900px) {
-            .laser-intro { 
-                flex-direction: column-reverse; 
-                height: auto; 
-                padding-top: 80px;
-                padding-bottom: 40px;
-            }
-            .laser-img-col { height: 400px; width: 100%; }
-            .ribbon-img { clip-path: none; } 
-            .laser-text-col { padding: 30px 20px; }
-        }
-
-        /* --- 2. БЛОК УСЛУГ --- */
-        .services-section {
-            background-color: #111;
-            padding: 80px 0;
-        }
+        /* 2 БЛОК: КАРТОЧКИ УСЛУГ (СТЕКЛО) */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 40px;
         }
-        .service-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
+
+        .laser-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
             padding: 40px 30px;
-            border-radius: 10px;
+            text-align: center;
             transition: 0.3s;
-            display: flex;
-            flex-direction: column;
+            backdrop-filter: blur(10px);
         }
-        .service-card:hover {
+
+        .laser-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
             border-color: var(--pink);
-            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .service-icon { font-size: 40px; margin-bottom: 20px; }
-        .service-title { font-size: 22px; font-weight: bold; color: #fff; margin-bottom: 15px; text-transform: uppercase; }
-        .service-desc { color: #ccc; font-size: 15px; line-height: 1.6; }
 
-        /* --- ИНФОБЛОК --- */
-        .info-bg {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
-            background-size: cover; background-position: center; text-align: center; color: #fff; padding: 80px 20px; position: relative;
+        .lc-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--pink);
+            text-shadow: 0 0 20px var(--pink);
         }
-        .info-bg-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-        .info-text-intro { font-size: 16px; line-height: 1.5; margin-bottom: 30px; max-width: 700px; color: #fff; }
-        .info-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0 30px; }
-        .info-oval {
-            display: flex; align-items: center; justify-content: center; width: 100%; max-width: 600px; height: 55px;
-            border-radius: 50px; margin-bottom: 15px; padding: 0 20px; font-size: 16px; font-weight: bold; text-align: center;
-            line-height: 1.2; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .oval-static { background: #ffffff; color: #000000; border: 2px solid #fff; }
-        .oval-link { background: rgba(20, 20, 20, 0.9); border: 1px solid var(--pink); color: #fff; text-decoration: none; transition: 0.3s; cursor: pointer; }
-        .oval-link:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
-        a.oval-link { display: flex; }
 
-        /* --- КОНТАКТЫ --- */
-        .contacts-flex { display: flex; flex-wrap: wrap; background: #292929; }
-        .map-wrapper { flex: 1; min-width: 300px; height: 500px; }
-        .map-wrapper iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) invert(100%); }
-        .contact-data { flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
-        .contact-row { margin-bottom: 25px; }
-        .phone-link { font-size: 24px; font-weight: bold; display: block; text-decoration: none; }
-        .phone-desc { font-size: 14px; color: #aaa; margin-top: 5px; text-transform: uppercase; }
+        .lc-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .lc-desc {
+            font-size: 16px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* АДАПТИВ */
+        @media (max-width: 900px) {
+            .hero-section-laser { 
+                flex-direction: column; 
+                padding: 120px 20px 40px 20px; 
+                height: auto; 
+            }
+            .hero-text-col { padding-right: 0; max-width: 100%; }
+            .laser-title { font-size: 34px !important; white-space: normal; text-align: center; }
+            .hero-photo-col {
+                position: relative; width: 100%; height: 400px; top: auto; right: auto; bottom: auto; margin-top: 40px;
+            }
+            .rhombus-img-container { clip-path: none; border-radius: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -143,8 +124,8 @@
     <div class="sidebar" id="sidebar">
         <ul class="menu-list">
             <li><a href="index.html">Главная</a></li>
-            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
-            <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио тату</a></li>
+            <li><a href="portfolio_pirsing.html">Портфолио пирсинг</a></li>
             <li><a href="uhod_tatu.html">Уход за тату</a></li>
             <li><a href="healer.html">Уход за пирсингом</a></li>
             <li><a href="obuchenie_tatu.html">Обучение тату</a></li>
@@ -152,147 +133,221 @@
             <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
             <li><a href="lazernoye-udaleniye.html" style="color:var(--pink);">Лазерное удаление</a></li>
             <li><a href="contakty.html">Контакты</a></li>
-            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-запись</a></li>
         </ul>
     </div>
 
     <header>
-        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-        <a href="index.html" class="logo">BLACKMARK</a>
         <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </header>
 
-    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
-
-
-    <section class="laser-intro">
-        <div class="laser-text-col">
-            <div class="laser-intro-content">
-                <h1>Привет! Меня зовут Олеся Семерская, занимаюсь лазерным удалением тату и перманентного макияжа в Первоуральске!</h1>
-                
-                <p>Добро пожаловать на мою страницу, посвященную искусству лазерного удаления тату и татуажа! Я с уверенностью и профессионализмом помогу вам избавиться от нежелательных рисунков на коже.</p>
-                
-                <p>Благодаря современным технологиям лазерное удаление тату, татуажа, перманента бровей и губ стало максимально комфортным и безопасным.</p>
-                
-                <p>Всегда с уважением и вниманием отношусь к вашим пожеланиям, предлагая индивидуальный подход к каждому случаю.</p>
-                
-                <p>В моем уютном пространстве вы сможете расслабиться и насладиться процессом освобождения от старого татуажа. Я понимаю, что каждая история уникальна, и готова поддержать вас на пути к чистой и обновленной коже.</p>
-            </div>
+   <div class="fab-wrapper" id="fabMenu">
+        
+        <div class="fab-options">
+            <a href="https://dikidi.net/#widget=165223" target="_blank" class="fab-item dikidi" data-tooltip="Онлайн запись">
+                <svg viewBox="0 0 24 24"><path d="M9 7v10h4.5c2.5 0 4.5-2 4.5-5s-2-4.5-4.5-5H9zm0-2h4.5C17.65 5 21 8.35 21 12s-3.35 7-7 7H7V5h2z"/></svg>
+            </a>
             
-            <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="btn btn-pink" style="align-self: flex-start; margin-top: 25px;">НАПИСАТЬ МАСТЕРУ</a>
+            <a href="https://vk.com/black_mark_pvk" target="_blank" class="fab-item vk" data-tooltip="ВКонтакте">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 72.9-72.5 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.4-21.7-16.9-21.7h-92.6c-9.4 0-15 6.9-15 13.7 0 14.4 21.7 17.5 23.9 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.7-73.4-97.4-157.4-5.8-11.7-11.5-16.7-26.7-16.7H18.7c-16.9 0-20 7.9-20 16.7 0 15.6 20 93.1 93.1 195.5C140.9 432.3 207.8 480 268.4 480c35.9 0 40.3-7.9 40.3-21.7v-50c0-15 3.2-18.1 13.9-18.1 7.9 0 21.7 4 53.7 35.9 37.1 37.1 43.1 41.8 63.9 41.8h58.9c16.9 0 25.3-8.4 20.4-25-5.3-16.9-24.4-41.8-49.7-71.8-13.7-15.6-34-32.5-40.3-40.9-8.9-11.7-6.4-16.9 0-27.2 0 0 71.2-100.3 78.3-135.3z"/></svg>
+            </a>
+            
+            <a href="tel:+79956762408" class="fab-item call" data-tooltip="Позвонить">
+                <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.26-.26.35-.62.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3.3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .69-.63.69-1.19v-3.43c0-.54-.45-.99-.99-.99z"/></svg>
+            </a>
         </div>
 
-        <div class="laser-img-col">
-            <img src="https://static.tildacdn.com/tild6533-3366-4530-a437-313966666563/GEM5-gOsJHI.jpg" class="ribbon-img" alt="Олеся Семерская">
+        <div class="fab-main" onclick="toggleFab()">
+            <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.26-.26.35-.62.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3.3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .69-.63.69-1.19v-3.43c0-.54-.45-.99-.99-.99z"/></svg>
         </div>
-    </section>
-
-
-    <div class="marquee-wrap">
-        <div class="marquee-text">ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ</div>
     </div>
 
+    <script>
+        function toggleFab() {
+            document.getElementById('fabMenu').classList.toggle('active');
+        }
+    </script>
+        
+    </script>
 
-    <section class="services-section">
-        <div class="container">
-            <h2 style="text-align: center; color: #fff; font-size: 32px; margin-bottom: 50px;">МОИ УСЛУГИ</h2>
+    <section class="hero-section-laser">
+        
+        <div class="hero-text-col">
+            <h1 class="hero-title laser-title">BLACK MARK <span style="color:var(--pink);">LASER</span></h1>
             
-            <div class="services-grid">
-                
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <div class="service-title">Лазерное удаление тату</div>
-                    <div class="service-desc">
-                        Безопасное выведение пигмента без шрамов и рубцов. Работаем с черными и цветными татуировками любого размера. Используем неодимовый лазер нового поколения.
-                    </div>
-                </div>
+            <div style="font-size: 16px; color: #ddd; line-height: 1.6; font-family: 'Nunito', sans-serif; margin-bottom: 30px;">
+                <p style="margin-bottom: 15px; font-weight: 700;">
+                    Ошибки прошлого не должны оставаться с вами навсегда. Я — Олеся Семера, и я помогу вернуть вашей коже чистоту.
+                </p>
+                <p style="margin-bottom: 15px;">
+                    Мы используем мощный неодимовый лазер, который разрушает пигмент, не повреждая кожу. Это не магия, а физика и профессионализм. Я работаю бережно, чтобы процесс был максимально комфортным, а результат — идеальным.
+                </p>
+                <p style="margin-bottom: 15px;">
+                    Будь то надоевшая татуировка или неудачный перманентный макияж — мы справимся. Никаких шрамов, никаких ожогов. Только чистый результат и возможность начать с чистого листа.
+                </p>
+                <p style="font-weight: 800; color: #fff; font-size: 18px;">
+                    Ваша кожа заслуживает лучшего. Записывайтесь на консультацию!
+                </p>
+            </div>
+            
+            <a href="https://dikidi.net/#widget=165223" target="_blank" class="btn-pink">Удалить тату</a>
+        </div>
 
-                <div class="service-card">
-                    <div class="service-icon">👄</div>
-                    <div class="service-title">Удаление татуажа</div>
-                    <div class="service-desc">
-                        Деликатное удаление перманентного макияжа бровей, губ и век. Исправление старых, некачественных работ, изменение цвета и формы.
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <div class="service-title">Карбоновый пилинг</div>
-                    <div class="service-desc">
-                        Процедура для очищения и омоложения кожи. Сужает поры, выравнивает тон лица, борется с акне и пигментацией. Мгновенный эффект сияния.
-                    </div>
-                </div>
-
+        <div class="hero-photo-col">
+            <div class="rhombus-img-container">
+                <div class="rhombus-placeholder">ФОТО ОЛЕСИ (ЛАЗЕР)</div>
             </div>
         </div>
     </section>
 
 
-    <div class="marquee-wrap">
-        <div class="marquee-text">ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ</div>
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+        </div>
     </div>
 
 
-    <section class="info-bg">
-        <div class="info-bg-content">
+    <section class="container" style="padding: 100px 15px;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 class="hero-title" style="font-size: 40px; margin-bottom: 10px;">ВОЗМОЖНОСТИ ЛАЗЕРА</h2>
+            <p style="color: #ccc; font-size: 18px;">Как мы можем решить вашу проблему?</p>
+        </div>
+        
+        <div class="services-grid">
             
-            <div class="info-text-intro">
-                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно.
+            <div class="laser-card">
+                <div class="lc-icon">✖️</div>
+                <h3 class="lc-title">Полное удаление</h3>
+                <p class="lc-desc">
+                    Курс процедур для максимального очищения кожи от пигмента. Подходит тем, кто хочет полностью избавиться от татуировки без следа.
+                </p>
             </div>
-            
-            <div class="info-divider"></div>
-            
-            <div class="info-oval oval-static">Работаем для вас: с 11:00-20:00</div>
-            <div class="info-oval oval-static">Все сеансы проходят по предварительной записи</div>
-            <a href="https://vk.com/gim105478249" target="_blank" class="info-oval oval-link">НАПИСАТЬ В VK (СТУДИЯ)</a>
-            
-            <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="info-oval oval-link">Олеся Семерская (Лазер)</a>
-            
+
+            <div class="laser-card">
+                <div class="lc-icon">🎨</div>
+                <h3 class="lc-title">Осветление под Cover-Up</h3>
+                <p class="lc-desc">
+                    Подготовка старой татуировки к перекрытию новым рисунком. Мы осветляем пигмент ровно настолько, чтобы мастер мог сделать шедевр поверх старого.
+                </p>
+            </div>
+
+            <div class="laser-card">
+                <div class="lc-icon">👄</div>
+                <h3 class="lc-title">Удаление перманента</h3>
+                <p class="lc-desc">
+                    Бережное удаление татуажа бровей или губ. Работаем деликатно, чтобы не повредить волоски бровей и нежную кожу лица.
+                </p>
+            </div>
+
         </div>
     </section>
 
 
-    <div class="contacts-flex">
-        <div class="map-wrapper">
-             <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" style="filter: grayscale(100%) invert(100%);"></iframe>
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
         </div>
-        <div class="contact-data">
-            <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
-            
-            <div class="contact-row">
-                <a href="tel:+79935245578" class="phone-link" style="color: #fff;">+7 993 524 55 78</a>
-                <span class="phone-desc">Тату / Обучение</span>
-            </div>
-
-            <div class="contact-row">
-                <a href="tel:+79956763408" class="phone-link" style="color: var(--pink);">+7 995 676 34 08</a>
-                <span class="phone-desc">Пирсинг</span>
-            </div>
-
-            <div class="contact-row">
-                <a href="tel:+79025010782" class="phone-link" style="color: #ccc; text-decoration: underline;">+7 902 501 07 82</a>
-                <span class="phone-desc">Лазерное удаление</span>
-            </div>
-
-            <div style="font-size: 18px; line-height: 1.5; margin-top: 10px;">
-                г. Первоуральск, ул. Вайнера 45В<br>
-                <span style="font-size: 14px; color: #777;">Встаете лицом к магазину «ПРИЗМА», вход слева за углом, 2 этаж.</span>
-            </div>
+        <div class="marquee-track">
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
+            <div class="marquee-item">ЧИСТАЯ КОЖА • УДАЛЕНИЕ • COVER-UP • БЕЗ ШРАМОВ •</div>
         </div>
     </div>
 
+
+    <section class="info-section-wrapper">
+        <div class="info-bg-placeholder">LASER INFO</div>
+        
+        <div class="info-content">
+            <div class="info-text-main">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно. Мы уделяем особое внимание безопасности и стараемся сделать процесс удаления максимально эффективным.
+            </div>
+
+            <div class="oval-list">
+                <div class="c-oval static">РАБОТАЕМ ДЛЯ ВАС<br>С 11:00 ДО 21:00</div>
+                <div class="c-oval static">РАБОТАЕМ ТОЛЬКО<br>ПО ПРЕДВАРИТЕЛЬНОЙ ЗАПИСИ</div>
+                <a href="https://vk.com/gim105478249" target="_blank" class="c-oval">НАПИСАТЬ В СООБЩЕСТВО VK</a>
+                <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="c-oval" style="background:var(--pink); border-color:var(--pink);">ОЛЕСЯ СЕМЕРА — ЛАЗЕР</a>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+        </div>
+    </div>
+
+
+    <section class="container" style="padding: 80px 15px 40px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 30px;">Наши контакты</h2>
+                <div class="glass-panel" style="padding: 30px; margin-bottom: 30px;">
+                    <p style="font-size: 18px; margin-bottom: 15px; color: #fff;">📍 <strong>г. Первоуральск, ул. Вайнера 45В</strong></p>
+                    <a href="tel:+79956762408" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #fff;">
+                        📞 +7 995 676 24 08 <span style="color:var(--pink); font-size: 14px;">(Пирсинг)</span>
+                    </a>
+                    <a href="tel:+79935245578" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #fff;">
+                        📞 +7 993 524 55 78 <span style="color:var(--purple); font-size: 14px;">(Тату)</span>
+                    </a>
+                    <a href="tel:+79025010782" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #fff;">
+                        📞 +7 902 501 07 82 <span style="color:#aaa; font-size: 14px;">(Удаление)</span>
+                    </a>
+                </div>
+                <div style="height: 350px; border-radius: 20px; overflow: hidden; filter: grayscale(100%) invert(100%); border: 1px solid #555;">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 30px;">Что говорят люди</h2>
+                <div class="map-widget-container" style="height: 600px;">
+                    <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/234036698257?comments"></iframe>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://yandex.ru/maps/org/black_mark/234036698257/reviews/" target="_blank" class="btn-pink">Оставить отзыв</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+        <div class="footer-copyright">© 2016 Black Mark Studio | Первоуральск</div>
+        <div class="footer-credit">Разработка — Егор Хэлл</div>
     </footer>
 
     <script>
         function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
-            document.querySelector('.burger-btn').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar) sidebar.classList.toggle('active');
+            
+            const overlay = document.getElementById('overlay');
+            if (overlay) overlay.classList.toggle('active');
+            
+            const burgerBtn = document.querySelector('.burger-btn');
+            if (burgerBtn) burgerBtn.classList.toggle('active');
         }
     </script>
-
 </body>
 </html>

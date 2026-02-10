@@ -3,166 +3,158 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Контакты — Black Mark Studio</title>
-    <meta name="description" content="Контакты тату и пирсинг студии Black Mark. Телефоны, соцсети, карта проезда и отзывы." />
+    
+    <title>BLACK MARK — Контакты | Как нас найти</title>
+    <meta name="description" content="Контакты студии Black Mark в Первоуральске. Телефоны мастеров, ссылки на соцсети, карта проезда и отзывы." />
     
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 
     <style>
-        /* --- 1. БЛОК: ЗАГОЛОВОК (КОМПАКТНЫЙ) --- */
-        .contact-intro {
-            background-color: #000;
-            padding: 80px 0 40px; /* Отступ под шапку */
-            text-align: center;
-        }
-        
-        .neon-title {
-            font-size: 40px;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: var(--pink);
-            font-family: 'Arial Black', sans-serif;
-            margin: 0;
-            /* Анимация переливающегося белого неона */
-            animation: neon-white 2s infinite alternate;
-        }
+        /* --- СТИЛИ ДЛЯ КОНТАКТОВ --- */
 
-        @keyframes neon-white {
-            0% { text-shadow: 0 0 10px var(--pink); color: var(--pink); }
-            100% { text-shadow: 0 0 20px #fff, 0 0 40px var(--pink); color: #fff; }
-        }
-
-        /* РОЗОВАЯ БЕГУЩАЯ СТРОКА */
-        .pink-marquee {
-            background: var(--pink);
-            height: 35px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            border-top: 1px solid #fff;
-            border-bottom: 1px solid #fff;
-        }
-        .pm-text {
-            white-space: nowrap;
-            color: #fff;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 14px;
-            animation: marquee 10s linear infinite;
-            padding-left: 100%;
-        }
-
-
-        /* --- 2. БЛОК: СПЛИТ ЭКРАН (КОНТАКТЫ + КАРТА) --- */
-        .split-screen {
-            display: flex;
-            height: 70vh; /* Фиксированная высота, чтобы влезало в монитор */
-            min-height: 500px;
-            background: #111;
-            overflow: hidden;
-        }
-
-        /* ЛЕВАЯ ЧАСТЬ (КОНТАКТЫ) */
-        .left-info-col {
-            flex: 1.2; /* Чуть шире карты */
-            display: flex;
-            flex-direction: column;
-            border-right: 2px solid var(--pink); /* Розовый разделитель */
-        }
-
-        .info-zone {
-            flex: 1;
+        /* Общий стиль для секций 1/3 экрана */
+        .contact-section-third {
+            min-height: 33vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-        }
-        
-        /* Разделитель внутри левой колонки */
-        .zone-divider {
-            height: 2px;
-            background: var(--pink);
-            width: 100%;
+            text-align: center;
+            padding: 40px 20px;
             position: relative;
         }
 
-        /* ПРАВАЯ ЧАСТЬ (КАРТА) */
-        .right-map-col {
-            flex: 0.8;
-            height: 100%;
+        /* 1 БЛОК: ЗАГОЛОВОК */
+        .cs-hero {
+            background: #050505;
+            padding-top: 100px; /* Отступ от шапки */
         }
-        .right-map-col iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            filter: grayscale(100%) invert(100%);
-        }
-
-        /* Стиль овалов */
-        .grid-oval {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 90%;
-            max-width: 450px;
-            height: 45px; /* Компактные овалы */
-            background: #1a1a1a;
-            border: 1px solid #444;
-            border-radius: 50px;
-            margin-bottom: 10px;
+        .cs-title {
+            font-size: 50px;
             color: #fff;
-            font-size: 13px; /* Шрифт поменьше */
-            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap; /* В одну строку */
+        }
+        .cs-title span { color: var(--pink); text-shadow: 0 0 20px var(--pink); }
+
+        /* 2 БЛОК: НОМЕРА */
+        .cs-phones {
+            background: radial-gradient(circle, rgba(20,20,20,1) 0%, #000 100%);
+        }
+        
+        /* Стили для овалов с телефонами */
+        .phone-oval {
+            width: 100%;
+            max-width: 500px;
+            min-height: 65px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Номер слева, Имя справа */
+            padding: 0 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #fff;
             text-decoration: none;
             transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        .phone-oval:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+
+        .phone-number {
+            font-size: 20px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .phone-info {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Цвета для мастеров */
+        .color-tatu { color: var(--purple); text-shadow: 0 0 10px var(--purple); }
+        .color-piercing { color: var(--pink); text-shadow: 0 0 10px var(--pink); }
+        .color-laser { color: #fff; }
+
+        .call-time {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        /* 3 БЛОК: ССЫЛКИ */
+        .cs-socials {
+            background: #080808;
+        }
+        .cs-socials .c-oval {
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* 4 БЛОК: БЛАГОДАРНОСТЬ */
+        .cs-thanks {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-        }
-        .grid-oval:hover {
-            border-color: var(--pink);
-            background: #222;
-            color: var(--pink);
-        }
-        .grid-oval.static {
-            border-color: var(--pink);
-            color: var(--pink);
-            cursor: default;
-        }
-        .grid-oval.static:hover { background: #1a1a1a; }
-
-        /* Адаптив */
-        @media (max-width: 900px) {
-            .split-screen { flex-direction: column; height: auto; }
-            .left-info-col { border-right: none; }
-            .right-map-col { height: 400px; }
-            .info-zone { padding: 40px 20px; }
-        }
-
-
-        /* --- 3. БЛОК: ОТЗЫВЫ --- */
-        .reviews-section {
-            background-color: #000;
             padding: 60px 20px;
-            text-align: center;
+            background: radial-gradient(circle, rgba(112, 0, 255, 0.1) 0%, #000 80%);
+        }
+        .thanks-title {
+            font-size: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
             color: #fff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
         }
         .thanks-text {
-            font-size: 24px;
-            margin-bottom: 40px;
+            max-width: 700px;
+            font-size: 18px;
+            line-height: 1.8;
             color: #ccc;
-            font-weight: 300;
         }
-        .thanks-text span { color: var(--pink); font-weight: bold; }
 
-        /* Контейнер виджета */
-        .widget-container {
-            max-width: 800px;
-            height: 600px;
-            margin: 0 auto;
-            border: 1px solid #333;
-            border-radius: 10px;
-            overflow: hidden;
+        /* Текст адреса */
+        .address-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        .address-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .cs-title { font-size: 28px; }
+            .phone-oval { flex-direction: column; height: auto; padding: 15px; gap: 5px; text-align: center; }
+            .phone-number { font-size: 18px; }
+            .phone-info { font-size: 12px; }
+            .thanks-title { font-size: 28px; }
+            .thanks-text { font-size: 16px; }
         }
     </style>
 </head>
@@ -172,8 +164,8 @@
     <div class="sidebar" id="sidebar">
         <ul class="menu-list">
             <li><a href="index.html">Главная</a></li>
-            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
-            <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио тату</a></li>
+            <li><a href="portfolio_pirsing.html">Портфолио пирсинг</a></li>
             <li><a href="uhod_tatu.html">Уход за тату</a></li>
             <li><a href="healer.html">Уход за пирсингом</a></li>
             <li><a href="obuchenie_tatu.html">Обучение тату</a></li>
@@ -181,89 +173,187 @@
             <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
             <li><a href="lazernoye-udaleniye.html">Лазерное удаление</a></li>
             <li><a href="contakty.html" style="color:var(--pink);">Контакты</a></li>
-            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-запись</a></li>
         </ul>
     </div>
 
     <header>
-        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-        <a href="index.html" class="logo">BLACKMARK</a>
         <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </header>
 
-    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
-
-
-    <section class="contact-intro">
-        <h1 class="neon-title">КАК С НАМИ СВЯЗАТЬСЯ?</h1>
-    </section>
-
-    <div class="pink-marquee">
-        <div class="pm-text">ЗВОНИТЕ! &nbsp;&nbsp; • &nbsp;&nbsp; ПИШИТЕ! &nbsp;&nbsp; • &nbsp;&nbsp; УЗНАВАЙТЕ! &nbsp;&nbsp; • &nbsp;&nbsp; ЗВОНИТЕ! &nbsp;&nbsp; • &nbsp;&nbsp; ПИШИТЕ!</div>
-    </div>
-
-
-    <div class="split-screen">
+   <div class="fab-wrapper" id="fabMenu">
         
-        <div class="left-info-col">
+        <div class="fab-options">
+            <a href="https://dikidi.net/#widget=165223" target="_blank" class="fab-item dikidi" data-tooltip="Онлайн запись">
+                <svg viewBox="0 0 24 24"><path d="M9 7v10h4.5c2.5 0 4.5-2 4.5-5s-2-4.5-4.5-5H9zm0-2h4.5C17.65 5 21 8.35 21 12s-3.35 7-7 7H7V5h2z"/></svg>
+            </a>
             
-            <div class="info-zone">
-                <a href="tel:+79956762408" class="grid-oval">+7 995 676 24 08 • Егор • Пирсинг</a>
-                <a href="tel:+79935245578" class="grid-oval">+7 993 524 55 78 • Марина • Тату</a>
-                <a href="tel:+79025010782" class="grid-oval">+7 902 501 07 82 • Олеся • Удаление</a>
-                <div class="grid-oval static">ЗВОНИТЕ С 10:00 ДО 21:00</div>
-            </div>
-
-            <div class="zone-divider"></div>
-
-            <div class="info-zone">
-                <a href="https://vk.com/gim105478249" target="_blank" class="grid-oval">СООБЩЕСТВО ВКОНТАКТЕ</a>
-                <a href="https://vk.com/m.morro" target="_blank" class="grid-oval">МАРИНА МОРРО (ТАТУ)</a>
-                <a href="https://vk.com/id819592651" target="_blank" class="grid-oval">ЕГОР ХЭЛЛ (ПИРСИНГ)</a>
-                <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="grid-oval">ОЛЕСЯ СЕМЕРСКАЯ (ЛАЗЕР)</a>
-            </div>
-
+            <a href="https://vk.com/black_mark_pvk" target="_blank" class="fab-item vk" data-tooltip="ВКонтакте">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 72.9-72.5 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.4-21.7-16.9-21.7h-92.6c-9.4 0-15 6.9-15 13.7 0 14.4 21.7 17.5 23.9 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.7-73.4-97.4-157.4-5.8-11.7-11.5-16.7-26.7-16.7H18.7c-16.9 0-20 7.9-20 16.7 0 15.6 20 93.1 93.1 195.5C140.9 432.3 207.8 480 268.4 480c35.9 0 40.3-7.9 40.3-21.7v-50c0-15 3.2-18.1 13.9-18.1 7.9 0 21.7 4 53.7 35.9 37.1 37.1 43.1 41.8 63.9 41.8h58.9c16.9 0 25.3-8.4 20.4-25-5.3-16.9-24.4-41.8-49.7-71.8-13.7-15.6-34-32.5-40.3-40.9-8.9-11.7-6.4-16.9 0-27.2 0 0 71.2-100.3 78.3-135.3z"/></svg>
+            </a>
+            
+            <a href="tel:+79956762408" class="fab-item call" data-tooltip="Позвонить">
+                <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.26-.26.35-.62.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3.3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .69-.63.69-1.19v-3.43c0-.54-.45-.99-.99-.99z"/></svg>
+            </a>
         </div>
 
-        <div class="right-map-col">
-            <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" frameborder="0"></iframe>
+        <div class="fab-main" onclick="toggleFab()">
+            <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.26-.26.35-.62.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3.3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .69-.63.69-1.19v-3.43c0-.54-.45-.99-.99-.99z"/></svg>
         </div>
-
     </div>
 
+    <script>
+        function toggleFab() {
+            document.getElementById('fabMenu').classList.toggle('active');
+        }
+    </script>
+        
+    </script>
+
+    <section class="contact-section-third cs-hero">
+        <h1 class="cs-title">BLACK MARK <span>CONTACT</span></h1>
+    </section>
 
     <div class="pink-marquee">
-        <div class="pm-text">ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; BLACK MARK STUDIO &nbsp;&nbsp; • &nbsp;&nbsp; КАЧЕСТВО И СТИЛЬ</div>
+        <div class="marquee-track">
+            <div class="marquee-item">СВЯЗЬ • ЗАПИСЬ • КОНСУЛЬТАЦИЯ •</div>
+            <div class="marquee-item">СВЯЗЬ • ЗАПИСЬ • КОНСУЛЬТАЦИЯ •</div>
+            <div class="marquee-item">СВЯЗЬ • ЗАПИСЬ • КОНСУЛЬТАЦИЯ •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">СВЯЗЬ • ЗАПИСЬ • КОНСУЛЬТАЦИЯ •</div>
+            <div class="marquee-item">СВЯЗЬ • ЗАПИСЬ • КОНСУЛЬТАЦИЯ •</div>
+            <div class="marquee-item">СВЯЗЬ • ЗАПИСЬ • КОНСУЛЬТАЦИЯ •</div>
+        </div>
     </div>
 
 
-    <section class="reviews-section">
-        <div class="thanks-text">
-            Спасибо, что выбираете <span>BLACK MARK</span>.<br>
-            Ваше доверие — наша главная награда!
-        </div>
-
-        <div class="widget-container">
-            <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/234036698257?comments"></iframe>
-        </div>
+    <section class="contact-section-third cs-phones">
         
-        <div style="margin-top: 30px;">
-            <a href="https://yandex.ru/maps/org/black_mark/234036698257/reviews/" target="_blank" class="btn btn-pink">ОСТАВИТЬ ОТЗЫВ</a>
+        <a href="tel:+79935245578" class="phone-oval">
+            <span class="phone-number">+7 993 524 55 78</span>
+            <span class="phone-info color-tatu">МАРИНА • ТАТУ</span>
+        </a>
+
+        <a href="tel:+79956762408" class="phone-oval">
+            <span class="phone-number">+7 995 676 24 08</span>
+            <span class="phone-info color-piercing">ЕГОР • ПИРСИНГ</span>
+        </a>
+
+        <a href="tel:+79025010782" class="phone-oval">
+            <span class="phone-number">+7 902 501 07 82</span>
+            <span class="phone-info color-laser">ОЛЕСЯ • УДАЛЕНИЕ</span>
+        </a>
+
+        <div class="call-time">ЗВОНИТЕ С 10:00 ДО 22:00</div>
+    </section>
+
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">СОЦИАЛЬНЫЕ СЕТИ • МАСТЕРА • VK •</div>
+            <div class="marquee-item">СОЦИАЛЬНЫЕ СЕТИ • МАСТЕРА • VK •</div>
+            <div class="marquee-item">СОЦИАЛЬНЫЕ СЕТИ • МАСТЕРА • VK •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">СОЦИАЛЬНЫЕ СЕТИ • МАСТЕРА • VK •</div>
+            <div class="marquee-item">СОЦИАЛЬНЫЕ СЕТИ • МАСТЕРА • VK •</div>
+            <div class="marquee-item">СОЦИАЛЬНЫЕ СЕТИ • МАСТЕРА • VK •</div>
+        </div>
+    </div>
+
+
+    <section class="contact-section-third cs-socials">
+        <a href="https://vk.com/black_mark_pvk" target="_blank" class="c-oval">СООБЩЕСТВО ВКОНТАКТЕ</a>
+        <a href="https://vk.com/m.morro" target="_blank" class="c-oval">МАРИНА МОРРО (ТАТУ)</a>
+        <a href="https://vk.com/id819592651" target="_blank" class="c-oval">ЕГОР ХЭЛЛ (ПИРСИНГ)</a>
+        <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="c-oval">ОЛЕСЯ СЕМЕРСКАЯ (ЛАЗЕР)</a>
+    </section>
+
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">BLACK MARK FAMILY • СПАСИБО ЗА ДОВЕРИЕ •</div>
+            <div class="marquee-item">BLACK MARK FAMILY • СПАСИБО ЗА ДОВЕРИЕ •</div>
+            <div class="marquee-item">BLACK MARK FAMILY • СПАСИБО ЗА ДОВЕРИЕ •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">BLACK MARK FAMILY • СПАСИБО ЗА ДОВЕРИЕ •</div>
+            <div class="marquee-item">BLACK MARK FAMILY • СПАСИБО ЗА ДОВЕРИЕ •</div>
+            <div class="marquee-item">BLACK MARK FAMILY • СПАСИБО ЗА ДОВЕРИЕ •</div>
+        </div>
+    </div>
+
+
+    <section class="cs-thanks">
+        <h2 class="thanks-title">BLACK MARK FAMILY</h2>
+        <div class="thanks-text">
+            <p style="margin-bottom: 20px;">Мы не просто студия — мы комьюнити.</p>
+            <p style="margin-bottom: 20px;">Спасибо, что доверяете нам самое дорогое — своё тело и свой стиль. Ваша смелость вдохновляет нас творить каждый день.</p>
+            <p>Вы — часть нашей истории, а мы — часть вашей.<br><strong style="color:var(--pink);">Навсегда.</strong></p>
         </div>
     </section>
 
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+        </div>
+    </div>
+
+
+    <section class="container" style="padding: 80px 15px 40px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+            
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 30px;">КАК НАС НАЙТИ</h2>
+                <div class="glass-panel" style="padding: 30px; margin-bottom: 30px;">
+                    <span class="address-title">📍 Свердловская область, город Первоуральск, Улица Вайнера 45В</span>
+                    <p class="address-text">
+                        Встаете лицом к магазину «ПРИЗМА», вход будет слева за углом, стеклянная дверь. Заходите, справа увидите лестницу, поднимаетесь на второй этаж, направо черная дверь. Вы пришли!
+                    </p>
+                </div>
+                
+                <div style="height: 350px; border-radius: 20px; overflow: hidden; filter: grayscale(100%) invert(100%); border: 1px solid #555;">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 30px;">ЧТО ГОВОРЯТ ЛЮДИ</h2>
+                <div class="map-widget-container" style="height: 600px;">
+                    <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/234036698257?comments"></iframe>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://yandex.ru/maps/org/black_mark/234036698257/reviews/" target="_blank" class="btn-pink">ОСТАВИТЬ ОТЗЫВ</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <footer>
-        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+        <div class="footer-copyright">© 2016 Black Mark Studio | Первоуральск</div>
+        <div class="footer-credit">Разработка — Егор Хэлл</div>
     </footer>
 
     <script>
         function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
-            document.querySelector('.burger-btn').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar) sidebar.classList.toggle('active');
+            
+            const overlay = document.getElementById('overlay');
+            if (overlay) overlay.classList.toggle('active');
+            
+            const burgerBtn = document.querySelector('.burger-btn');
+            if (burgerBtn) burgerBtn.classList.toggle('active');
         }
     </script>
-
 </body>
 </html>
