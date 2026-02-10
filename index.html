@@ -3,131 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Black Mark — Тату и пирсинг в Первоуральске</title>
-    <meta name="description" content="Студия тату и пирсинга Black Mark. Качественные тату, пирсинг, обучение, удаление лазером." />
-
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css" type="text/css" media="all" />
     
-    <style>
-        /* Основные стили - ЧИСТЫЕ, чтобы ничего не ехало */
-        body { margin: 0; padding: 0; background-color: #000; color: #fff; font-family: 'TildaSans', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; padding: 0; margin: 0; }
-        h1, h2, h3 { margin: 0; font-weight: 700; text-transform: uppercase; font-family: 'Georgia', serif; }
-        p { line-height: 1.5; }
-        
-        /* Цвета */
-        .pink-text { color: #c62197; }
-        .bg-pink { background-color: #c62197; color: #fff; }
-        .bg-dark { background-color: #141414; }
-
-        /* HEADER */
-        .header {
-            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
-            background-color: rgba(20, 20, 20, 0.95); backdrop-filter: blur(10px);
-            z-index: 1000; display: flex; align-items: center; justify-content: space-between;
-            padding: 0 20px; box-sizing: border-box; border-bottom: 1px solid #333;
-        }
-        .logo { font-size: 24px; color: #c62197; font-weight: 700; font-family: 'Georgia', serif; }
-        
-        /* Бургер меню */
-        .burger-btn { font-size: 24px; background: none; border: none; color: #c62197; cursor: pointer; }
-        
-        /* Мобильное меню (скрыто) */
-        .mobile-menu {
-            position: fixed; top: 0; left: -100%; width: 80%; height: 100vh;
-            background: #000; z-index: 1001; transition: 0.3s ease;
-            padding: 80px 20px; box-shadow: 5px 0 15px rgba(0,0,0,0.5);
-        }
-        .mobile-menu.active { left: 0; }
-        .mobile-menu li { margin-bottom: 20px; }
-        .mobile-menu a { font-size: 18px; text-transform: uppercase; font-weight: 600; display: block; }
-        .mobile-menu a:hover { color: #c62197; }
-        .overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); z-index: 1000; display: none;
-        }
-        .overlay.active { display: block; }
-        .close-menu { position: absolute; top: 20px; right: 20px; font-size: 30px; color: #fff; background: none; border: none; }
-
-        /* Кнопка Контакты (внизу слева) */
-        .float-contact {
-            position: fixed; bottom: 20px; left: 20px; z-index: 900;
-            background: #c62197; padding: 10px 20px; border-radius: 30px;
-            font-weight: bold; font-size: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        /* HERO SECTION */
-        .hero {
-            height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://static.tildacdn.com/tild3231-3563-4739-b336-656635336265/noroot.png');
-            background-size: cover; background-position: center; padding: 20px;
-        }
-        .hero h1 { font-size: 36px; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
-        .hero-descr { font-size: 18px; margin-bottom: 40px; font-weight: 600; text-transform: uppercase; }
-        .btn {
-            display: inline-block; padding: 15px 30px; border-radius: 30px; font-weight: bold;
-            margin: 5px; text-transform: uppercase; font-size: 14px;
-        }
-        .btn-primary { background: #c62197; color: #fff; }
-        .btn-secondary { background: #e0e0e0; color: #000; }
-
-        /* TEXT BLOCK */
-        .text-block { background: #fff; color: #000; padding: 60px 20px; }
-        .container { max-width: 1100px; margin: 0 auto; }
-        .text-flex { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
-        .text-content { flex: 1; min-width: 300px; font-size: 18px; }
-        .author-block { flex: 0 0 250px; text-align: center; margin: 0 auto; }
-        .author-img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; }
-
-        /* MARQUEE */
-        .marquee { background: #c62197; padding: 15px 0; overflow: hidden; white-space: nowrap; }
-        .marquee span { display: inline-block; padding-left: 100%; animation: marquee 15s linear infinite; font-size: 20px; font-weight: bold; }
-        @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
-
-        /* GRID (GALLERY) */
-        .gallery-section { padding: 60px 20px; background: #111; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .grid img { width: 100%; height: 350px; object-fit: cover; border-radius: 8px; }
-        .center-btn { text-align: center; }
-
-        /* MAP & CONTACTS */
-        .map-section { background: #292929; padding: 40px 0; }
-        .contact-flex { display: flex; flex-wrap: wrap; gap: 0; }
-        .map-frame { flex: 1; min-width: 300px; height: 500px; }
-        .contact-info { flex: 1; min-width: 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-        .contact-link { font-size: 24px; color: #c62197; display: block; margin-bottom: 10px; font-weight: bold; }
-        .contact-sub { font-size: 14px; color: #ccc; margin-bottom: 20px; display: block; }
-        
-        /* FOOTER */
-        .footer { background: #1a1a1a; padding: 30px; text-align: center; font-size: 14px; color: #777; }
-
-        /* Адаптив для телефонов */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 28px; }
-            .btn { width: 100%; box-sizing: border-box; }
-            .map-frame { height: 300px; }
-        }
-    </style>
+    <title>BLACK MARK — Тату и Пирсинг в Первоуральске | Студия Экстремальной Красоты</title>
+    <meta name="description" content="Ведущая студия татуировки и пирсинга в Первоуральске. Художественная татуировка, перекрытие (cover-up), лазерное удаление тату, обучение мастеров, реконструкция волос. Стерильно и безопасно." />
+    <meta name="keywords" content="тату первоуральск, пирсинг первоуральск, удаление тату, обучение тату, тату салон, прокол ушей, марина морро, егор хэлл, олеся семерская, яна мошняга" />
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="header">
-        <button class="burger-btn" onclick="toggleMenu()">☰</button>
-        <a href="index.html" class="logo">BLACKMARK</a>
-        <a href="https://vk.com/black_mark_pvk" target="_blank">
-            <svg width="30" height="30" viewBox="0 0 100 100" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#c62197"/>
-            </svg>
-        </a>
-    </div>
-
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="close-menu" onclick="toggleMenu()">×</button>
-        <div style="margin-bottom: 40px; color: #c62197; font-weight: bold; font-size: 24px;">МЕНЮ</div>
-        <ul>
-            <li><a href="index.html" style="color: #c62197;">Главная</a></li>
+    <div class="sidebar" id="sidebar">
+        <ul class="menu-list">
+            <li><a href="index.html" style="color:var(--pink);">Главная</a></li>
             <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
             <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
             <li><a href="uhod_tatu.html">Уход за тату</a></li>
@@ -137,93 +25,236 @@
             <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
             <li><a href="lazernoye-udaleniye.html">Лазерное удаление</a></li>
             <li><a href="contakty.html">Контакты</a></li>
-            <li><a href="https://dikidi.net/#widget=165223" target="_blank" style="color: #c62197;">ОНЛАЙН-ЗАПИСЬ</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
         </ul>
     </div>
 
-    <a href="contakty.html" class="float-contact">КОНТАКТЫ</a>
+    <header>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+    </header>
 
-    <div class="hero">
-        <div class="container">
-            <h1>Студия тату и пирсинга<br>в Первоуральске</h1>
-            <div class="hero-descr">Творческое объединение опытных мастеров</div>
-            <div>
-                <a href="https://dikidi.net/#widget=165223" target="_blank" class="btn btn-primary">Онлайн-запись</a>
-                <a href="https://vk.com/im?media=&amp;sel=-105478249" target="_blank" class="btn btn-secondary">Консультация в VK</a>
+    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
+
+
+    <section style="position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;">
+        
+        <div class="placeholder-hero-bg">ФОТО: ГЛАВНАЯ 1</div>
+        
+        <div style="position: relative; z-index: 2; padding: 20px; max-width: 800px;">
+            <h1 class="hero-title" style="margin-bottom: 20px;">BLACK MARK</h1>
+            <h2 style="font-size: 20px; color: #fff; text-transform: uppercase; line-height: 1.6; font-weight: 700; margin-bottom: 40px; text-shadow: 0 0 10px #000;">
+                Объединение опытных мастеров.<br>
+                Студия экстремальной красоты, тату и пирсинга в Первоуральске.
+            </h2>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://dikidi.net/#widget=165223" target="_blank" class="btn-pink">ЗАПИСАТЬСЯ ОНЛАЙН</a>
+                <a href="https://vk.com/black_mark_pvk" target="_blank" class="btn-pink" style="background: transparent; border: 2px solid var(--pink); box-shadow: none;">НАПИСАТЬ В VK</a>
             </div>
+        </div>
+    </section>
+
+
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
         </div>
     </div>
 
-    <div class="text-block">
-        <div class="container">
-            <div class="text-flex">
-                <div class="text-content">
-                    <p>Каждый день, открывая двери нашей студии, мы испытываем невероятную радость видеть ваши улыбки и доверие!</p>
-                    <p>Спасибо вам за то, что доверяете нам свои самые яркие идеи. Мы ценим каждого из вас и стремимся создавать атмосферу, в которой каждый чувствует себя комфортно.</p>
-                    <p>Приходите к нам за вдохновением, креативом и профессионализмом!</p>
+
+    <section class="container" style="padding: 100px 15px;">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <h2 class="neon-title" style="font-size: 40px; margin-bottom: 10px;">BLACK MARK'S TEAM</h2>
+            <p style="color: #ccc; font-size: 18px;">Обеспечим вас наилучшим сервисом, чтобы сделать вас счастливыми.</p>
+        </div>
+
+        <div class="master-row">
+            <div class="master-text">
+                <h3 style="color: var(--pink); font-size: 28px; margin-bottom: 5px;">МАРИНА МОРРО</h3>
+                <p style="color: #fff; font-weight: bold; margin-bottom: 20px;">Руководитель • Тату-мастер</p>
+                <div class="master-quote">
+                    «Для меня Black Mark — это не просто бизнес, это мой дом, в который я приглашаю гостей.
+                    Я отвечаю здесь за фундамент: за то, чтобы вам было спокойно, безопасно и комфортно с первой секунды. 
+                    Как руководитель, я беру на себя всю ответственность за качество и сервис. Как мастер — я вкладываю душу в каждую линию.
+                    Я люблю слушать ваши истории и превращать их в татуировки. Моя задача — сделать так, чтобы вы знали: здесь вас ждёт доброжелательность, поддержка и профессионализм без компромиссов».
                 </div>
-                <div class="author-block">
-                    <img src="https://static.tildacdn.com/tild3364-6664-4164-b134-303963633564/noroot.png" class="author-img" alt="Марина Морро">
-                    <div style="font-weight: bold; font-size: 20px;">Марина Морро</div>
-                    <div style="color: #777;">Руководитель студии</div>
+                <a href="https://vk.com/m.morro" target="_blank" class="btn-pink" style="padding: 12px 30px; font-size: 12px;">НАПИСАТЬ МАРИНЕ</a>
+            </div>
+            <div class="master-photo">
+                <div class="placeholder-circle">ФОТО МАРИНЫ</div>
+            </div>
+        </div>
+
+        <div class="master-row">
+            <div class="master-text">
+                <h3 style="color: var(--pink); font-size: 28px; margin-bottom: 5px;">ОЛЕСЯ СЕМЕРА</h3>
+                <p style="color: #fff; font-weight: bold; margin-bottom: 20px;">Тату-мастер • Лазерное удаление</p>
+                <div class="master-quote">
+                    «Со мной никогда не бывает скучно, обещаю.
+                    Я люблю свою работу за эмоции. Будь то создание яркой татуировки или удаление ошибок прошлого лазером — я делаю это с драйвом и, да, с долей своего фирменного юмора. Но за всем этим стоит огромная любовь к людям и к искусству.
+                    Для меня атмосфера студии — это свобода быть собой. Ко мне приходят не просто за услугой, а за зарядом энергии. Мы сделаем красиво, посмеемся и, возможно, станем лучшими друзьями».
                 </div>
+                <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="btn-pink" style="padding: 12px 30px; font-size: 12px;">НАПИСАТЬ ОЛЕСЕ</a>
             </div>
+            <div class="master-photo">
+                <div class="placeholder-circle">ФОТО ОЛЕСИ</div>
+            </div>
+        </div>
+
+        <div class="master-row">
+            <div class="master-text">
+                <h3 style="color: var(--pink); font-size: 28px; margin-bottom: 5px;">ЕГОР ХЭЛЛ</h3>
+                <p style="color: #fff; font-weight: bold; margin-bottom: 20px;">Ведущий пирсер • Администратор</p>
+                <div class="master-quote">
+                    «Я тот человек, который встретит вас на входе и проводит в мир модификаций.
+                    В работе я перфекционист: стерильность, анатомия, точность прокола — здесь я максимально серьезен и строг. Но как только игла убрана, я "включаю" своего парня.
+                    Я знаю, что пирсинг — это стресс, поэтому моя цель — снять напряжение. Я люблю свое дело за возможность менять ваше восприятие себя. Со мной надежно, безопасно и комфортно».
+                </div>
+                <a href="https://vk.com/id819592651" target="_blank" class="btn-pink" style="padding: 12px 30px; font-size: 12px;">НАПИСАТЬ ЕГОРУ</a>
+            </div>
+            <div class="master-photo">
+                <div class="placeholder-circle">ФОТО ЕГОРА</div>
+            </div>
+        </div>
+
+        <div class="master-row">
+            <div class="master-text">
+                <h3 style="color: var(--pink); font-size: 28px; margin-bottom: 5px;">ЯНА МОШНЯГА</h3>
+                <p style="color: #fff; font-weight: bold; margin-bottom: 20px;">Колорист • Реконструкция волос</p>
+                <div class="master-quote">
+                    «Не дайте моей милой внешности вас обмануть — я не боюсь самых сложных задач.
+                    Волосы — это характер, и я помогаю его раскрыть. Я берусь за сложные окрашивания, кератин и тотальную реконструкцию там, где другие сомневаются. У меня смелый подход: я вижу результат еще до того, как мы начали.
+                    Для меня наша студия — это место преображения. Я работаю уверенно и с любовью к каждому волоску, чтобы, глядя в зеркало, вы видели лучшую версию себя».
+                </div>
+                <a href="https://vk.com/m_oshnyag_a" target="_blank" class="btn-pink" style="padding: 12px 30px; font-size: 12px;">НАПИСАТЬ ЯНЕ</a>
+            </div>
+            <div class="master-photo">
+                <div class="placeholder-circle">ФОТО ЯНЫ</div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
         </div>
     </div>
 
-    <div class="marquee">
-        <span>БОЛЬНО! ДОРОГО! НАВСЕГДА! &nbsp;&nbsp;&nbsp; БОЛЬНО! ДОРОГО! НАВСЕГДА! &nbsp;&nbsp;&nbsp; БОЛЬНО! ДОРОГО! НАВСЕГДА!</span>
-    </div>
 
-    <div class="gallery-section">
-        <div class="container">
-            <div class="grid">
-                <img src="https://static.tildacdn.com/tild6233-6164-4663-b035-383461373035/eqWato3QgfU.jpg" alt="Тату 1">
-                <img src="https://static.tildacdn.com/tild3932-6464-4163-b962-646664313061/noroot.png" alt="Тату 2">
-                <img src="https://static.tildacdn.com/tild3562-6264-4963-b835-643936663135/HNfRcBfnBt8.jpg" alt="Тату 3">
-                <img src="https://static.tildacdn.com/tild3363-3964-4331-b665-376534623831/JrUSO4QaIZo_1.jpg" alt="Тату 4">
+    <section class="info-section-wrapper">
+        <div class="info-bg-placeholder">ГЛАВНАЯ 1 (ФОН)</div>
+        
+        <div class="info-content">
+            <div class="info-text-main">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно. Мы уделяем особое внимание каждому клиенту и стараемся сделать процесс нанесения татуировки или пирсинга максимально приятным и безболезненным.
             </div>
-            <div class="center-btn" style="color: #fff;">
-                <h2 style="margin-bottom: 20px;">Black Mark</h2>
-                <p style="max-width: 600px; margin: 0 auto 30px;">Ищете тату и пирсинг студию в Первоуральске? Наша студия предлагает профессиональные услуги по созданию качественных татуировок и пирсинга.</p>
-                <a href="tel:+79935245578" class="btn btn-primary">ПОЗВОНИТЬ</a>
+
+            <div class="oval-list">
+                <div class="c-oval static">РАБОТАЕМ ДЛЯ ВАС С 11:00 ДО 21:00</div>
+                <div class="c-oval static">РАБОТАЕМ ТОЛЬКО ПО ПРЕДВАРИТЕЛЬНОЙ ЗАПИСИ</div>
+                <a href="https://vk.com/gim105478249" target="_blank" class="c-oval">НАПИСАТЬ В СООБЩЕСТВО VK</a>
+                <a href="https://vk.com/id819592651" target="_blank" class="c-oval">ЕГОР ХЭЛЛ — ПИРСИНГ</a>
+                <a href="https://vk.com/m.morro" target="_blank" class="c-oval">МАРИНА МОРРО — ТАТУ</a>
             </div>
+        </div>
+    </section>
+
+
+    <div class="pink-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
+            <div class="marquee-item">БОЛЬНО! • ДОРОГО! • НАВСЕГДА! •</div>
         </div>
     </div>
 
-    <div class="map-section">
-        <div class="container contact-flex">
-            <div class="map-frame">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="filter: grayscale(100%) invert(100%);"></iframe>
-            </div>
-            <div class="contact-info">
-                <h2>Наши контакты</h2>
-                <div style="margin-top: 30px;">
-                    <a href="tel:+79935072823" class="contact-link">+7 993 507 28 23</a>
-                    <span class="contact-sub">Пирсинг</span>
+
+    <section class="container" style="padding: 80px 15px 40px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+            
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
+                <div class="glass-panel" style="padding: 30px; margin-bottom: 30px;">
+                    <p style="font-size: 18px; margin-bottom: 15px; color: #fff;">📍 <strong>г. Первоуральск, ул. Вайнера 45В</strong></p>
+                    <p style="color: #aaa; margin-bottom: 25px;">(Ориентир: магазин «ПРИЗМА», вход слева за углом, 2 этаж)</p>
                     
-                    <a href="tel:+79935245578" class="contact-link" style="color: #fff;">+7 993 524 55 78</a>
-                    <span class="contact-sub">Тату</span>
-
-                    <a href="tel:+79025010782" class="contact-link" style="color: #ccc; font-size: 20px;">+7 902 501 07 82</a>
-                    <span class="contact-sub">Лазерное удаление</span>
+                    <a href="tel:+79956762408" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #fff;">
+                        📞 +7 995 676 24 08 <span style="color:var(--pink); font-size: 14px; margin-left: 10px;">(ПИРСИНГ)</span>
+                    </a>
+                    
+                    <a href="tel:+79935245578" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #fff;">
+                        📞 +7 993 524 55 78 <span style="color:var(--purple); font-size: 14px; margin-left: 10px;">(ТАТУ)</span>
+                    </a>
+                    
+                    <a href="tel:+79025010782" style="display: block; font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #fff;">
+                        📞 +7 902 501 07 82 <span style="color:#aaa; font-size: 14px; margin-left: 10px;">(УДАЛЕНИЕ)</span>
+                    </a>
                 </div>
-                <div style="margin-top: 20px; line-height: 1.6;">
-                    г. Первоуральск, ул. Вайнера 45В<br>
-                    Вход слева за углом, 2 этаж, черная дверь.
+                
+                <div style="height: 350px; border-radius: 20px; overflow: hidden; filter: grayscale(100%) invert(100%); border: 1px solid #555;">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0"></iframe>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="footer">
-        © Разработка и продвижение сайта — Антон Штиль
-    </div>
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 30px;">ЧТО ГОВОРЯТ ЛЮДИ</h2>
+                <div class="map-widget-container" style="height: 600px;">
+                    <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/234036698257?comments"></iframe>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://yandex.ru/maps/org/black_mark/234036698257/reviews/" target="_blank" class="btn-pink">ОСТАВИТЬ ОТЗЫВ</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        © 2016-2024 Black Mark Studio | Первоуральск <br><br>
+        <span style="color: var(--pink); font-weight: bold; letter-spacing: 2px;">РАЗРАБОТКА — ЕГОР ХЭЛЛ</span>
+    </footer>
+
 
     <script>
         function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
+            document.getElementById('sidebar').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
+            document.querySelector('.burger-btn').classList.toggle('active');
         }
     </script>
 </body>

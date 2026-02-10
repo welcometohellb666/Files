@@ -2,288 +2,334 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Портфолио Пирсинг | Black Mark</title>
-    <meta name="description" content="Студия пирсинга в Первоуральске. Мастер Антон Штиль. Проколы любой сложности: нос, уши, губы, пупок." />
+    <title>Портфолио Пирсинг — HUESOS | Black Mark</title>
+    <meta name="description" content="Пирсинг в Первоуральске. Безопасность, стерильность и качество." />
     
-    <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script>
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-grid-3.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';"/>
-    <link rel="stylesheet" href="https://static.tildacdn.com/ws/project8427820/tilda-blocks-page43351136.min.css?t=1769626468" type="text/css" media="all" onerror="this.loaderr='y';" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-animation-2.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-cover-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-menu-widgeticons-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css" type="text/css" media="all" onerror="this.loaderr='y';" />
-    
-    <script src="https://static.tildacdn.com/js/tilda-scripts-3.0.min.js" charset="utf-8" defer onerror="this.loaderr='y';"></script>
-    <script src="https://static.tildacdn.com/ws/project8427820/tilda-blocks-page43351136.min.js?t=1769626468" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="https://static.tildacdn.com/js/tilda-lazyload-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="https://static.tildacdn.com/js/tilda-menu-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 
     <style>
-        /* Сетка портфолио */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px 20px;
-        }
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-        .portfolio-item:hover {
-            transform: scale(1.02);
-        }
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .portfolio-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 10px;
-            font-size: 14px;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .portfolio-item:hover .portfolio-caption {
-            opacity: 1;
-        }
-
-        /* Заголовки и текст */
-        .page-title {
-            text-align: center;
-            padding-top: 120px;
-            padding-bottom: 20px;
-            color: #000;
-            font-family: 'Georgia', serif;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .master-intro {
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            text-align: center;
-            font-size: 18px;
-            line-height: 1.5;
-            padding: 0 20px;
-        }
-        
-        /* Бегущая строка (стилизация) */
-        .marquee-container {
-            background-color: #c62197;
-            color: white;
-            padding: 15px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            margin-bottom: 30px;
-        }
-        .marquee-text {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 15s linear infinite;
+        /* --- СТИЛИ ДЛЯ ЗАГЛУШЕК ФОТО --- */
+        .photo-placeholder {
+            background-color: #222;
+            border: 2px dashed #444;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
             font-size: 18px;
+            text-transform: uppercase;
         }
-        @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
+
+        /* --- ПЕРВЫЙ БЛОК --- */
+        .intro-split {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #000;
+            overflow: hidden;
         }
+        .intro-text-col {
+            flex: 1;
+            min-width: 350px;
+            padding: 80px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .intro-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--pink);
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+        }
+        .intro-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        .intro-desc p { margin-bottom: 15px; }
+        
+        /* Правая часть (Заглушка Фото 1) */
+        .intro-img-col {
+            flex: 1;
+            min-width: 350px;
+            min-height: 500px;
+            position: relative;
+        }
+        .intro-placeholder {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        @media (max-width: 768px) {
+            .intro-placeholder { clip-path: none; min-height: 400px; }
+            .intro-split { flex-direction: column-reverse; }
+        }
+
+        /* --- ГАЛЕРЕЯ MASONRY --- */
+        .gallery-section {
+            background-color: #111;
+            padding: 60px 0;
+        }
+        .masonry-grid {
+            column-count: 4;
+            column-gap: 20px;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        /* Стили для заглушек в галерее */
+        .gallery-placeholder {
+            width: 100%;
+            height: 300px; /* Фиксированная высота для заглушек */
+            border-radius: 8px;
+        }
+        /* Разная высота для эффекта Masonry */
+        .h-250 { height: 250px; }
+        .h-350 { height: 350px; }
+        .h-400 { height: 400px; }
+
+        @media (max-width: 1024px) { .masonry-grid { column-count: 3; } }
+        @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
+        
+        /* --- ИНФОБЛОК --- */
+        .info-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+            padding: 80px 20px;
+            position: relative;
+        }
+        .info-bg-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .info-text-intro {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            max-width: 700px;
+            color: #fff;
+        }
+        .info-divider {
+            width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0 30px;
+        }
+        
+        /* ОВАЛЫ */
+        .info-oval {
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; max-width: 600px; height: 55px;
+            border-radius: 50px; margin-bottom: 15px; padding: 0 20px;
+            font-size: 16px; font-weight: bold; text-align: center;
+            line-height: 1.2; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .oval-static { background: #ffffff; color: #000000; border: 2px solid #fff; }
+        .oval-link {
+            background: rgba(20, 20, 20, 0.9); border: 1px solid var(--pink); color: #fff;
+            text-decoration: none; transition: 0.3s; cursor: pointer;
+        }
+        .oval-link:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+        a.oval-link { display: flex; }
+
+        /* --- КОНТАКТЫ --- */
+        .contacts-flex { display: flex; flex-wrap: wrap; background: #292929; }
+        .map-wrapper { flex: 1; min-width: 300px; height: 500px; }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) invert(100%); }
+        .contact-data { flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+        .contact-row { margin-bottom: 25px; }
+        .phone-link { font-size: 24px; font-weight: bold; display: block; text-decoration: none; }
+        .phone-desc { font-size: 14px; color: #aaa; margin-top: 5px; text-transform: uppercase; }
     </style>
 </head>
+<body>
 
-<body class="t-body" style="margin:0;">
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="sidebar" id="sidebar">
+        <ul class="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
+            <li><a href="portfolio_pirsing.html" style="color:var(--pink);">Портфолио Пирсинг</a></li>
+            <li><a href="uhod_tatu.html">Уход за тату</a></li>
+            <li><a href="healer.html">Уход за пирсингом</a></li>
+            <li><a href="obuchenie_tatu.html">Обучение тату</a></li>
+            <li><a href="obuchenie_pirsing.html">Обучение пирсингу</a></li>
+            <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
+            <li><a href="lazernoye-udaleniye.html">Лазерное удаление</a></li>
+            <li><a href="contakty.html">Контакты</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
+        </ul>
+    </div>
 
-    <div id="t-header" class="t-records">
-        <div id="rec717252900" class="r t-rec" style="background-color:#141414;" data-record-type="451" data-bg-color="#141414">
-            <div id="nav717252900" class="t451" data-menu="yes">
-                <div class="t451__container t451__positionfixed t451__panel" style="height: 70px;">
-                    <div class="t451__container__bg" style="background-color: rgba(0,0,0,1);"></div>
-                    
-                    <div class="t451__menu__content">
-                        <div class="t451__burger-wrapper__mobile">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                        <div class="t451__leftside t451__side t451__side_burger">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                    </div>
+    <header>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+    </header>
 
-                    <div class="t451__centerside t451__side">
-                        <div class="t451__logo__container t451__textlogo__container">
-                            <div class="t451__logo__content">
-                                <a class="t451__logo" href="index.html">
-                                    <div class="t-heading t-heading_xs" style="color:#c62197; font-size:40px;">BLACKMARK</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
 
-                    <div class="t451__rightside t451__side t451__side_socials">
-                        <div class="t-sociallinks">
-                            <ul role="list" class="t-sociallinks__wrapper">
-                                <li class="t-sociallinks__item"><a href="https://vk.com/black_mark_pvk" target="_blank" style="color:#c62197; font-weight:bold;">VK</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+    <section class="intro-split">
+        <div class="intro-text-col">
+            <h1 class="intro-title">Привет! Меня зовут HUESOS</h1>
+            <div class="intro-desc">
+                <p>Добро пожаловать в мир стиля и самовыражения вместе с моим пирсинг салоном в Первоуральске!</p>
+                <p>Ищете, где сделать пирсинг? Вы нашли идеальное место! У меня безопасность, стерильность и качество стоят на первом месте.<br>
+                Я предлагаю пирсинг любой сложности и строго следую международным стандартам проведения процедур.</p>
+                
+                <p style="margin-top:20px; font-weight:bold;">Почему стоит выбрать меня?</p>
+                <p>
+                    <strong>Безопасность:</strong> Использую только одноразовые инструменты и стерильные иглы.<br>
+                    <strong>Качество:</strong> Опытный пирсер с высокой квалификацией.<br>
+                    <strong>Персональный подход:</strong> Внимателен ко всем вашим пожеланиям и особенностям анатомии.
+                </p>
+
+                <p>Мои клиенты уверены в безопасности каждой процедуры.</p>
+                <p>Запишитесь на процедуру к ведущему пирсинг мастеру в студию Black Mark и подчеркните свою индивидуальность со мной!</p>
+                
+                <p style="color: var(--pink); font-weight: 700; font-size: 20px; margin-top: 20px;">Береги себя! Люби пирсинг!</p>
+            </div>
+        </div>
+
+        <div class="intro-img-col">
+            <div class="photo-placeholder intro-placeholder">
+                Фотография 1
+            </div>
+        </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">HUESOS &nbsp;&nbsp; • &nbsp;&nbsp; ПРОФЕССИОНАЛЬНЫЙ ПИРСИНГ &nbsp;&nbsp; • &nbsp;&nbsp; СТЕРИЛЬНОСТЬ 100%</div>
+    </div>
+
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;">ПРИМЕРЫ РАБОТ</h2>
+            
+            <div class="masonry-grid">
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-350">Фотография 1</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-250">Фотография 2</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-400">Фотография 3</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-350">Фотография 4</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-250">Фотография 5</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-400">Фотография 6</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-350">Фотография 7</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-250">Фотография 8</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-400">Фотография 9</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-350">Фотография 10</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-250">Фотография 11</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-400">Фотография 12</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-350">Фотография 13</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-250">Фотография 14</div></div>
+                <div class="masonry-item"><div class="photo-placeholder gallery-placeholder h-400">Фотография 15</div></div>
             </div>
             
-            <div class="t451 t451m t451m__left">
-                <button type="button" class="t451m__close-button t451m__close"><div class="t451m__close_icon" style="color:#ffffff;"><span></span><span></span><span></span><span></span></div></button>
-                <div class="t451m__container t-align_left">
-                    <div class="t451m__top">
-                        <nav class="t451m__menu">
-                            <ul class="t451m__list t-menu__list">
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="index.html">Главная</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_tatu.html">Портфолио Тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_pirsing.html" style="color:#c62197;">Портфолио Пирсинг</a></li> <li class="t451m__list_item"><a class="t-menu__link-item" href="contakty.html">Контакты</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="https://vk.com/id819592651" target="_blank" class="btn btn-pink">СМОТРЕТЬ БОЛЬШЕ В VK</a>
             </div>
         </div>
-        
-        <div id="rec768468878" class="r t-rec" data-record-type="898">
-            <div class="t898 t898_pos_left t898_animate">
-                <div class="t898__btn" style="bottom:20px;left:10px;">
-                    <label class="t898__btn_label" style="background:#c62197;">
-                        <span class="t898__btn-text t-name t-name_xs">КОНТАКТЫ</span>
-                    </label>
-                </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">УКРАШЕНИЯ ИЗ ТИТАНА &nbsp;&nbsp; • &nbsp;&nbsp; ЛЕГКАЯ РУКА &nbsp;&nbsp; • &nbsp;&nbsp; ПОЛНОЕ СОПРОВОЖДЕНИЕ</div>
+    </div>
+
+
+    <section class="info-bg">
+        <div class="info-bg-content">
+            
+            <div class="info-text-intro">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно. Мы уделяем особое внимание каждому клиенту и стараемся сделать процесс максимально приятным и безболезненным.
+            </div>
+            
+            <div class="info-divider"></div>
+            
+            <div class="info-oval oval-static">
+                Работаем для вас: с 11:00-20:00
+            </div>
+            
+            <div class="info-oval oval-static">
+                Все сеансы проходят по предварительной записи
+            </div>
+            
+            <a href="https://vk.com/gim105478249" target="_blank" class="info-oval oval-link">
+                НАПИСАТЬ В VK (СТУДИЯ)
+            </a>
+
+            <a href="https://vk.com/id819592651" target="_blank" class="info-oval oval-link">
+                Егор Хэлл (Пирсинг)
+            </a>
+
+            <a href="https://vk.com/m.morro" target="_blank" class="info-oval oval-link">
+                Марина Морро (Тату)
+            </a>
+
+        </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ЛЮБИ СЕБЯ! &nbsp;&nbsp; • &nbsp;&nbsp; ЗАПИСЫВАЙСЯ НА ПИРСИНГ! &nbsp;&nbsp; • &nbsp;&nbsp; ЛЮБИ СЕБЯ!</div>
+    </div>
+
+
+    <div class="contacts-flex">
+        <div class="map-wrapper">
+             <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" style="filter: grayscale(100%) invert(100%);"></iframe>
+        </div>
+        <div class="contact-data">
+            <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
+            
+            <div class="contact-row">
+                <a href="tel:+79935245578" class="phone-link" style="color: #fff;">+7 993 524 55 78</a>
+                <span class="phone-desc">Тату / Обучение</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79956763408" class="phone-link" style="color: var(--pink);">+7 995 676 34 08</a>
+                <span class="phone-desc">Пирсинг</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79025010782" class="phone-link" style="color: #ccc; text-decoration: underline;">+7 902 501 07 82</a>
+                <span class="phone-desc">Лазерное удаление</span>
+            </div>
+
+            <div style="font-size: 18px; line-height: 1.5; margin-top: 10px;">
+                г. Первоуральск, ул. Вайнера 45В<br>
+                <span style="font-size: 14px; color: #777;">Встаете лицом к магазину «ПРИЗМА», вход слева за углом, 2 этаж.</span>
             </div>
         </div>
     </div>
 
-    <div id="portfolio-content" class="t-records">
-        
-        <div class="t-container">
-            <div class="t-col t-col_12">
-                <h1 class="page-title t-title t-title_xxl">Портфолио: Пирсинг</h1>
-                <div class="master-intro">
-                    <p><strong>Привет! Меня зовут Антон Штиль.</strong></p>
-                    <p>Ищете, где сделать пирсинг? Вы нашли идеальное место! У меня безопасность, стерильность и качество стоят на первом месте. Я предлагаю пирсинг любой сложности и строго следую международным стандартам.</p>
-                    <p style="font-size: 14px; color: #555;">Использую только одноразовые инструменты и стерильные иглы.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="marquee-container">
-            <div class="marquee-text">БЕРЕГИТЕ СЕБЯ! ЛЮБИТЕ ПИРСИНГ! &nbsp;&nbsp;&nbsp; БЕРЕГИТЕ СЕБЯ! ЛЮБИТЕ ПИРСИНГ! &nbsp;&nbsp;&nbsp; БЕРЕГИТЕ СЕБЯ! ЛЮБИТЕ ПИРСИНГ!</div>
-        </div>
-
-        <div class="t-container">
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild3261-3935-4237-b538-653030323838/lc7VeXlgIYg.jpg" alt="Вертикальный лабрет">
-                    <div class="portfolio-caption">Вертикальный лабрет</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild6538-6236-4165-b135-393330343638/n3sIU5oLmF8.jpg" alt="Пирсинг пупка">
-                    <div class="portfolio-caption">Пирсинг пупка</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild3534-6635-4330-a364-323638373363/8qC2mvG3enM.jpg" alt="Пирсинг брови">
-                    <div class="portfolio-caption">Пирсинг брови</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild6233-6265-4362-a163-343130333762/4hJ96EuXOe8.jpg" alt="Пирсинг хряща (Конч)">
-                    <div class="portfolio-caption">Хрящ (Конч)</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild6636-3938-4165-b864-636135333664/bAw_mp0Dz8U.jpg" alt="Укус ангела">
-                    <div class="portfolio-caption">Укус ангела</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild3431-6531-4466-a135-356364373037/LNtv0O-tKcc.jpg" alt="Пирсинг мочки">
-                    <div class="portfolio-caption">Мочки ушей</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild3961-6262-4837-a632-353231333763/JD6EKbEipc8.jpg" alt="Пирсинг губ">
-                    <div class="portfolio-caption">Пирсинг губ</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild6635-3430-4161-b665-666662646161/DOw4jFTLTTg.jpg" alt="Трагус">
-                    <div class="portfolio-caption">Трагус</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild6336-6134-4531-b734-303461303833/4sXgzhczFV4.jpg" alt="Пирсинг носа">
-                    <div class="portfolio-caption">Крыло носа</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild3232-3964-4331-b939-353361643830/awKnZLvWP4o.jpg" alt="Септум">
-                    <div class="portfolio-caption">Септум</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild3034-3439-4534-a139-666633613631/-LTl9BnWBDU.jpg" alt="Руук">
-                    <div class="portfolio-caption">Руук</div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://static.tildacdn.com/tild3833-6334-4165-b531-316539336362/lup58GQtDtE.jpg" alt="Хеликс">
-                    <div class="portfolio-caption">Хеликс</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="t-container" style="padding: 50px 0; text-align: center;">
-             <a class="t-btn t-btnflex t-btnflex_type_button t-btnflex_md" href="https://dikidi.net/#widget=165223" target="_blank" style="color:#ffffff;background-color:#c62197;border-radius:30px;">
-                <span class="t-btnflex__text">ЗАПИСАТЬСЯ НА ПИРСИНГ</span>
-             </a>
-        </div>
-    </div>
-
-    <div id="rec867606367" class="r t-rec" style="background-color:#292929; padding: 20px 0;" data-record-type="463">
-        <div class="t463">
-            <div class="t463__maincontainer">
-                <div class="t463__content">
-                    <div class="t463__colwrapper">
-                        <div class="t463__col t463__col_center t-align_center">
-                            <div class="t463__typo t463__copyright t-name t-name_xs" style="color:#ffffff;">
-                                © Разработка и продвижение сайта-Антон Штиль
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <footer>
+        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+    </footer>
 
     <script>
-        t_onReady(function() {
-            t_onFuncLoad('t_menuburger_init', function(){
-                var rec = document.querySelector('#rec717252900');
-                if(!rec) return;
-                var burger = rec.querySelectorAll('.t-menuburger');
-                var menu = document.querySelector('.t451m');
-                var closeBtn = document.querySelector('.t451m__close');
-                
-                Array.prototype.forEach.call(burger, function(b) {
-                    b.addEventListener('click', function() {
-                        menu.classList.add('t451m_opened');
-                        menu.style.display = 'block';
-                    });
-                });
-                
-                if(closeBtn) {
-                    closeBtn.addEventListener('click', function() {
-                        menu.classList.remove('t451m_opened');
-                        setTimeout(function(){ menu.style.display = 'none'; }, 300);
-                    });
-                }
-            });
-        });
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+            document.querySelector('.burger-btn').classList.toggle('active');
+        }
     </script>
 
 </body>

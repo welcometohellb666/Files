@@ -2,422 +2,500 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Уход за пирсингом (Healer) | Black Mark</title>
-    <meta name="description" content="Рекомендации по уходу за пирсингом от студии Black Mark. Средство BlackMark's Healer." />
+    <title>Уход за пирсингом — BlackMark's Healer</title>
+    <meta name="description" content="Полный гид по уходу за пирсингом. Инструкции для ушей, лица, рта и тела. Средство BlackMark's Healer." />
     
-    <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script>
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-grid-3.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/ws/project8427820/tilda-blocks-page45079959.min.css?t=1769626886" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-animation-2.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-menu-widgeticons-1.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css" type="text/css" media="all" />
-    
-    <script src="https://static.tildacdn.com/js/tilda-scripts-3.0.min.js" charset="utf-8" defer></script>
-    <script src="https://static.tildacdn.com/js/tilda-menu-1.0.min.js" charset="utf-8" async></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 
     <style>
-        html {
-            scroll-behavior: smooth;
+        /* --- БЛОК 1: ЛОГО И НАВИГАЦИЯ --- */
+        .healer-nav-block {
+            background-color: #000;
+            padding: 120px 20px 50px;
+            text-align: center;
+            border-bottom: 1px solid #222;
         }
-        /* Стили для аккордеонов (выпадающих списков) */
-        .accordion-item {
+        .healer-logo {
+            font-size: 36px;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            font-family: 'Arial Black', sans-serif;
+            border: 4px solid #fff;
+            display: inline-block;
+            padding: 15px 40px;
+        }
+        .healer-logo span { color: var(--pink); }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .nav-btn {
+            background: transparent;
+            border: 2px solid var(--pink);
+            color: #fff;
+            padding: 12px 35px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 40px;
+            transition: 0.3s;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .nav-btn:hover {
+            background: var(--pink);
+            color: #fff;
+            box-shadow: 0 0 15px var(--pink);
+        }
+
+        /* --- БЛОК 2: ОПИСАНИЕ HEALER --- */
+        .healer-intro {
             background-color: #111;
-            border-bottom: 1px solid #333;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .healer-brand {
+            text-transform: uppercase;
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: #777;
             margin-bottom: 10px;
         }
-        .accordion-header {
-            width: 100%;
-            padding: 20px;
-            background: none;
-            border: none;
-            outline: none;
+        .healer-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #fff;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.3;
+        }
+        .healer-text {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ccc;
             text-align: left;
+        }
+        .healer-text p { margin-bottom: 20px; }
+        
+        .healer-subs {
+            font-size: 16px;
+            color: #aaa;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            display: inline-block;
+            font-style: italic;
+        }
+
+        /* --- БЛОК 3: АККОРДЕОНЫ (КАТЕГОРИИ) --- */
+        .piercing-category {
+            padding: 60px 0;
+            background-color: #000;
+        }
+        .category-anchor { scroll-margin-top: 100px; }
+        
+        .category-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        .category-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 3px;
+            background: var(--pink);
+            margin: 10px auto 0;
+        }
+        .category-wrapper {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 60px;
+        }
+        .category-wrapper:first-child { margin-top: 0; }
+
+        .accordion-item {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .accordion-item:hover { border-color: var(--pink); }
+        
+        .accordion-header {
+            padding: 25px 30px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 18px;
+            font-weight: 700;
             color: #fff;
-            transition: background 0.3s;
+            text-transform: uppercase;
+            transition: 0.3s;
         }
-        .accordion-header:hover {
-            background-color: #222;
-        }
-        .accordion-title {
-            font-size: 20px;
-            font-weight: 600;
-            font-family: 'Georgia', serif;
-        }
+        .accordion-header:hover { color: var(--pink); }
+        
         .accordion-icon {
-            width: 24px;
-            height: 24px;
-            transition: transform 0.3s ease;
+            font-size: 24px;
+            color: var(--pink);
+            font-weight: bold;
+            transition: 0.3s;
         }
-        .accordion-header.active .accordion-icon {
-            transform: rotate(180deg);
-        }
+        .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+        
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: #1a1a1a;
-            color: #ddd;
+            transition: max-height 0.4s ease-out;
+            background-color: #222;
         }
         .accordion-body {
-            padding: 20px;
+            padding: 30px;
+            color: #ddd;
+            line-height: 1.6;
             font-size: 16px;
-            line-height: 1.5;
         }
-        .accordion-body ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        .accordion-body li {
-            margin-bottom: 5px;
-        }
-        
-        /* Меню категорий внутри страницы */
-        .inner-nav {
-            background-color: #000;
-            padding: 20px 0;
-            border-bottom: 1px solid #333;
-            position: sticky;
-            top: 70px; /* Высота основного хедера */
-            z-index: 900;
-        }
-        .inner-nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-        .inner-nav li {
-            margin: 5px 15px;
-        }
-        .inner-nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            text-transform: uppercase;
-            border-bottom: 1px solid transparent;
-            transition: 0.3s;
-        }
-        .inner-nav a:hover {
-            color: #c62197;
-            border-bottom: 1px solid #c62197;
-        }
-        .section-title-block {
-            padding: 40px 0;
-            background-color: #000;
+        .accordion-body ul { padding-left: 20px; margin-bottom: 15px; }
+        .accordion-body li { margin-bottom: 8px; }
+        /* Сохраняем стиль списков как в оригинале */
+        .accordion-body ul { list-style-type: disc; }
+
+
+        /* --- БЛОК 5: БЛАГОДАРНОСТЬ --- */
+        .outro-block {
+            background-color: #111;
+            padding: 80px 20px;
             text-align: center;
             color: #fff;
         }
-
-        /* Бегущая строка */
-        .marquee-container {
-            background-color: #c62197;
-            color: white;
-            padding: 15px 0;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .marquee-text {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 20s linear infinite;
+        .outro-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
             font-weight: bold;
-            font-size: 18px;
+            text-transform: uppercase;
         }
-        @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
+        .outro-phone {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--pink);
+            text-decoration: none;
+            display: block;
+            margin: 20px 0 50px;
         }
+        .ingredients-box {
+            border: 1px solid #444;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 15px;
+            background: #1a1a1a;
+        }
+        .ingredients-title {
+            color: var(--pink);
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        /* --- ИНФОБЛОК --- */
+        .info-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
+            background-size: cover; background-position: center; text-align: center; color: #fff; padding: 80px 20px; position: relative;
+        }
+        .info-bg-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        .info-text-intro { font-size: 16px; line-height: 1.5; margin-bottom: 30px; max-width: 700px; color: #fff; }
+        .info-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0 30px; }
+        .info-oval {
+            display: flex; align-items: center; justify-content: center; width: 100%; max-width: 600px; height: 55px;
+            border-radius: 50px; margin-bottom: 15px; padding: 0 20px; font-size: 16px; font-weight: bold; text-align: center;
+            line-height: 1.2; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .oval-static { background: #ffffff; color: #000000; border: 2px solid #fff; }
+        .oval-link { background: rgba(20, 20, 20, 0.9); border: 1px solid var(--pink); color: #fff; text-decoration: none; transition: 0.3s; cursor: pointer; }
+        .oval-link:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+        a.oval-link { display: flex; }
+
+        /* --- КОНТАКТЫ --- */
+        .contacts-flex { display: flex; flex-wrap: wrap; background: #292929; }
+        .map-wrapper { flex: 1; min-width: 300px; height: 500px; }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) invert(100%); }
+        .contact-data { flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+        .contact-row { margin-bottom: 25px; }
+        .phone-link { font-size: 24px; font-weight: bold; display: block; text-decoration: none; }
+        .phone-desc { font-size: 14px; color: #aaa; margin-top: 5px; text-transform: uppercase; }
     </style>
 </head>
+<body>
 
-<body class="t-body" style="margin:0;">
-
-    <div id="t-header" class="t-records">
-        <div id="rec717252900" class="r t-rec" style="background-color:#141414;" data-record-type="451" data-bg-color="#141414">
-            <div id="nav717252900" class="t451" data-menu="yes">
-                <div class="t451__container t451__positionfixed t451__panel" style="height: 70px;">
-                    <div class="t451__container__bg" style="background-color: rgba(0,0,0,1);"></div>
-                    
-                    <div class="t451__menu__content">
-                        <div class="t451__burger-wrapper__mobile">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                        <div class="t451__leftside t451__side t451__side_burger">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                    </div>
-
-                    <div class="t451__centerside t451__side">
-                        <div class="t451__logo__container t451__textlogo__container">
-                            <div class="t451__logo__content">
-                                <a class="t451__logo" href="index.html">
-                                    <div class="t-heading t-heading_xs" style="color:#c62197; font-size:40px;">BLACKMARK</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="t451__rightside t451__side t451__side_socials">
-                        <div class="t-sociallinks">
-                            <ul role="list" class="t-sociallinks__wrapper">
-                                <li class="t-sociallinks__item"><a href="https://vk.com/black_mark_pvk" target="_blank" style="color:#c62197; font-weight:bold;">VK</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="t451 t451m t451m__left">
-                <button type="button" class="t451m__close-button t451m__close"><div class="t451m__close_icon" style="color:#ffffff;"><span></span><span></span><span></span><span></span></div></button>
-                <div class="t451m__container t-align_left">
-                    <div class="t451m__top">
-                        <nav class="t451m__menu">
-                            <ul class="t451m__list t-menu__list">
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="index.html">Главная</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_tatu.html">Портфолио Тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="uhod_tatu.html">Уход за тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="healer.html" style="color:#c62197;">Уход за пирсингом</a></li> <li class="t451m__list_item"><a class="t-menu__link-item" href="contakty.html">Контакты</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="rec768468878" class="r t-rec" data-record-type="898">
-            <div class="t898 t898_pos_left t898_animate">
-                <div class="t898__btn" style="bottom:20px;left:10px;">
-                    <label class="t898__btn_label" style="background:#c62197;">
-                        <span class="t898__btn-text t-name t-name_xs">КОНТАКТЫ</span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div style="padding-top:120px; padding-bottom:30px; text-align:center;">
-        <div class="t-uptitle t-uptitle_md" style="color:#000;">Black Mark</div>
-        <h1 class="t-title t-title_xxs" style="color:#000;">Как и какими средствами ухаживать за твоим новым пирсингом?</h1>
-    </div>
-
-    <div style="padding: 40px 20px; max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center;">
-        <div style="flex: 2; min-width: 300px; padding-right: 20px;">
-            <p style="font-size: 16px; line-height: 1.6;">
-                <strong>"BlackMark's Healer"</strong> продукт был разработан с целью обеспечения эффективного стимулирования процессов заживления кожи после выполнения пирсинга, способствует более быстрому заживлению Вашего прокола.<br><br>
-                В его действии объединены несколько направлений: он обладает противовоспалительными свойствами, препятствует развитию инфекций, а также обеспечивает глубокое увлажнение. Средство обладает пролонгированным действием.<br><br>
-                Данный продукт идеален для повседневного ухода за пирсингом!<br><br>
-                <em style="font-size: 14px; color: #555;">Можно заменить: Местамидин, Мистодин, Мирамистин.</em>
-            </p>
-        </div>
-        <div style="flex: 1; min-width: 250px; text-align: center;">
-            <img src="https://static.tildacdn.com/tild3564-3863-4534-a139-383633366530/photo.png" alt="BlackMark Healer" style="width: 100%; max-width: 200px;">
-        </div>
-    </div>
-
-    <div class="inner-nav">
-        <ul>
-            <li><a href="#ear-piercing">Ушная раковина</a></li>
-            <li><a href="#face-piercing">Лицо</a></li>
-            <li><a href="#oral-piercing">Рот</a></li>
-            <li><a href="#body-piercing">Тело</a></li>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="sidebar" id="sidebar">
+        <ul class="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
+            <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
+            <li><a href="uhod_tatu.html">Уход за тату</a></li>
+            <li><a href="healer.html" style="color:var(--pink);">Уход за пирсингом</a></li>
+            <li><a href="obuchenie_tatu.html">Обучение тату</a></li>
+            <li><a href="obuchenie_pirsing.html">Обучение пирсингу</a></li>
+            <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
+            <li><a href="lazernoye-udaleniye.html">Лазерное удаление</a></li>
+            <li><a href="contakty.html">Контакты</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
         </ul>
     </div>
 
-    <div class="marquee-container">
-        <div class="marquee-text">БЕРЕГИТЕ СЕБЯ! ЛЮБИТЕ ПИРСИНГ! &nbsp;&nbsp;&nbsp; БЕРЕГИТЕ СЕБЯ! ЛЮБИТЕ ПИРСИНГ!</div>
+    <header>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+    </header>
+
+    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
+
+
+    <section class="healer-nav-block">
+        <div class="healer-logo">BMS <span>HEALERS</span></div>
+        <div class="nav-buttons">
+            <a href="#ear" class="nav-btn">Ухо</a>
+            <a href="#face" class="nav-btn">Лицо</a>
+            <a href="#mouth" class="nav-btn">Рот</a>
+            <a href="#body" class="nav-btn">Тело</a>
+        </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">BLACKMARK'S HEALER &nbsp;&nbsp; • &nbsp;&nbsp; БЫСТРОЕ ЗАЖИВЛЕНИЕ &nbsp;&nbsp; • &nbsp;&nbsp; ЗАЩИТА ОТ ИНФЕКЦИЙ</div>
     </div>
 
-    <div id="ear-piercing" class="section-title-block">
-        <h2 class="t-title t-title_lg">Рекомендации: Пирсинг ушной раковины</h2>
+
+    <section class="healer-intro">
+        <div class="container">
+            <div class="healer-brand">Black Mark</div>
+            <h2 class="healer-title">Как и какими средствами ухаживать за твоим новым пирсингом?</h2>
+            
+            <div class="healer-text">
+                <p>BlackMark's Healer" продукт был разработан с целью обеспечения эффективного стимулирования процессов заживления кожи после выполнения пирсинга, способствует более быстрому заживлению Вашего прокола.</p>
+                <p>В его действии объединены несколько направлений: он обладает противовоспалительными свойствами, препятствует развитию инфекций, вызванных бактериями и вирусами, а также обеспечивает глубокое увлажнение и питание кожи. Средство обладает пролонгированным действием, которое защищает от проникновения инфекций и создает идеальные условия для исцеления кожи.</p>
+                <p style="color: #fff; font-weight: bold; font-size: 20px; text-align: center; margin-top: 30px;">Данный продукт идеален для повседневного ухода за пирсингом!</p>
+            </div>
+
+            <div class="healer-subs">
+                Можно заменить: Местамидин, Мистодин, Мирамистин
+            </div>
+        </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ПРАВИЛЬНЫЙ УХОД — ЗАЛОГ ЗДОРОВЬЯ &nbsp;&nbsp; • &nbsp;&nbsp; НЕ ТРОГАЙ ГРЯЗНЫМИ РУКАМИ! &nbsp;&nbsp; • &nbsp;&nbsp; СОБЛЮДАЙ ИНСТРУКЦИЮ</div>
     </div>
-    
-    <div style="background-color: #000; padding-bottom: 50px;">
-        <div class="t-container">
-            <div class="t-col t-col_8 t-prefix_2">
-                
-                <div class="accordion-item">
-                    <button class="accordion-header accordion-trigger">
-                        <span class="accordion-title">Пирсинг Мочки</span>
-                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p><strong>Уход (0-30 дней):</strong> Обработка 2-3 раза в день средством "BlackMark's Healer".</p>
-                            <p><strong>Особенности:</strong> Может быть гематома, это нормально. Не крутите украшение.</p>
-                            <p><strong>Ограничения:</strong> Бани, сауны, бассейны. Не спать на проколе.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header accordion-trigger">
-                        <span class="accordion-title">Пирсинг Хеликс</span>
-                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p><strong>Уход (0-45 дней):</strong> Обработка 2-3 раза в день. Аккуратно убирайте выделения после размокания.</p>
-                            <p><strong>Особенности:</strong> Легко зацепить волосами. Осторожно мойте голову. Не спать на этой стороне.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header accordion-trigger">
-                        <span class="accordion-title">Пирсинг Индастриал</span>
-                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p>Это два прокола, соединенные одним украшением. Очень чувствителен к травмам.</p>
-                            <p><strong>Ограничения:</strong> Не спать на ухе. Закалывать волосы. Не крутить штангу.</p>
-                        </div>
-                    </div>
-                </div>
+    <section class="piercing-category">
+        <div class="container">
+            
+            <div class="category-wrapper category-anchor" id="ear">
+                <div class="category-title">УХО</div>
+            </div>
+            
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Мочки<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-30 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><ul><li>нанесите средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений</li></ul><br>Рекомендации по уходу (после 30 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, промывайте прокол с мягким мылом</li></ul><br>Особенности:<br><ul><li>после прокола на мочке может образоваться гематома, это абсолютно нормально</li><li>в первую неделю место прокола может незначительно кровить</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоема, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>не допускайте попадания на прокол различных средств, например лака для волос, краски для волос, духов и т.д</li><li>не используйте никакие другие средства, кроме&nbsp;"BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>в холодное время года обязательно носите шапку, чтобы избежать воспаления и осложнённого заживления</li></ul><br>Через месяц с момента прокола посетите вашего мастера для осмотра и контроля заживления. При желании можно будет сделать даунсайз (заменить основание украшения на более короткое) и сменить украшение на другое.
+            </div></div></div>
 
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Хеликс<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-45 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений</li></ul><br>Рекомендации по уходу (после 45 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, аккуратно промывайте прокол мягкой пенкой для лица или шампунем</li></ul><br>Особенности:<br><ul><li>так как прокол находится возле завитка уха, он легко цепляется очками/волосами/когда поправляете волосы руками, поэтому обращайте внимание, насколько осторожно вы это делаете</li><li>нужно быть осторожным во время мытья головы, чтобы случайно не зацепить украшение в проколе и не травмировать его</li><li>также данный вид пирсинга легко травмировать во сне, отлежав его за ночь, поэтому старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>замена прямого украшения на колечко в Хеликсе возможна не ранее, чем через 6 месяца с момента прокола, и может быть проведена только вашим мастером после предварительного осмотра</li></ul><br>Ограничения (0-45 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте сон на стороне прокола. Старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>не допускайте попадания на прокол различных средств, например краски для волос/средств для укладки волос и т.д.</li><li>не используйте никакие другие средства для ухода за пирсингом кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>в холодное время года обязательно носите шапку, чтобы избежать воспаления и осложнённого заживления</li></ul><br><br>Через 1-1,5 месяца с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а так же для проведения даунсайза (замены основания украшения на более короткое). Это крайне важная процедура, после которой волосы не будут цепляться за прокол, будет возможно удобно спать, а прокол останется ровным и красивым.<br><br>
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Форвард Хеликс<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-45 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений</li></ul><br>Рекомендации по уходу (после 45 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, аккуратно промывайте прокол мягкой пенкой для лица или шампунем</li></ul><br>Особенности:<br><ul><li>так как прокол находится на внешней части завитка уха, он легко цепляется очками/волосами/когда поправляете волосы руками, поэтому обращайте внимание, насколько осторожно вы это делаете</li><li>нужно быть осторожным во время мытья головы, чтобы случайно не зацепить украшение в проколе и не травмировать его</li><li>данный вид пирсинга легко травмировать во сне, отлежав его за ночь, поэтому старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>замена прямого украшения на колечко в Форвард Хеликсе возможна не ранее, чем через 6 месяцев с момента прокола, и может быть проведена только вашим мастером после предварительного осмотра</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте сон на стороне прокола. Старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>не допускайте попадания на прокол различных средств, например краски для волос/средств для укладки волос и т.д.</li><li>не используйте никакие другие средства для ухода за пирсингом кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>в холодное время года обязательно носите шапку, чтобы избежать воспаления и осложнённого заживления</li></ul><br>Через 1-1,5 месяца с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а так же для проведения даунсайза (замены основания украшения на более короткое). Это крайне важная процедура, после которой волосы не будут цепляться за прокол, будет возможно удобно спать, а прокол останется ровным и красивым.<br><br>
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Конч<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-45 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений</li></ul><br>Рекомендации по уходу (после 45 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю, принимая душ, аккуратно промывайте прокол мягкой пенкой для лица или шампунем</li></ul><br>Особенности:<br><ul><li>так как сразу после прокола ставится длинное основание украшения с запасом на отечность, его легко зацепить волосами/когда поправляете волосы руками, поэтому обращайте внимание, насколько осторожно вы это делаете</li><li>на первое время обязательно ограничить ношение наушников, чтобы не травмировать прокол (на 1-1,5 месяца)</li><li>нужно быть осторожным во время мытья головы, чтобы случайно не зацепить украшение в проколе</li><li>также данный вид пирсинга легко травмировать во сне, отлежав его за ночь, поэтому старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>замена прямого украшения на колечко в Конче возможна не ранее, чем через 6 месяцев с момента прокола, и может быть проведена только вашим мастером после предварительного осмотра</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте сон на стороне прокола. Старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>не допускайте попадания на прокол различных средств, например краски для волос/средств для укладки волос и т.д.</li><li>не используйте никакие другие средства для ухода за пирсингом кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>в холодное время года обязательно носите шапку, чтобы избежать воспаления и осложнённого заживления</li></ul><br>Через 1-1,5 месяца с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а так же для проведения даунсайза (замены основания украшения на более короткое). Это крайне важная процедура, после которой волосы не будут цепляться за прокол, будет возможно удобно спать, а прокол останется ровным и красивым.
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Трагус<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-45 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений</li></ul><br>Рекомендации по уходу (после 45 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, аккуратно промывайте прокол мягкой пенкой для лица или шампунем</li></ul><br>Особенности:<br><ul><li>на первое время обязательно ограничьте ношение наушников, чтобы не травмировать прокол (на 1-1,5 месяца)</li><li>данный вид пирсинга легко травмировать во сне, отлежав его за ночь, поэтому старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>замена прямого украшения на колечко в Трагусе возможна не ранее, чем через 6 месяцев с момента прокола, и может быть проведена только вашим мастером после предварительного осмотра</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте сон на стороне прокола. Старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>не допускайте попадания на прокол различных средств, например краски для волос/средств для укладки волос и т.д.</li><li>не используйте никакие другие средства для ухода за пирсингом кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>в холодное время года обязательно носите шапку, чтобы избежать воспаления и осложнённого заживления</li></ul><br>Через 1-1,5 месяца с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а так же для проведения даунсайза (замены основания украшения на более короткое). Это крайне важная процедура, после которой волосы не будут цепляться за прокол, будет возможно удобно спать, а прокол останется ровным и красивым.<br><br>
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Руук/Фаукс Руук<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-45 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск.</li><li>важно убирать выделения таким образом, чтобы украшение в нем (микробанан) было максимально статично. Для этого подставьте к шарику заострённую ватную палочку или микробраш и подкручивающими движениями возле украшения соберите на него размокшие выделения. Повторите то же самое с другой стороны прокола.</li></ul><br>Рекомендации по уходу (после 45 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, аккуратно промывайте прокол мягкой пенкой для лица или шампунем</li></ul><br>Особенности:<br><ul><li>замена прямого украшения на колечко в Рууке возможна не ранее, чем через 6 месяцев с момента прокола, и может быть проведена только вашим мастером после предварительного осмотра</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте сон на стороне прокола. Старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>не допускайте попадания на прокол различных средств, например краски для волос/средств для укладки волос и т.д.</li><li>не используйте никакие другие средства для ухода за пирсингом кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>в холодное время года обязательно носите шапку, чтобы избежать воспаления и осложнённого заживления</li></ul><br>Через 1-1,5 месяца с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а так же для проведения даунсайза (замены основания украшения на более короткое). Это крайне важная процедура, чтобы прокол остался ровным и красивым.<br><br>
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Дэйс<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-45 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск.</li><li>важно убирать выделения таким образом, чтобы украшение в нем (кольцо) было максимально статично. Для этого подставьте заострённую ватную палочку или микробраш возле места прокола и подкручивающими движениями соберите на него размокшие выделения. Повторите то же самое с другой стороны прокола.</li></ul><br>Рекомендации по уходу (после 45 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, аккуратно промывайте прокол мягкой пенкой для лица или шампунем</li></ul><br>Особенности:<br><ul><li>на первое время обязательно ограничить ношение наушников, чтобы не травмировать прокол (на 1,5-2 месяца)</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте сон на стороне прокола. Старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>не допускайте попадания на прокол различных средств, например краски для волос/средств для укладки волос и т.д.</li><li>не используйте никакие другие средства для ухода за пирсингом кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>в холодное время года обязательно носите шапку, чтобы избежать воспаления и осложнённого заживления</li></ul><br>Через 1-1,5 месяца с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а так же для проведения даунсайза (замены основания украшения на более короткое). Это крайне важная процедура, после которой волосы не будут цепляться за прокол, будет возможно удобно спать, а прокол останется ровным и красивым.<br><br>
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Индастриал<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-45 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск.</li><li>важно убирать выделения таким образом, чтобы украшение в нем (кольцо) было максимально статично. Для этого подставьте заострённую ватную палочку или микробраш возле места прокола и подкручивающими движениями соберите на него размокшие выделения. Повторите то же самое с другой стороны прокола.</li></ul><br><br>Рекомендации по уходу (после 45 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, аккуратно промывайте прокол мягкой пенкой для лица или шампунем</li></ul><br>Особенности:<br><ul><li>так как прокол находится на внешней части завитка уха, он легко цепляется очками/волосами/когда поправляете волосы руками, поэтому обращайте внимание, насколько осторожно вы это делаете</li><li>нужно быть осторожным во время мытья головы, чтобы случайно не зацепить украшение в проколе и не травмировать его</li><li>не рекомендуется убирать выделения, сопровождающие заживление, ватными палочками и микробрашами, чтобы не травмировать прокол</li><li>данный вид пирсинга легко травмировать во сне, отлежав его за ночь, поэтому старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>Индастриал - это два прокола хряща, соединённые между собой одним украшением. Вследствие этого он сильнее других видов пирсинга подвержен травматизации (цепляете одну сторону украшения, а травмируете сразу два прокола). Поэтому индастриал рекомендуется делать людям, у которых уже есть успешный опыт заживления других проколов хрящей</li></ul><br><br>Ограничения (0-45 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте сон на стороне прокола. Старайтесь спать на другой стороне или на спине, подкладывайте под голову руку так, чтобы не лежать на проколе</li><li>закалывайте волосы заколкой, чтобы они не цеплялись и не обматывались вокруг верхней части украшения</li><li>не используйте никакие другие средства для ухода за пирсингом кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>не допускайте попадания на прокол различных средств, например краски для волос/средств для укладки волос и т.д.</li></ul><br>Через 1-1,5 месяца с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а так же для проведения даунсайза (замены основания украшения на более короткое). Это крайне важная процедура, после которой украшение будет меньше торчать и цепляться, а значит реже травмироваться.<br><br>
+            </div></div></div>
+
+
+            <div class="category-wrapper category-anchor" id="face">
+                <div class="category-title">ЛИЦО</div>
+            </div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Губы (Вертикальный лабрет/Джеструм)<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-30 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul><br>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг шариков заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений.</li></ul><br>Рекомендации по уходу (после 30 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, промывайте прокол с наружней стороны мягкой пенкой для лица</li></ul><br>Особенности:<br><ul><li>на 2-3 день после прокола начинает появляться отечность, которая спадает ко 2-3 недели</li><li>в период заживления нужно обеспечить проколу максимальный покой, стараться меньше разговаривать, целоваться и т.д.</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоема, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте употребление алкоголя на 2 недели</li><li>не используйте никакие другие средства, кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li></ul><br>Через 2-3 недели с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а также даунсайза (замены основания украшения на более короткое), чтобы украшение перестало торчать и цепляться, чтобы не травмировать прокол.
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Губы (Монро/Лабрет/Медуза)<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-30 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer" с наружней стороны прокола, со стороны слизистой обрабатывать не нужно</li><li>после каждого приёма пищи/напитка/курения полощите рот прохладной чистой водой (фильтрованной или бутилированной)</li></ul><br>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг шариков заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений.</li></ul><br>Рекомендации по уходу (после 30 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, промывайте прокол с наружней стороны мягкой пенкой для лица</li></ul><br>Особенности:<br><ul><li>на 2-3 день после прокола начинает появляться отечность, которая спадает ко 2-3 недели</li><li>в период заживления нужно обеспечить проколу максимальный покой, стараться меньше разговаривать, целоваться и т.д.</li><li>может ощущаться, как украшение иногда задевает зубы, стучит о них. После смены украшение на короткое этого уже не будет.</li></ul><br><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоема, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>ограничьте употребление алкоголя на 2 недели</li><li>не используйте никакие другие средства, кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li></ul><br>Через 2-3 недели с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а также даунсайза (замены основания украшения на более короткое), чтобы украшение перестало торчать и цепляться, а зубы и десны остались целыми.<br><br>
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Брови/Бридж<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-30 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений</li></ul><br>Рекомендации по уходу (после 30 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, промывайте прокол пенкой для лица или мягким мылом</li></ul><br>Особенности:<br><ul><li>возле места прокола может образоваться небольшой синяк, это абсолютно нормально и он быстро пройдет</li><li>в первую неделю место прокола может незначительно кровить</li><li>через 1.5-2 недели после прокола будет значительная отёчность тканей</li><li>в период заживления рекомендуется сменить полотенце для лица на одноразовые бумажные салфетки, чтобы избежать инфекции</li><li>нужно быть осторожным во время умывания, чтобы случайно не зацепить украшение в проколе и не травмировать его</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоема, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>не допускайте попадания на прокол декоративной и уходовой косметики</li><li>не используйте никакие другие средства, кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li></ul><br>Через месяц с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а так же для проведения даунсайза (замены основания украшения на более короткое). Это крайне важная процедура, после которой украшение не будет торчать и цепляться, а прокол останется ровным и красивым.<br><br>
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Септум<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-30 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer".</li></ul><br>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений.</li></ul><br>Рекомендации по уходу (после 30 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, промывайте прокол мягкой пенкой для лица.</li></ul><br>Особенности:<br><ul><li>обычно в течение первых 2-3 дней проявляется отёк, вследствие которого украшение в проколе может смещаться (поворачиваться вперёд/назад/по диагонали). В этот момент важно не трогать украшение, не пытаться поставить его прямо. Отечность пройдёт через несколько дней и украшение вернётся в ровное положение</li><li>украшение по типу циркуляра и bcr-кольца со вставкой не статичны и будут крутиться в проколе, поэтому шарики циркуляра и вставка не всегда будут оставаться посередине. В первый месяц после прокола не следует поворачивать украшение самостоятельно, чтобы не травмировать прокол</li><li>нужно быть осторожным во время умывания, чтобы случайно не зацепить украшение в проколе и не травмировать его</li></ul><br>Ограничения (0-30 дней):<br>-ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек<br>-ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую<br>-не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)<br>-не используйте никакие другие средства, кроме "BlackMark's Healer", без предварительной консультации с вашим мастером<br><br>Через месяц с момента прокола посетите вашего мастера для осмотра и контроля заживления. При желании можно будет заменить украшение на другое.<br><br>
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Крыло Носа<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-30 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений</li></ul><br>Рекомендации по уходу (после 30 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, промывайте прокол мягкой пенкой для лица</li></ul><br>Особенности:<br><ul><li>в первую неделю после прокола он может незначительно кровить, так как в тканях носа располагается развитая сосудистая сетка</li><li>в период заживления рекомендуется сменить полотенце для лица на одноразовые бумажные салфетки, чтобы избежать инфекции</li><li>нужно быть осторожным во время умывания, чтобы случайно не зацепить украшение в проколе и не травмировать его</li><li>Замена прямого украшения на колечко в крыле носа возможна не ранее, чем через 3 месяца с момента прокола, и может быть проведена только вашим мастером после предварительного осмотра</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>не допускайте попадания на прокол различных средств, например декоративной и уходовой косметики</li><li>не используйте никакие другие средства, кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li></ul><br>Через месяц с момента прокола посетите вашего мастера для осмотра и контроля заживления. При необходимости будет сделать даунсайз (заменить основание украшения на более короткое).<br><br>
+            </div></div></div>
+
+
+            <div class="category-wrapper category-anchor" id="mouth">
+                <div class="category-title">РОТ</div>
+            </div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Языка/Смайл/Антисмайл<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-14 дней):<br><ul><li>после каждого приёма пищи/напитка/курения полощите рот прохладной чистой водой (фильтрованной или бутилированной)</li><li>при появлении желтоватого налёта на языке, аккуратно счищайте его зубной щёткой или скребком для языка, осторожно обходя место самого прокола</li><li>для дополнительной гигиены полости рта в период заживления можно использовать ополаскиватель без спирта и отдушек (они раздражают свежий прокол и осложняют заживление)</li><li>Примеры описанных ополаскивателей: LACALUT «Aktiv», PRESIDENT «Профи», АСЕПТА, КОЛГЕЙТ Плакс «Комплексная защита» или LACALUT «Сенситив». </li></ul><br>Особенности:<br><ul><li>на 2-3 день после прокола начинает появляться значительная отечность, которая может сопровождаться болезненностью</li><li>иногда может происходить повышение температуры тела, воспаляться лимфоузлы шеи</li><li>в период заживления нужно обеспечить проколу максимальный покой, стараться меньше разговаривать, целоваться и т.д.</li><li>сначала ставится длинное украшение с большими шариками (на период отека-2/3 недели), из-за чего украшение может мешаться во рту и натирать под языком. После смены украшения на более коротки с маленькими шариками, дискомфорт полностью пройдёт</li></ul><br>Ограничения (0-15 дней):<br><ul><li>в период заживления нужно обеспечить проколу максимальный покой (не играть с украшением, не крутить/не прикусывать его, не вытаскивать изыск изо рта, чтобы не зацепить штангу о зубы и т.д.)</li><li>не трогайте прокол руками, не двигайте его</li><li>ограничьте употребление алкоголя на 2 недели</li><li>не используйте никакие другие средства для ухода за проколом, кроме чистой воды и ополаскиватель для полости рта</li><li>если болезненные ощущения будут сильными, можно выпить обезболивающее средство, которое вам подходит. При повышении температуры НЕ нужно принимать никакие лекарственные препараты (антибиотики, лекарства от ОРВИ и т.д.)</li></ul><br>Через 2-3 недели с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а также даунсайза (замены основания украшения на более короткое), чтобы украшение перестало торчать и цепляться, а зубы и десны остались целыми.<br><br>
+            </div></div></div>
+
+
+            <div class="category-wrapper category-anchor" id="body">
+                <div class="category-title">ТЕЛО</div>
+            </div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Пупка<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-30 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul><br>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг верхней части украшения заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений</li></ul><br>Рекомендации по уходу (после 30 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, промывайте прокол гелем для душа или мягким мылом</li></ul><br>Особенности:<br><ul><li>на первое время мастер заклеит место прокола широким пластырем, чтобы он не контактировал с одеждой и чтобы вы случайно с непривычки не зацепили украшение. После снятия пластыря начните обработку прокола уходовым средством</li><li>с проколом пупка в первые 2 недели ограничьте занятия спортом и упражнения, которые задействуют живот (складки/скрутки и т.д.), а с проколом Кристина- упражнения на нижнюю часть тела</li><li>с проколом пупка в период заживления нельзя носить одежду с высокой посадкой, которая непосредственно контактирует с проколом и украшением, пережимает их. При проколе Кристина нельзя носить слишком узкое, давящее и кружевное белье, чтобы не травмировать прокол.</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоема, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>не используйте никакие другие средства, кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li></ul><br>Через месяц с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления.
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Пирсинг Сосков<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-30 дней):<br><ul><li>проводите обработку прокола 2-3 раза в день уходовым средством "BlackMark's Healer"</li></ul><br>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут. Аккуратно уберите выделения вокруг шариков заостренной ватной палочкой или микробрашем.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и заостренной ватной палочкой или микробрашем уберите остатки размокших выделений.</li></ul><br>Рекомендации по уходу (после 30 дней):<br><ul><li>обрабатывайте пирсинг 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, промывайте прокол гелем для душа или мягким мылом</li></ul><br>Особенности:<br><ul><li>на первое время мастер заклеит место прокола широким пластырем, чтобы он не контактировал с одеждой и чтобы вы случайно с непривычки не зацепили украшение. После снятия пластыря начните обработку прокола уходовым средством</li><li>в первые 2 недели ограничьте занятия спортом и упражнения, которые задействуют грудной отдел(отжимания/махи и т.д.)</li><li>в период заживления нельзя носить кружевное белье, белье с пуш-апом и слишком утягивающие топы</li><li>с непривычки, штангу в проколе соска легко зацепить нижним бельём, одеялом во время сна, мочалкой в душе и т.д. Обращайте внимание, насколько осторожно вы это делаете.</li></ul><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоема, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции, смените наволочку на чистую</li><li>не трогайте прокол руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>не используйте никакие другие средства, кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li></ul><br>Через месяц с момента прокола обязательно посетите вашего мастера для осмотра и контроля заживления, а также даунсайза (замены основания украшения на более короткое), чтобы украшение перестало цепляться. При желании его можно будет сменить на другое.
+            </div></div></div>
+
+            <div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Микродермал<span class="accordion-icon">+</span></div><div class="accordion-content"><div class="accordion-body">
+                Рекомендации по уходу (0-45 дней):<br><ul><li>проводите обработку микродермала 2-3 раза в день уходовым средством</li></ul>"BlackMark's Healer"<br><br>Когда начнутся выделения:<br><ul><li>нанесите уходовое средство и подождите 1-2 минуты, пока они размокнут.</li><li>если первый вариант не способствует качественной обработке прокола, сделайте примочку с уходовым средством на несколько минут. Для этого обильно смочите кусочек ватного диска в "BlackMark's Healer" и приложите к месту прокола, при этом не оказывая на него сильного давления, чтобы не травмировать. Через несколько минут уберите ватный диск и ужалите остатки размокших выделений заостренной ватной палочкой или микробрашем.</li></ul><br><br>Рекомендации по уходу (после 45 дней):<br><ul><li>обрабатывайте микродермал 1 раз в день уходовым средством</li><li>несколько раз в неделю,принимая душ, накладывайте на микродермал на 1-2 минуты мягкую пенку для лица или гель для душа, после чего смывайте пену тёплой водой</li></ul><br>Особенности:<br><ul><li>микродермал-явление нестабильное, в зависимости от вашего иммунитета и качества ухода зависит его срок жизни</li><li>он крайне чувствителен к состоянию здоровья, поэтому при снижении иммунитета может реагировать воспалением</li><li>дермал легко зацепить цепочкой, надевая одежду, при нанесении макияжа, во время мытья в душе и т.д. Часто, травмы происходят по причине того, что украшение зацепило домашнее животное, ребёнок ударил ногой и т.д.</li><li>на место установки микродермала нельзя наносить различные средства (духи, кремы и т.д.), это может привести к воспалению и отторжению</li><li>менять украшение на другое рекомендуется не раньше, чем через месяц</li><li>обязательно посещайте вашего мастера для профессиональной чистки и удавления скопившихся выделений из под украшения, чтобы избежать воспаления и отторжения дермала</li></ul><br><br>Ограничения (0-30 дней):<br><ul><li>ограничьте посещение бани, сауны, бассейна, водоемов, солярия, чтобы не спровоцировать воспаление и гиперотек</li><li>ограничьте контакт с животными во избежание инфекции и травмы</li><li>не трогайте микродермал руками, не двигайте, не крутите украшение в нем во избежание травмы (даже во время обработки прокола)</li><li>не используйте никакие другие средства для ухода за микродермалом кроме "BlackMark's Healer", без предварительной консультации с вашим мастером</li><li>не откручивайте украшение самостоятельно; не пытайтесь чистить ваш дермал под украшением самостоятельно. Это приведёт к травме, воспалению и отторжению.</li></ul><br>Через 1 месяц с момента установки обязательно посетите вашего мастера для осмотра и контроля заживления. Посещайте мастера каждые 3-4 месяца для профессиональной чистки. Это крайне важная процедура, чтобы ваш микродермал оставался здоровым, красивым и радовал вас многие годы!<br><br>
+            </div></div></div>
+
+        </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ЛУЧШИЕ МАСТЕРА ГОРОДА &nbsp;&nbsp; • &nbsp;&nbsp; СТЕРИЛЬНОСТЬ 100% &nbsp;&nbsp; • &nbsp;&nbsp; ИНДИВИДУАЛЬНЫЙ ПОДХОД</div>
+    </div>
+
+
+    <section class="info-bg">
+        <div class="info-bg-content">
+            
+            <div class="info-text-intro">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно. Мы уделяем особое внимание каждому клиенту и стараемся сделать процесс нанесения татуировки или пирсинга максимально приятным и безболезненным.
+            </div>
+            
+            <div class="info-divider"></div>
+            
+            <div class="info-oval oval-static">Работаем для вас: с 11:00-20:00</div>
+            <div class="info-oval oval-static">Все сеансы проходят по предварительной записи</div>
+            <a href="https://vk.com/gim105478249" target="_blank" class="info-oval oval-link">НАПИСАТЬ В VK (СТУДИЯ)</a>
+            <a href="https://vk.com/id819592651" target="_blank" class="info-oval oval-link">Егор Хэлл (Пирсинг)</a>
+            <a href="https://vk.com/m.morro" target="_blank" class="info-oval oval-link">Марина Морро (Тату)</a>
+        </div>
+    </section>
+
+
+    <section class="outro-block">
+        <h2 class="outro-title">Благодарим за доверие, удачного заживления!</h2>
+        <div style="margin-bottom: 5px; color: #aaa; text-transform: uppercase;">Запись на пирсинг по телефону:</div>
+        <a href="tel:+79956762408" class="outro-phone">+7 995 676 24 08</a>
+
+        <div class="ingredients-box">
+            <div class="ingredients-title">"BlackMark's Healer"</div>
+            <p style="color:#ccc; margin:0; line-height: 1.5;">Состав: деминерализованная вода, хлорноватистая кислота, экстракт ромашки, экстракт алоэ вера.</p>
+        </div>
+    </section>
+
+
+    <div class="contacts-flex">
+        <div class="map-wrapper">
+             <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" style="filter: grayscale(100%) invert(100%);"></iframe>
+        </div>
+        <div class="contact-data">
+            <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
+            
+            <div class="contact-row">
+                <a href="tel:+79935245578" class="phone-link" style="color: #fff;">+7 993 524 55 78</a>
+                <span class="phone-desc">Тату / Обучение</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79956763408" class="phone-link" style="color: var(--pink);">+7 995 676 34 08</a>
+                <span class="phone-desc">Пирсинг</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79025010782" class="phone-link" style="color: #ccc; text-decoration: underline;">+7 902 501 07 82</a>
+                <span class="phone-desc">Лазерное удаление</span>
+            </div>
+
+            <div style="font-size: 18px; line-height: 1.5; margin-top: 10px;">
+                г. Первоуральск, ул. Вайнера 45В<br>
+                <span style="font-size: 14px; color: #777;">Встаете лицом к магазину «ПРИЗМА», вход слева за углом, 2 этаж.</span>
             </div>
         </div>
     </div>
 
-    <div id="face-piercing" class="section-title-block">
-        <h2 class="t-title t-title_lg">Рекомендации: Пирсинг лица</h2>
-    </div>
-    
-    <div style="background-color: #000; padding-bottom: 50px;">
-        <div class="t-container">
-            <div class="t-col t-col_8 t-prefix_2">
-                
-                <div class="accordion-item">
-                    <button class="accordion-header accordion-trigger">
-                        <span class="accordion-title">Пирсинг Губы (Лабрет/Монро)</span>
-                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p><strong>Уход:</strong> Обработка снаружи средством. Рот полоскать водой после еды.</p>
-                            <p><strong>Отек:</strong> На 2-3 день будет отек. Это нормально. Через 2-3 недели нужен даунсайз (короткое украшение).</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header accordion-trigger">
-                        <span class="accordion-title">Пирсинг Крыло Носа / Септум</span>
-                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p><strong>Септум:</strong> Украшение может кривиться из-за отека — не поправляйте руками. Само выровняется.</p>
-                            <p><strong>Крыло:</strong> Осторожно при умывании. Не наносить тональный крем на прокол.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    
-    <div id="oral-piercing" class="section-title-block">
-        <h2 class="t-title t-title_lg">Рот и Тело</h2>
-    </div>
-
-    <div style="background-color: #000; padding-bottom: 50px;">
-        <div class="t-container">
-            <div class="t-col t-col_8 t-prefix_2">
-                
-                <div class="accordion-item">
-                    <button class="accordion-header accordion-trigger">
-                        <span class="accordion-title">Язык / Смайл</span>
-                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p><strong>Диета:</strong> Исключить острое, горячее, алкоголь на 2 недели.</p>
-                            <p><strong>Гигиена:</strong> Полоскать рот водой после еды. Ополаскиватель без спирта.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="body-piercing" class="accordion-item">
-                    <button class="accordion-header accordion-trigger">
-                        <span class="accordion-title">Пупок / Соски / Микродермал</span>
-                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p><strong>Пупок:</strong> Не носить высокую талию, давящую на прокол.</p>
-                            <p><strong>Соски:</strong> Не носить кружевное белье (целпляется). Аккуратно с мочалкой.</p>
-                            <p><strong>Микродермал:</strong> Чистка у мастера каждые 3-4 месяца.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div id="rec867611319" class="r t-rec" style="background-color:#292929; padding: 40px 0; text-align:center;" data-record-type="463">
-        <div class="t-container">
-             <div style="color:#ffffff; margin-bottom: 20px;">
-                <h3 class="t-heading t-heading_xs">Благодарим за доверие!</h3>
-                <p>Запись на пирсинг: <a href="tel:+79956763408" style="color: #c62197; text-decoration: none;">+7 995 676 34 08</a></p>
-            </div>
-            <div class="t463__typo t463__copyright t-name t-name_xs" style="color:#ffffff;">
-                © Разработка и продвижение сайта-Антон Штиль
-            </div>
-        </div>
-    </div>
+    <footer>
+        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+    </footer>
 
     <script>
-        // Меню бургер
-        t_onReady(function() {
-            t_onFuncLoad('t_menuburger_init', function(){
-                var rec = document.querySelector('#rec717252900');
-                if(!rec) return;
-                var burger = rec.querySelectorAll('.t-menuburger');
-                var menu = document.querySelector('.t451m');
-                var closeBtn = document.querySelector('.t451m__close');
-                
-                Array.prototype.forEach.call(burger, function(b) {
-                    b.addEventListener('click', function() {
-                        menu.classList.add('t451m_opened');
-                        menu.style.display = 'block';
-                    });
-                });
-                
-                if(closeBtn) {
-                    closeBtn.addEventListener('click', function() {
-                        menu.classList.remove('t451m_opened');
-                        setTimeout(function(){ menu.style.display = 'none'; }, 300);
-                    });
-                }
-            });
+        // Меню
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+            document.querySelector('.burger-btn').classList.toggle('active');
+        }
 
-            // Логика аккордеонови (JS для открытия/закрытия)
-            var acc = document.getElementsByClassName("accordion-trigger");
-            var i;
-
-            for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    } 
-                });
+        // Аккордеон
+        function toggleAccordion(element) {
+            element.parentElement.classList.toggle('active');
+            var content = element.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
             }
-        });
+        }
     </script>
 
 </body>

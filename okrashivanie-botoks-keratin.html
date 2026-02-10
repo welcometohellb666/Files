@@ -2,186 +2,304 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Лазерное удаление тату в Первоуральске | Black Mark</title>
-    <meta name="description" content="Лазерное удаление тату и татуажа в Первоуральске. Мастер Олеся Семерская. Безопасно и эффективно." />
+    <title>Окрашивание и реконструкция волос — Яна Мошняга | Black Mark</title>
+    <meta name="description" content="Окрашивание, кератин, ботокс и реконструкция волос в Первоуральске. Мастер Яна Мошняга." />
     
-    <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script>
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-grid-3.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-animation-2.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-menu-widgeticons-1.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css" type="text/css" media="all" />
-    
-    <script src="https://static.tildacdn.com/js/tilda-scripts-3.0.min.js" charset="utf-8" defer></script>
-    <script src="https://static.tildacdn.com/js/tilda-menu-1.0.min.js" charset="utf-8" async></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 
     <style>
-        /* Бегущая строка */
-        .marquee-container {
-            background-color: #c62197;
-            color: white;
-            padding: 15px 0;
+        /* --- 1. ПЕРВЫЙ БЛОК (БЕЛЫЙ, НА ВЕСЬ ЭКРАН) --- */
+        .hair-intro {
+            background-color: #fff;
+            color: #000; /* Черный текст на белом */
+            padding: 0;
             overflow: hidden;
-            white-space: nowrap;
+            display: flex;
+            align-items: stretch;
+            height: 100vh; /* Строго на высоту экрана */
+            min-height: 600px; /* Чтобы на совсем маленьких экранах не сплющило */
+            position: relative;
+            margin-top: -60px; /* Компенсация шапки, если она прозрачная, или просто чтобы поднять выше */
+            padding-top: 60px; /* Отступ под шапку */
         }
-        .marquee-text {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 15s linear infinite;
+        
+        /* Текст слева */
+        .hair-text-col {
+            flex: 1;
+            padding: 0 40px; /* Отступы по бокам */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Центрируем вертикально */
+            z-index: 2;
+        }
+        
+        /* Контент (Текст) */
+        .hair-intro-content {
+            font-size: 14px; /* Уменьшил шрифт */
+            line-height: 1.4;
+            color: #333; /* Темно-серый для мягкости */
+        }
+        .hair-intro-content h1 {
+            font-size: 22px; /* Уменьшил заголовок */
+            font-weight: 900;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+            line-height: 1.2;
+        }
+        .hair-intro-content p {
+            margin-bottom: 8px; /* Уменьшил отступы между абзацами */
+        }
+
+        /* Фото справа (ПАРАЛЛЕЛЕПИПЕД / ЛЕНТА) */
+        .hair-img-col {
+            flex: 1;
+            position: relative;
+            height: 100%;
+        }
+        .ribbon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            /* Форма ленты */
+            clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+        }
+
+        /* Адаптив */
+        @media (max-width: 900px) {
+            .hair-intro { 
+                flex-direction: column-reverse; 
+                height: auto; /* На мобилках разрешаем скролл */
+                padding-top: 80px;
+                padding-bottom: 40px;
+            }
+            .hair-img-col { height: 400px; width: 100%; }
+            .ribbon-img { clip-path: none; } 
+            .hair-text-col { padding: 30px 20px; }
+            .hair-intro-content h1 { font-size: 20px; }
+        }
+
+
+        /* --- 2. ГАЛЕРЕЯ (15 ЗАГЛУШЕК MASONRY) --- */
+        .gallery-section {
+            background-color: #111;
+            padding: 80px 0;
+        }
+        .masonry-grid {
+            column-count: 4;
+            column-gap: 20px;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .photo-placeholder {
+            background-color: #222;
+            border: 2px dashed #444;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
             font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            width: 100%;
         }
-        @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
+        /* Разная высота */
+        .h-200 { height: 200px; }
+        .h-250 { height: 250px; }
+        .h-300 { height: 300px; }
+        .h-350 { height: 350px; }
+        .h-400 { height: 400px; }
+
+        @media (max-width: 1024px) { .masonry-grid { column-count: 3; } }
+        @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
+
+
+        /* --- ИНФОБЛОК --- */
+        .info-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
+            background-size: cover; background-position: center; text-align: center; color: #fff; padding: 80px 20px; position: relative;
         }
+        .info-bg-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        .info-text-intro { font-size: 16px; line-height: 1.5; margin-bottom: 30px; max-width: 700px; color: #fff; }
+        .info-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0 30px; }
+        .info-oval {
+            display: flex; align-items: center; justify-content: center; width: 100%; max-width: 600px; height: 55px;
+            border-radius: 50px; margin-bottom: 15px; padding: 0 20px; font-size: 16px; font-weight: bold; text-align: center;
+            line-height: 1.2; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .oval-static { background: #ffffff; color: #000000; border: 2px solid #fff; }
+        .oval-link { background: rgba(20, 20, 20, 0.9); border: 1px solid var(--pink); color: #fff; text-decoration: none; transition: 0.3s; cursor: pointer; }
+        .oval-link:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+        a.oval-link { display: flex; }
+
+        /* --- КОНТАКТЫ --- */
+        .contacts-flex { display: flex; flex-wrap: wrap; background: #292929; }
+        .map-wrapper { flex: 1; min-width: 300px; height: 500px; }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) invert(100%); }
+        .contact-data { flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+        .contact-row { margin-bottom: 25px; }
+        .phone-link { font-size: 24px; font-weight: bold; display: block; text-decoration: none; }
+        .phone-desc { font-size: 14px; color: #aaa; margin-top: 5px; text-transform: uppercase; }
     </style>
 </head>
+<body>
 
-<body class="t-body" style="margin:0;">
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="sidebar" id="sidebar">
+        <ul class="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
+            <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
+            <li><a href="uhod_tatu.html">Уход за тату</a></li>
+            <li><a href="healer.html">Уход за пирсингом</a></li>
+            <li><a href="obuchenie_tatu.html">Обучение тату</a></li>
+            <li><a href="obuchenie_pirsing.html">Обучение пирсингу</a></li>
+            <li><a href="okrashivanie-botoks-keratin.html" style="color:var(--pink);">Волосы / Окрашивание</a></li>
+            <li><a href="lazernoye-udaleniye.html">Лазерное удаление</a></li>
+            <li><a href="contakty.html">Контакты</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
+        </ul>
+    </div>
 
-    <div id="t-header" class="t-records">
-        <div id="rec717252900" class="r t-rec" style="background-color:#141414;" data-record-type="451" data-bg-color="#141414">
-            <div id="nav717252900" class="t451" data-menu="yes">
-                <div class="t451__container t451__positionfixed t451__panel" style="height: 70px;">
-                    <div class="t451__container__bg" style="background-color: rgba(0,0,0,1);"></div>
-                    
-                    <div class="t451__menu__content">
-                        <div class="t451__burger-wrapper__mobile">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                        <div class="t451__leftside t451__side t451__side_burger">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                    </div>
+    <header>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+    </header>
 
-                    <div class="t451__centerside t451__side">
-                        <div class="t451__logo__container t451__textlogo__container">
-                            <div class="t451__logo__content">
-                                <a class="t451__logo" href="index.html">
-                                    <div class="t-heading t-heading_xs" style="color:#c62197; font-size:40px;">BLACKMARK</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
 
-                    <div class="t451__rightside t451__side t451__side_socials">
-                        <div class="t-sociallinks">
-                            <ul role="list" class="t-sociallinks__wrapper">
-                                <li class="t-sociallinks__item"><a href="https://vk.com/black_mark_pvk" target="_blank" style="color:#c62197; font-weight:bold;">VK</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+    <section class="hair-intro">
+        <div class="hair-text-col">
+            <div class="hair-intro-content">
+                <h1>Привет! Меня зовут Яна, занимаюсь окрашиванием, кератиновым выпрямлением, ботоксом и реконструкцией волос в Первоуральске!</h1>
+                
+                <p>Хотите преобразить свои волосы и засиять новыми красками? Я воплощаю самые смелые идеи и помогаю вашим волосам выглядеть потрясающе!</p>
+
+                <p>🌟 <strong>Окрашивание волос</strong> – моя страсть! Независимо от техники, будь то классическое окрашивание или современные тренды, я подчеркну вашу индивидуальность.</p>
+
+                <p>💫 <strong>Инновационные техники окрашивания</strong> – это моё любимое занятие. Приходите на окрашивание волос в технике, цветное или яркое и откройте для себя разнообразие стилей и оттенков.</p>
+
+                <p>🔹 <strong>Восстановлю здоровье и блеск</strong> ваших волос с помощью ботокса и реконструкции. Эти процедуры наполненные заботой и восстановлением, сделают волосы эластичными и сияющими.</p>
+
+                <p>✨ <strong>Обладателям непослушных волос</strong> предлагаю кератиновое выпрямление. Забудьте о проблемах с укладкой, доверьтесь мне и наслаждайтесь гладкостью и блеском.</p>
+
+                <p style="margin-top: 15px; font-weight: bold;">Приглашаю вас в волшебный мир красоты и здоровья волос! Записывайтесь на консультацию – откройте для себя новые грани вашего образа вместе со мной!</p>
             </div>
             
-            <div class="t451 t451m t451m__left">
-                <button type="button" class="t451m__close-button t451m__close"><div class="t451m__close_icon" style="color:#ffffff;"><span></span><span></span><span></span><span></span></div></button>
-                <div class="t451m__container t-align_left">
-                    <div class="t451m__top">
-                        <nav class="t451m__menu">
-                            <ul class="t451m__list t-menu__list">
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="index.html">Главная</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_tatu.html">Портфолио Тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="uhod_tatu.html">Уход за тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="healer.html">Уход за пирсингом</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="obuchenie_tatu.html">Обучение Тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="lazernoye-udaleniye.html" style="color:#c62197;">Лазерное удаление</a></li> <li class="t451m__list_item"><a class="t-menu__link-item" href="contakty.html">Контакты</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+            <a href="https://vk.com/m_oshnyag_a" target="_blank" class="btn btn-pink" style="align-self: flex-start; margin-top: 20px;">НАПИСАТЬ МАСТЕРУ</a>
+        </div>
+
+        <div class="hair-img-col">
+            <img src="https://static.tildacdn.com/tild6365-6431-4336-b734-663562646232/epYJMQwrdW0__.jpg" class="ribbon-img" alt="Яна Мошняга">
+        </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ОКРАШИВАНИЕ &nbsp;&nbsp; • &nbsp;&nbsp; КЕРАТИН &nbsp;&nbsp; • &nbsp;&nbsp; БОТОКС &nbsp;&nbsp; • &nbsp;&nbsp; РЕКОНСТРУКЦИЯ</div>
+    </div>
+
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2 style="text-align: center; color: #fff; font-size: 32px; margin-bottom: 50px;">МОИ РАБОТЫ</h2>
+            
+            <div class="masonry-grid">
+                <div class="masonry-item"><div class="photo-placeholder h-350">Фотография 1</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-250">Фотография 2</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-400">Фотография 3</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-300">Фотография 4</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-200">Фотография 5</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-350">Фотография 6</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-250">Фотография 7</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-400">Фотография 8</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-300">Фотография 9</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-200">Фотография 10</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-350">Фотография 11</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-250">Фотография 12</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-400">Фотография 13</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-300">Фотография 14</div></div>
+                <div class="masonry-item"><div class="photo-placeholder h-200">Фотография 15</div></div>
             </div>
         </div>
-        
-        <div id="rec768468878" class="r t-rec" data-record-type="898">
-            <div class="t898 t898_pos_left t898_animate">
-                <div class="t898__btn" style="bottom:20px;left:10px;">
-                    <label class="t898__btn_label" style="background:#c62197;">
-                        <span class="t898__btn-text t-name t-name_xs">КОНТАКТЫ</span>
-                    </label>
-                </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ЗДОРОВЫЕ ВОЛОСЫ — ЭТО КРАСИВО &nbsp;&nbsp; • &nbsp;&nbsp; ЗАПИСЫВАЙСЯ ПРЯМО СЕЙЧАС</div>
+    </div>
+
+
+    <section class="info-bg">
+        <div class="info-bg-content">
+            
+            <div class="info-text-intro">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно.
+            </div>
+            
+            <div class="info-divider"></div>
+            
+            <div class="info-oval oval-static">Работаем для вас: с 11:00-20:00</div>
+            <div class="info-oval oval-static">Все сеансы проходят по предварительной записи</div>
+            <a href="https://vk.com/gim105478249" target="_blank" class="info-oval oval-link">НАПИСАТЬ В VK (СТУДИЯ)</a>
+            
+            <a href="https://vk.com/m_oshnyag_a" target="_blank" class="info-oval oval-link">Яна Мошняга (Волосы)</a>
+            
+        </div>
+    </section>
+
+
+    <div class="contacts-flex">
+        <div class="map-wrapper">
+             <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" style="filter: grayscale(100%) invert(100%);"></iframe>
+        </div>
+        <div class="contact-data">
+            <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
+            
+            <div class="contact-row">
+                <a href="tel:+79935245578" class="phone-link" style="color: #fff;">+7 993 524 55 78</a>
+                <span class="phone-desc">Тату / Обучение</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79956763408" class="phone-link" style="color: var(--pink);">+7 995 676 34 08</a>
+                <span class="phone-desc">Пирсинг</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79025010782" class="phone-link" style="color: #ccc; text-decoration: underline;">+7 902 501 07 82</a>
+                <span class="phone-desc">Лазерное удаление</span>
+            </div>
+
+            <div style="font-size: 18px; line-height: 1.5; margin-top: 10px;">
+                г. Первоуральск, ул. Вайнера 45В<br>
+                <span style="font-size: 14px; color: #777;">Встаете лицом к магазину «ПРИЗМА», вход слева за углом, 2 этаж.</span>
             </div>
         </div>
     </div>
 
-    <div style="position: relative; background-image: url('https://static.tildacdn.com/tild6664-3236-4134-a637-326331316432/312bb993-4968-494d-9.jpg'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
-        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);"></div>
-        <div class="t-container" style="position: relative; z-index: 2; color: #fff;">
-            <div class="t-col t-col_8">
-                <h1 style="font-family:'Georgia'; font-weight:700; font-size:32px; line-height: 1.3;">Привет! Меня зовут Олеся Семерская.<br>Я занимаюсь лазерным удалением тату и перманентного макияжа в Первоуральске!</h1>
-                <p style="font-size:18px; margin-top:20px; line-height: 1.5;">
-                    Помогу вам избавиться от нежелательных рисунков на коже.
-                    Благодаря современным технологиям удаление стало максимально комфортным и безопасным.
-                    <br><br>
-                    Я понимаю, что каждая история уникальна, и готова поддержать вас на пути к чистой и обновленной коже.
-                </p>
-                <a class="t-btn" href="https://vk.com/semerapascuda" target="_blank" style="color:#ffffff;background-color:#c62197;border-radius:30px; padding: 15px 30px; display: inline-block; margin-top: 30px; text-decoration: none; font-weight: bold;">НАПИСАТЬ МАСТЕРУ</a>
-            </div>
-        </div>
-    </div>
 
-    <div class="marquee-container">
-        <div class="marquee-text">ИСПРАВЛЮ ОШИБКИ НА ТВОЕЙ КОЖЕ! &nbsp;&nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ТВОЕЙ КОЖЕ! &nbsp;&nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ТВОЕЙ КОЖЕ!</div>
-    </div>
-
-    <div class="map-section" style="background-color: #292929; color: #fff; padding: 50px 0;">
-        <div class="t-container" style="display:flex; flex-wrap:wrap;">
-            <div class="t-col t-col_6" style="min-height: 400px; padding-bottom: 20px;">
-                 <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="filter: grayscale(100%) invert(100%); border-radius: 10px;"></iframe>
-            </div>
-            <div class="t-col t-col_6" style="padding-left: 40px; display:flex; flex-direction:column; justify-content:center;">
-                <h2 class="t-heading t-heading_sm">Наши контакты:</h2>
-                <div style="margin-bottom: 20px;">
-                    <a href="tel:+79025010782" style="color: #c62197; text-decoration: none; font-size: 24px; font-weight: bold;">+7 902 501 07 82</a>
-                    <div style="font-size:14px; color:#aaa; margin-top:5px;">Запись на удаление</div>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <a href="tel:+79935245578" style="color: #fff; text-decoration: none; font-size: 18px;">+7 993 524 55 78</a>
-                    <div style="font-size:14px; color:#aaa; margin-top:5px;">Запись на тату</div>
-                </div>
-                <p class="t-text t-text_sm" style="margin-top: 20px; line-height: 1.6;">
-                    г. Первоуральск, ул. Вайнера 45В<br>
-                    Вход слева за углом, 2 этаж.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div id="rec867611683" class="r t-rec" style="background-color:#292929; padding: 20px 0; border-top: 1px solid #444;" data-record-type="463">
-        <div class="t-container" style="text-align: center;">
-             <div class="t463__typo t463__copyright t-name t-name_xs" style="color:#ffffff;">
-                © Разработка и продвижение сайта-Антон Штиль
-            </div>
-        </div>
-    </div>
+    <footer>
+        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+    </footer>
 
     <script>
-        t_onReady(function() {
-            t_onFuncLoad('t_menuburger_init', function(){
-                var rec = document.querySelector('#rec717252900');
-                if(!rec) return;
-                var burger = rec.querySelectorAll('.t-menuburger');
-                var menu = document.querySelector('.t451m');
-                var closeBtn = document.querySelector('.t451m__close');
-                
-                Array.prototype.forEach.call(burger, function(b) {
-                    b.addEventListener('click', function() {
-                        menu.classList.add('t451m_opened');
-                        menu.style.display = 'block';
-                    });
-                });
-                
-                if(closeBtn) {
-                    closeBtn.addEventListener('click', function() {
-                        menu.classList.remove('t451m_opened');
-                        setTimeout(function(){ menu.style.display = 'none'; }, 300);
-                    });
-                }
-            });
-        });
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+            document.querySelector('.burger-btn').classList.toggle('active');
+        }
     </script>
 
 </body>

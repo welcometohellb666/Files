@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обучение пирсингу — Black Mark Studio</title>
+    <meta name="description" content="Обучение пирсингу в Первоуральске. Скоро открытие направления." />
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
+
+    <style>
+        /* --- 1. ПЕРВЫЙ БЛОК (ТРЕУГОЛЬНИК И ТЕКСТ) --- */
+        .unavailable-section {
+            background-color: #000;
+            min-height: 80vh; /* Почти на весь экран */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 50px 50px;
+            text-align: center;
+        }
+
+        /* Контейнер для фигуры */
+        .triangle-wrapper {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* SVG Треугольник */
+        .pink-triangle {
+            width: 100%;
+            height: 100%;
+            fill: var(--pink);
+            stroke: var(--pink);
+            stroke-width: 40; /* Делает углы "жирными" и скругленными */
+            stroke-linejoin: round; /* Скругляет углы */
+            filter: drop-shadow(0 0 20px rgba(198, 33, 151, 0.3)); /* Неоновое свечение */
+        }
+
+        /* SVG Сердце внутри */
+        .broken-heart-icon {
+            position: absolute;
+            top: 60%; /* Чуть ниже центра, чтобы визуально было посередине треугольника */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            fill: #000; /* Черное сердце */
+        }
+
+        /* Текст внизу */
+        .unavailable-text {
+            max-width: 1200px;
+    
+            font-size: 20px;
+            line-height: 1.6;
+            color: #fff;
+            font-weight: 900;
+        }
+
+        /* Ссылка в тексте */
+        .unavailable-link {
+            color: var(--pink);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px dashed var(--pink);
+            transition: 0.3s;
+        }
+        .unavailable-link:hover {
+            color: #fff;
+            border-bottom-color: #fff;
+            background-color: var(--pink);
+            padding: 0 5px;
+            border-radius: 4px;
+        }
+
+        /* --- ИНФОБЛОК (Копия) --- */
+        .info-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
+            background-size: cover; background-position: center; text-align: center; color: #fff; padding: 80px 20px; position: relative;
+        }
+        .info-bg-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        .info-text-intro { font-size: 16px; line-height: 1.5; margin-bottom: 30px; max-width: 700px; color: #fff; }
+        .info-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0 30px; }
+        .info-oval {
+            display: flex; align-items: center; justify-content: center; width: 100%; max-width: 600px; height: 55px;
+            border-radius: 50px; margin-bottom: 15px; padding: 0 20px; font-size: 16px; font-weight: bold; text-align: center;
+            line-height: 1.2; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .oval-static { background: #ffffff; color: #000000; border: 2px solid #fff; }
+        .oval-link { background: rgba(20, 20, 20, 0.9); border: 1px solid var(--pink); color: #fff; text-decoration: none; transition: 0.3s; cursor: pointer; }
+        .oval-link:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+        a.oval-link { display: flex; }
+
+        /* --- КОНТАКТЫ --- */
+        .contacts-flex { display: flex; flex-wrap: wrap; background: #292929; }
+        .map-wrapper { flex: 1; min-width: 300px; height: 500px; }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) invert(100%); }
+        .contact-data { flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+        .contact-row { margin-bottom: 25px; }
+        .phone-link { font-size: 24px; font-weight: bold; display: block; text-decoration: none; }
+        .phone-desc { font-size: 14px; color: #aaa; margin-top: 5px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="sidebar" id="sidebar">
+        <ul class="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
+            <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
+            <li><a href="uhod_tatu.html">Уход за тату</a></li>
+            <li><a href="healer.html">Уход за пирсингом</a></li>
+            <li><a href="obuchenie_tatu.html">Обучение тату</a></li>
+            <li><a href="obuchenie_pirsing.html" style="color:var(--pink);">Обучение пирсингу</a></li>
+            <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
+            <li><a href="lazernoye-udaleniye.html">Лазерное удаление</a></li>
+            <li><a href="contakty.html">Контакты</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+    </header>
+
+    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
+
+
+    <section class="unavailable-section">
+        
+        <div class="triangle-wrapper">
+            <svg class="pink-triangle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 25 L175 175 L25 175 Z" />
+            </svg>
+            
+            <svg class="broken-heart-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                <path d="M12 5l-1 4 2 2-2 4 1 3" stroke="var(--pink)" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+
+        <div class="unavailable-text">
+            Извиняемся, но в данный момент данная услуга не доступна, но как только она появится, все детали вы сможете увидеть на сайте или <a href="https://vk.com/black_mark_pvk" target="_blank" class="unavailable-link">в нашем сообществе вконтакте</a>.
+        </div>
+
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">СКОРО ОТКРЫТИЕ &nbsp;&nbsp; • &nbsp;&nbsp; СЛЕДИТЕ ЗА НОВОСТЯМИ &nbsp;&nbsp; • &nbsp;&nbsp; BLACK MARK STUDIO</div>
+    </div>
+
+
+    <section class="info-bg">
+        <div class="info-bg-content">
+            
+            <div class="info-text-intro">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно.
+            </div>
+            
+            <div class="info-divider"></div>
+            
+            <div class="info-oval oval-static">Работаем для вас: с 11:00-20:00</div>
+            <div class="info-oval oval-static">Все сеансы проходят по предварительной записи</div>
+            <a href="https://vk.com/gim105478249" target="_blank" class="info-oval oval-link">НАПИСАТЬ В VK (СТУДИЯ)</a>
+            <a href="https://vk.com/id819592651" target="_blank" class="info-oval oval-link">Егор Хэлл (Пирсинг)</a>
+            <a href="https://vk.com/m.morro" target="_blank" class="info-oval oval-link">Марина Морро (Тату)</a>
+        </div>
+    </section>
+
+
+    <div class="contacts-flex">
+        <div class="map-wrapper">
+             <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" style="filter: grayscale(100%) invert(100%);"></iframe>
+        </div>
+        <div class="contact-data">
+            <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
+            
+            <div class="contact-row">
+                <a href="tel:+79935245578" class="phone-link" style="color: #fff;">+7 993 524 55 78</a>
+                <span class="phone-desc">Тату / Обучение</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79956763408" class="phone-link" style="color: var(--pink);">+7 995 676 34 08</a>
+                <span class="phone-desc">Пирсинг</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79025010782" class="phone-link" style="color: #ccc; text-decoration: underline;">+7 902 501 07 82</a>
+                <span class="phone-desc">Лазерное удаление</span>
+            </div>
+
+            <div style="font-size: 18px; line-height: 1.5; margin-top: 10px;">
+                г. Первоуральск, ул. Вайнера 45В<br>
+                <span style="font-size: 14px; color: #777;">Встаете лицом к магазину «ПРИЗМА», вход слева за углом, 2 этаж.</span>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+            document.querySelector('.burger-btn').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

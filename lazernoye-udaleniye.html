@@ -2,409 +2,296 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Обучение тату в Первоуральске | Курсы Black Mark</title>
-    <meta name="description" content="Курсы татуировки в Первоуральске. Обучение с нуля, практика на моделях, сертификат. Мастер Марина Морро." />
+    <title>Лазерное удаление тату и татуажа — Олеся Семерская | Black Mark</title>
+    <meta name="description" content="Лазерное удаление татуировок и перманентного макияжа в Первоуральске. Мастер Олеся Семерская. Безопасно и эффективно." />
     
-    <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script>
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-grid-3.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-animation-2.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-menu-widgeticons-1.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css" type="text/css" media="all" />
-    
-    <script src="https://static.tildacdn.com/js/tilda-scripts-3.0.min.js" charset="utf-8" defer></script>
-    <script src="https://static.tildacdn.com/js/tilda-menu-1.0.min.js" charset="utf-8" async></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 
     <style>
-        /* Стили для карточек курсов */
-        .courses-grid {
+        /* --- 1. ПЕРВЫЙ БЛОК (БЕЛЫЙ, НА ВЕСЬ ЭКРАН) --- */
+        .laser-intro {
+            background-color: #fff;
+            color: #000;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+            height: 100vh; /* Высота экрана */
+            min-height: 600px;
+            position: relative;
+            margin-top: -60px; /* Компенсация меню */
+            padding-top: 60px;
+        }
+        
+        /* Текст слева */
+        .laser-text-col {
+            flex: 1;
+            padding: 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+        
+        .laser-intro-content {
+            font-size: 15px; /* Компактный шрифт */
+            line-height: 1.5;
+            color: #333;
+            max-width: 650px;
+        }
+        .laser-intro-content h1 {
+            font-size: 24px; /* Компактный заголовок */
+            font-weight: 900;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            line-height: 1.3;
+        }
+        .laser-intro-content p {
+            margin-bottom: 10px;
+        }
+
+        /* Фото справа (ЛЕНТА) */
+        .laser-img-col {
+            flex: 1;
+            position: relative;
+            height: 100%;
+        }
+        .ribbon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            /* Форма ленты */
+            clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+        }
+
+        /* Адаптив */
+        @media (max-width: 900px) {
+            .laser-intro { 
+                flex-direction: column-reverse; 
+                height: auto; 
+                padding-top: 80px;
+                padding-bottom: 40px;
+            }
+            .laser-img-col { height: 400px; width: 100%; }
+            .ribbon-img { clip-path: none; } 
+            .laser-text-col { padding: 30px 20px; }
+        }
+
+        /* --- 2. БЛОК УСЛУГ --- */
+        .services-section {
+            background-color: #111;
+            padding: 80px 0;
+        }
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-        .course-card {
-            background-color: #111;
-            border-radius: 8px;
-            overflow: hidden;
+        .service-card {
+            background: #1a1a1a;
             border: 1px solid #333;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s;
-        }
-        .course-card:hover {
-            transform: translateY(-5px);
-            border-color: #c62197;
-        }
-        .course-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        .course-content {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-        }
-        .course-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .course-subtitle {
-            font-size: 16px;
-            color: #aaa;
-            margin-bottom: 15px;
-        }
-        .course-price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #c62197;
-            margin-bottom: 5px;
-        }
-        .course-price-old {
-            font-size: 16px;
-            text-decoration: line-through;
-            color: #777;
-            margin-bottom: 20px;
-        }
-        
-        /* Модальные окна (Popups) */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 9999; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.8); 
-            backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            background-color: #1a1a1a;
-            margin: 5% auto; 
-            padding: 30px;
-            border: 1px solid #c62197;
-            width: 90%;
-            max-width: 600px;
-            color: #fff;
+            padding: 40px 30px;
             border-radius: 10px;
-            position: relative;
-            animation: zoomIn 0.3s;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
         }
-        @keyframes zoomIn {
-            from {transform: scale(0.9); opacity: 0;}
-            to {transform: scale(1); opacity: 1;}
+        .service-card:hover {
+            border-color: var(--pink);
+            transform: translateY(-5px);
         }
-        .close-modal {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .close-modal:hover {
-            color: #c62197;
-        }
-        .modal-body ul {
-            text-align: left;
-            padding-left: 20px;
-            line-height: 1.6;
-        }
-        .modal-body li {
-            margin-bottom: 10px;
-        }
+        .service-icon { font-size: 40px; margin-bottom: 20px; }
+        .service-title { font-size: 22px; font-weight: bold; color: #fff; margin-bottom: 15px; text-transform: uppercase; }
+        .service-desc { color: #ccc; font-size: 15px; line-height: 1.6; }
 
-        /* Бегущая строка */
-        .marquee-container {
-            background-color: #c62197;
-            color: white;
-            padding: 15px 0;
-            overflow: hidden;
-            white-space: nowrap;
+        /* --- ИНФОБЛОК --- */
+        .info-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
+            background-size: cover; background-position: center; text-align: center; color: #fff; padding: 80px 20px; position: relative;
         }
-        .marquee-text {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 15s linear infinite;
-            font-weight: bold;
-            font-size: 18px;
+        .info-bg-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        .info-text-intro { font-size: 16px; line-height: 1.5; margin-bottom: 30px; max-width: 700px; color: #fff; }
+        .info-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0 30px; }
+        .info-oval {
+            display: flex; align-items: center; justify-content: center; width: 100%; max-width: 600px; height: 55px;
+            border-radius: 50px; margin-bottom: 15px; padding: 0 20px; font-size: 16px; font-weight: bold; text-align: center;
+            line-height: 1.2; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-        @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
-        }
+        .oval-static { background: #ffffff; color: #000000; border: 2px solid #fff; }
+        .oval-link { background: rgba(20, 20, 20, 0.9); border: 1px solid var(--pink); color: #fff; text-decoration: none; transition: 0.3s; cursor: pointer; }
+        .oval-link:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+        a.oval-link { display: flex; }
+
+        /* --- КОНТАКТЫ --- */
+        .contacts-flex { display: flex; flex-wrap: wrap; background: #292929; }
+        .map-wrapper { flex: 1; min-width: 300px; height: 500px; }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) invert(100%); }
+        .contact-data { flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+        .contact-row { margin-bottom: 25px; }
+        .phone-link { font-size: 24px; font-weight: bold; display: block; text-decoration: none; }
+        .phone-desc { font-size: 14px; color: #aaa; margin-top: 5px; text-transform: uppercase; }
     </style>
 </head>
+<body>
 
-<body class="t-body" style="margin:0;">
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="sidebar" id="sidebar">
+        <ul class="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
+            <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
+            <li><a href="uhod_tatu.html">Уход за тату</a></li>
+            <li><a href="healer.html">Уход за пирсингом</a></li>
+            <li><a href="obuchenie_tatu.html">Обучение тату</a></li>
+            <li><a href="obuchenie_pirsing.html">Обучение пирсингу</a></li>
+            <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
+            <li><a href="lazernoye-udaleniye.html" style="color:var(--pink);">Лазерное удаление</a></li>
+            <li><a href="contakty.html">Контакты</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
+        </ul>
+    </div>
 
-    <div id="t-header" class="t-records">
-        <div id="rec717252900" class="r t-rec" style="background-color:#141414;" data-record-type="451" data-bg-color="#141414">
-            <div id="nav717252900" class="t451" data-menu="yes">
-                <div class="t451__container t451__positionfixed t451__panel" style="height: 70px;">
-                    <div class="t451__container__bg" style="background-color: rgba(0,0,0,1);"></div>
-                    
-                    <div class="t451__menu__content">
-                        <div class="t451__burger-wrapper__mobile">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                        <div class="t451__leftside t451__side t451__side_burger">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                    </div>
+    <header>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+    </header>
 
-                    <div class="t451__centerside t451__side">
-                        <div class="t451__logo__container t451__textlogo__container">
-                            <div class="t451__logo__content">
-                                <a class="t451__logo" href="index.html">
-                                    <div class="t-heading t-heading_xs" style="color:#c62197; font-size:40px;">BLACKMARK</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
 
-                    <div class="t451__rightside t451__side t451__side_socials">
-                        <div class="t-sociallinks">
-                            <ul role="list" class="t-sociallinks__wrapper">
-                                <li class="t-sociallinks__item"><a href="https://vk.com/black_mark_pvk" target="_blank" style="color:#c62197; font-weight:bold;">VK</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+    <section class="laser-intro">
+        <div class="laser-text-col">
+            <div class="laser-intro-content">
+                <h1>Привет! Меня зовут Олеся Семерская, занимаюсь лазерным удалением тату и перманентного макияжа в Первоуральске!</h1>
+                
+                <p>Добро пожаловать на мою страницу, посвященную искусству лазерного удаления тату и татуажа! Я с уверенностью и профессионализмом помогу вам избавиться от нежелательных рисунков на коже.</p>
+                
+                <p>Благодаря современным технологиям лазерное удаление тату, татуажа, перманента бровей и губ стало максимально комфортным и безопасным.</p>
+                
+                <p>Всегда с уважением и вниманием отношусь к вашим пожеланиям, предлагая индивидуальный подход к каждому случаю.</p>
+                
+                <p>В моем уютном пространстве вы сможете расслабиться и насладиться процессом освобождения от старого татуажа. Я понимаю, что каждая история уникальна, и готова поддержать вас на пути к чистой и обновленной коже.</p>
             </div>
             
-            <div class="t451 t451m t451m__left">
-                <button type="button" class="t451m__close-button t451m__close"><div class="t451m__close_icon" style="color:#ffffff;"><span></span><span></span><span></span><span></span></div></button>
-                <div class="t451m__container t-align_left">
-                    <div class="t451m__top">
-                        <nav class="t451m__menu">
-                            <ul class="t451m__list t-menu__list">
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="index.html">Главная</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_tatu.html">Портфолио Тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="uhod_tatu.html">Уход за тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="healer.html">Уход за пирсингом</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="obuchenie_tatu.html" style="color:#c62197;">Обучение Тату</a></li> <li class="t451m__list_item"><a class="t-menu__link-item" href="contakty.html">Контакты</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+            <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="btn btn-pink" style="align-self: flex-start; margin-top: 25px;">НАПИСАТЬ МАСТЕРУ</a>
         </div>
-        
-        <div id="rec768468878" class="r t-rec" data-record-type="898">
-            <div class="t898 t898_pos_left t898_animate">
-                <div class="t898__btn" style="bottom:20px;left:10px;">
-                    <label class="t898__btn_label" style="background:#c62197;">
-                        <span class="t898__btn-text t-name t-name_xs">КОНТАКТЫ</span>
-                    </label>
-                </div>
-            </div>
+
+        <div class="laser-img-col">
+            <img src="https://static.tildacdn.com/tild6533-3366-4530-a437-313966666563/GEM5-gOsJHI.jpg" class="ribbon-img" alt="Олеся Семерская">
         </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ</div>
     </div>
 
-    <div style="position: relative; background-image: url('https://static.tildacdn.com/tild3364-3236-4562-b831-336264353864/4GpTLEhLVIc.jpg'); background-size: cover; background-position: center; min-height: 600px; display: flex; align-items: center;">
-        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
-        <div class="t-container" style="position: relative; z-index: 2; color: #fff; text-align: left;">
-            <div class="t-col t-col_8">
-                <h1 style="font-family:'Georgia'; font-weight:700; font-size:36px; line-height: 1.2;">Я, Марина Морро, приглашаю на свои курсы тату в Первоуральске!</h1>
-                <p style="font-size:18px; margin-top:20px; line-height: 1.5;">
-                    Давно мечтаете научиться делать татуировки? Мои курсы — это ваш шанс! 
-                    Индивидуальный подход, постановка руки и сертификат по окончанию.
-                    <br><br>
-                    <strong>"Хочу делать тату!" — если это про вас, действуйте уже сегодня!</strong>
-                </p>
-                <a class="t-btn" href="https://vk.com/m.morro" target="_blank" style="color:#ffffff;background-color:#c62197;border-radius:30px; padding: 15px 30px; display: inline-block; margin-top: 30px; text-decoration: none; font-weight: bold;">НАПИСАТЬ МАСТЕРУ</a>
-            </div>
-        </div>
-    </div>
 
-    <div class="marquee-container">
-        <div class="marquee-text">ДАВАЙ УЧИТЬСЯ БИТЬ ТАТУХИ! &nbsp;&nbsp;&nbsp; ДАВАЙ УЧИТЬСЯ БИТЬ ТАТУХИ! &nbsp;&nbsp;&nbsp; ДАВАЙ УЧИТЬСЯ БИТЬ ТАТУХИ!</div>
-    </div>
-
-    <div style="background-color: #000;">
-        <div class="t-container">
-            <div class="courses-grid">
+    <section class="services-section">
+        <div class="container">
+            <h2 style="text-align: center; color: #fff; font-size: 32px; margin-bottom: 50px;">МОИ УСЛУГИ</h2>
+            
+            <div class="services-grid">
                 
-                <div class="course-card">
-                    <img src="https://static.tildacdn.com/tild3537-3730-4134-b037-633239323066/WAocCDDp-zg.jpg" alt="Базовый курс" class="course-img">
-                    <div class="course-content">
-                        <div class="course-title">Курс "Старт Тату"</div>
-                        <div class="course-subtitle">Тариф "Базовый"</div>
-                        <div class="course-price">20 000 р.</div>
-                        <div class="course-price-old">22 000 р.</div>
-                        <button class="t-btn btn-modal-trigger" data-modal="modal-1" style="color:#ffffff;background-color:#c62197;border-radius:20px; border:none; padding: 10px 20px; cursor: pointer;">ПРОГРАММА ТАРИФА</button>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <div class="service-title">Лазерное удаление тату</div>
+                    <div class="service-desc">
+                        Безопасное выведение пигмента без шрамов и рубцов. Работаем с черными и цветными татуировками любого размера. Используем неодимовый лазер нового поколения.
                     </div>
                 </div>
 
-                <div class="course-card">
-                    <img src="https://static.tildacdn.com/tild3932-3037-4664-b038-396635346366/htNODsNH-cI.jpg" alt="База + Практика" class="course-img">
-                    <div class="course-content">
-                        <div class="course-title">Курс "Старт Тату"</div>
-                        <div class="course-subtitle">Тариф "База + Практика"</div>
-                        <div class="course-price">40 000 р.</div>
-                        <div class="course-price-old">45 000 р.</div> <button class="t-btn btn-modal-trigger" data-modal="modal-2" style="color:#ffffff;background-color:#c62197;border-radius:20px; border:none; padding: 10px 20px; cursor: pointer;">ПРОГРАММА ТАРИФА</button>
+                <div class="service-card">
+                    <div class="service-icon">👄</div>
+                    <div class="service-title">Удаление татуажа</div>
+                    <div class="service-desc">
+                        Деликатное удаление перманентного макияжа бровей, губ и век. Исправление старых, некачественных работ, изменение цвета и формы.
                     </div>
                 </div>
 
-                <div class="course-card">
-                    <img src="https://static.tildacdn.com/tild6261-3333-4430-a536-366434333661/fdITCGhgdno.jpg" alt="INSIDER" class="course-img">
-                    <div class="course-content">
-                        <div class="course-title">Курс "Старт Тату"</div>
-                        <div class="course-subtitle">Тариф "INSIDER"</div>
-                        <div class="course-price">50 000 р.</div>
-                        <div class="course-price-old"></div>
-                        <button class="t-btn btn-modal-trigger" data-modal="modal-3" style="color:#ffffff;background-color:#c62197;border-radius:20px; border:none; padding: 10px 20px; cursor: pointer;">ПРОГРАММА ТАРИФА</button>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <div class="service-title">Карбоновый пилинг</div>
+                    <div class="service-desc">
+                        Процедура для очищения и омоложения кожи. Сужает поры, выравнивает тон лица, борется с акне и пигментацией. Мгновенный эффект сияния.
                     </div>
                 </div>
 
             </div>
         </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ &nbsp;&nbsp; • &nbsp;&nbsp; ИСПРАВЛЮ ОШИБКИ НА ВАШЕЙ КОЖЕ</div>
     </div>
 
-    <div id="modal-1" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 class="t-title t-title_xs" style="color: #c62197;">Тариф "Базовый"</h2>
-            <div class="modal-body">
-                <ul>
-                    <li>7 подробных теоретических занятий с ярким раздаточным материалом.</li>
-                    <li>Тату прописи для постановки твердой руки.</li>
-                    <li>3 практикума: подготовка эскиза, перевод трансфера, работа с пигментами, конфигурации игл.</li>
-                    <li>Выполнение 2х работ на искусственной коже.</li>
-                    <li>Устный экзамен по теории.</li>
-                    <li>Практический экзамен: выполнение графической работы с тенями и плотным покрасом.</li>
-                </ul>
-                <div style="text-align: center; margin-top: 20px;">
-                    <a href="https://vk.com/m.morro" target="_blank" class="t-btn" style="background:#c62197; color:#fff; text-decoration:none; padding: 10px 20px; border-radius: 20px;">Записаться</a>
-                </div>
+
+    <section class="info-bg">
+        <div class="info-bg-content">
+            
+            <div class="info-text-intro">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно.
+            </div>
+            
+            <div class="info-divider"></div>
+            
+            <div class="info-oval oval-static">Работаем для вас: с 11:00-20:00</div>
+            <div class="info-oval oval-static">Все сеансы проходят по предварительной записи</div>
+            <a href="https://vk.com/gim105478249" target="_blank" class="info-oval oval-link">НАПИСАТЬ В VK (СТУДИЯ)</a>
+            
+            <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="info-oval oval-link">Олеся Семерская (Лазер)</a>
+            
+        </div>
+    </section>
+
+
+    <div class="contacts-flex">
+        <div class="map-wrapper">
+             <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" style="filter: grayscale(100%) invert(100%);"></iframe>
+        </div>
+        <div class="contact-data">
+            <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
+            
+            <div class="contact-row">
+                <a href="tel:+79935245578" class="phone-link" style="color: #fff;">+7 993 524 55 78</a>
+                <span class="phone-desc">Тату / Обучение</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79956763408" class="phone-link" style="color: var(--pink);">+7 995 676 34 08</a>
+                <span class="phone-desc">Пирсинг</span>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:+79025010782" class="phone-link" style="color: #ccc; text-decoration: underline;">+7 902 501 07 82</a>
+                <span class="phone-desc">Лазерное удаление</span>
+            </div>
+
+            <div style="font-size: 18px; line-height: 1.5; margin-top: 10px;">
+                г. Первоуральск, ул. Вайнера 45В<br>
+                <span style="font-size: 14px; color: #777;">Встаете лицом к магазину «ПРИЗМА», вход слева за углом, 2 этаж.</span>
             </div>
         </div>
     </div>
 
-    <div id="modal-2" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 class="t-title t-title_xs" style="color: #c62197;">Тариф "База + Практика"</h2>
-            <div class="modal-body">
-                <ul>
-                    <li><strong>Всё, что в Базовом тарифе, плюс:</strong></li>
-                    <li>Углубленная практика на искусственной коже.</li>
-                    <li>Уровни линий, покрас, тени (работа с геометрией).</li>
-                    <li>Лайнинг (1, 2, 3 уровни линий).</li>
-                    <li>Выполнение черно-белого и цветного эскиза (предложенного и своего).</li>
-                    <li><strong>Выполнение работы на модели.</strong></li>
-                    <li>2-3 занятия на проработку ошибок и экзамен.</li>
-                </ul>
-                <div style="text-align: center; margin-top: 20px;">
-                    <a href="https://vk.com/m.morro" target="_blank" class="t-btn" style="background:#c62197; color:#fff; text-decoration:none; padding: 10px 20px; border-radius: 20px;">Записаться</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div id="modal-3" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 class="t-title t-title_xs" style="color: #c62197;">Тариф "INSIDER"</h2>
-            <div class="modal-body">
-                <ul>
-                    <li>Полный курс теории и практики.</li>
-                    <li>Углубленная постановка руки.</li>
-                    <li>Все виды работ на искусственной коже.</li>
-                    <li>Разбор всех стилей и техник.</li>
-                    <li><strong>5 занятий работы на живых моделях!</strong></li>
-                    <li>Максимальное погружение в профессию.</li>
-                </ul>
-                <div style="text-align: center; margin-top: 20px;">
-                    <a href="https://vk.com/m.morro" target="_blank" class="t-btn" style="background:#c62197; color:#fff; text-decoration:none; padding: 10px 20px; border-radius: 20px;">Записаться</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="map-section" style="background-color: #292929; color: #fff; padding: 50px 0;">
-        <div class="t-container" style="display:flex; flex-wrap:wrap;">
-            <div class="t-col t-col_6" style="min-height: 400px;">
-                 <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="filter: grayscale(100%) invert(100%); border-radius: 10px;"></iframe>
-            </div>
-            <div class="t-col t-col_6" style="padding-left: 40px; display:flex; flex-direction:column; justify-content:center;">
-                <h2 class="t-heading t-heading_sm">Наши контакты:</h2>
-                <p class="t-text t-text_md"><a href="tel:+79935245578" style="color: #c62197; text-decoration: none; font-size: 24px; font-weight: bold;">+7 993 524 55 78</a><br><span style="font-size: 14px; color: #aaa;">По вопросам обучения и тату</span></p>
-                <p class="t-text t-text_sm">г. Первоуральск, ул. Вайнера 45В</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="rec867611683" class="r t-rec" style="background-color:#292929; padding: 20px 0; border-top: 1px solid #444;" data-record-type="463">
-        <div class="t-container" style="text-align: center;">
-             <div class="t463__typo t463__copyright t-name t-name_xs" style="color:#ffffff;">
-                © Разработка и продвижение сайта-Антон Штиль
-            </div>
-        </div>
-    </div>
+    <footer>
+        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+    </footer>
 
     <script>
-        t_onReady(function() {
-            // Меню
-            t_onFuncLoad('t_menuburger_init', function(){
-                var rec = document.querySelector('#rec717252900');
-                if(!rec) return;
-                var burger = rec.querySelectorAll('.t-menuburger');
-                var menu = document.querySelector('.t451m');
-                var closeBtn = document.querySelector('.t451m__close');
-                
-                Array.prototype.forEach.call(burger, function(b) {
-                    b.addEventListener('click', function() {
-                        menu.classList.add('t451m_opened');
-                        menu.style.display = 'block';
-                    });
-                });
-                
-                if(closeBtn) {
-                    closeBtn.addEventListener('click', function() {
-                        menu.classList.remove('t451m_opened');
-                        setTimeout(function(){ menu.style.display = 'none'; }, 300);
-                    });
-                }
-            });
-
-            // Модальные окна
-            var modalBtns = document.querySelectorAll('.btn-modal-trigger');
-            var closeBtns = document.querySelectorAll('.close-modal');
-            var modals = document.querySelectorAll('.modal');
-
-            modalBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    var modalId = this.getAttribute('data-modal');
-                    var modal = document.getElementById(modalId);
-                    modal.style.display = "block";
-                });
-            });
-
-            closeBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    this.closest('.modal').style.display = "none";
-                });
-            });
-
-            window.onclick = function(event) {
-                if (event.target.classList.contains('modal')) {
-                    event.target.style.display = "none";
-                }
-            }
-        });
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+            document.querySelector('.burger-btn').classList.toggle('active');
+        }
     </script>
 
 </body>

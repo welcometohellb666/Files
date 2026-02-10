@@ -2,272 +2,358 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Контакты | Black Mark Первоуральск</title>
-    <meta name="description" content="Адрес и телефоны студии тату и пирсинга Black Mark в Первоуральске. Улица Вайнера 45В." />
+    <title>Уход за тату — Black Mark Studio</title>
+    <meta name="description" content="Полный гайд по заживлению татуировки: пленка Suprasorb F или пеленки, ограничения и рекомендации." />
     
-    <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script>
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-grid-3.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';"/>
-    <link rel="stylesheet" href="https://static.tildacdn.com/ws/project8427820/tilda-blocks-page43351136.min.css?t=1769626468" type="text/css" media="all" onerror="this.loaderr='y';" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-animation-2.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-menu-widgeticons-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
-    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css" type="text/css" media="all" onerror="this.loaderr='y';" />
-    
-    <script src="https://static.tildacdn.com/js/tilda-scripts-3.0.min.js" charset="utf-8" defer onerror="this.loaderr='y';"></script>
-    <script src="https://static.tildacdn.com/ws/project8427820/tilda-blocks-page43351136.min.js?t=1769626468" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="https://static.tildacdn.com/js/tilda-lazyload-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="https://static.tildacdn.com/js/tilda-menu-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 
     <style>
-        /* Стили для страницы контактов */
-        .contacts-hero {
-            position: relative;
-            background-image: url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 20px;
+        /* --- 1. ПЕРВЫЙ БЛОК (БЕЛЫЙ, КОМПАКТНЫЙ) --- */
+        .care-intro {
+            background-color: #fff;
+            color: #000;
+            padding: 100px 20px 60px; /* Отступ сверху под меню */
             text-align: center;
-            color: #ffffff;
         }
-        .contacts-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.40), rgba(0,0,0,0.30));
-            z-index: 1;
+        .care-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            line-height: 1.2;
         }
-        .contacts-content {
-            position: relative;
-            z-index: 2;
-            max-width: 600px;
-            margin: 0 auto;
+        .care-subtitle {
+            font-size: 24px;
+            color: var(--pink);
+            font-weight: bold;
+            text-transform: uppercase;
         }
-        .contacts-links a {
+
+        /* --- 2. ВТОРОЙ БЛОК (АККОРДЕОН / СПОЙЛЕРЫ) --- */
+        .accordion-section {
+            background-color: #111;
+            padding: 80px 0;
+        }
+        
+        .accordion-item {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .accordion-item:hover {
+            border-color: var(--pink);
+        }
+
+        /* Заголовок спойлера (Кнопка) */
+        .accordion-header {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 700;
             color: #fff;
-            text-decoration: underline;
-            margin: 0 10px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .accordion-header:hover {
+            color: var(--pink);
+        }
+        
+        /* Иконка плюсика */
+        .accordion-icon {
+            font-size: 24px;
+            color: var(--pink);
+            transition: 0.3s;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg); /* Превращается в крестик */
+        }
+
+        /* Контент спойлера (Скрыт по умолчанию) */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: #222;
+        }
+        .accordion-body {
+            padding: 30px;
+            color: #ccc;
+            line-height: 1.6;
             font-size: 16px;
         }
-        
-        /* Секция с картой и инфо */
-        .map-section {
-            display: flex;
-            flex-wrap: wrap;
-            background-color: #292929;
-            min-height: 600px;
-        }
-        .map-container {
-            flex: 1;
-            min-width: 300px;
-            min-height: 400px;
-        }
-        .info-container {
-            flex: 1;
-            min-width: 300px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            background-color: #292929;
+        .accordion-body strong { color: #fff; }
+        .accordion-body ul { padding-left: 20px; margin-bottom: 15px; }
+        .accordion-body li { margin-bottom: 10px; }
+
+        /* --- ИНФОБЛОК (ОВАЛЫ) --- */
+        .info-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://static.tildacdn.com/tild3561-6439-4932-b062-346139333835/noroot.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
             color: #fff;
+            padding: 80px 20px;
+            position: relative;
         }
-        .info-content a {
-            color: #c62197;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 20px;
+        .info-bg-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .info-content a:hover {
-            text-decoration: underline;
+        .info-text-intro {
+            font-size: 16px; line-height: 1.5; margin-bottom: 30px; max-width: 700px; color: #fff;
         }
-        
-        /* Бегущая строка */
-        .marquee-container {
-            background-color: #c62197;
-            color: white;
-            padding: 15px 0;
-            overflow: hidden;
-            white-space: nowrap;
+        .info-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0 30px; }
+        .info-oval {
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; max-width: 600px; height: 55px;
+            border-radius: 50px; margin-bottom: 15px; padding: 0 20px;
+            font-size: 16px; font-weight: bold; text-align: center;
+            line-height: 1.2; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-        .marquee-text {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 20s linear infinite;
-            font-weight: bold;
-            font-size: 18px;
+        .oval-static { background: #ffffff; color: #000000; border: 2px solid #fff; }
+        .oval-link {
+            background: rgba(20, 20, 20, 0.9); border: 1px solid var(--pink); color: #fff;
+            text-decoration: none; transition: 0.3s; cursor: pointer;
         }
-        @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
-        }
+        .oval-link:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+        a.oval-link { display: flex; }
+
+        /* --- КОНТАКТЫ --- */
+        .contacts-flex { display: flex; flex-wrap: wrap; background: #292929; }
+        .map-wrapper { flex: 1; min-width: 300px; height: 500px; }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) invert(100%); }
+        .contact-data { flex: 1; min-width: 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+        .contact-row { margin-bottom: 25px; }
+        .phone-link { font-size: 24px; font-weight: bold; display: block; text-decoration: none; }
+        .phone-desc { font-size: 14px; color: #aaa; margin-top: 5px; text-transform: uppercase; }
     </style>
 </head>
+<body>
 
-<body class="t-body" style="margin:0;">
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="sidebar" id="sidebar">
+        <ul class="menu-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="portfolio_tatu.html">Портфолио Тату</a></li>
+            <li><a href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
+            <li><a href="uhod_tatu.html" style="color:var(--pink);">Уход за тату</a></li>
+            <li><a href="healer.html">Уход за пирсингом</a></li>
+            <li><a href="obuchenie_tatu.html">Обучение тату</a></li>
+            <li><a href="obuchenie_pirsing.html">Обучение пирсингу</a></li>
+            <li><a href="okrashivanie-botoks-keratin.html">Волосы / Окрашивание</a></li>
+            <li><a href="lazernoye-udaleniye.html">Лазерное удаление</a></li>
+            <li><a href="contakty.html">Контакты</a></li>
+            <li><a href="https://dikidi.net/#widget=165223" style="color:var(--pink);">Онлайн-Запись</a></li>
+        </ul>
+    </div>
 
-    <div id="t-header" class="t-records">
-        <div id="rec717252900" class="r t-rec" style="background-color:#141414;" data-record-type="451" data-bg-color="#141414">
-            <div id="nav717252900" class="t451" data-menu="yes">
-                <div class="t451__container t451__positionfixed t451__panel" style="height: 70px;">
-                    <div class="t451__container__bg" style="background-color: rgba(0,0,0,1);"></div>
-                    
-                    <div class="t451__menu__content">
-                        <div class="t451__burger-wrapper__mobile">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                        <div class="t451__leftside t451__side t451__side_burger">
-                            <button type="button" class="t-menuburger t-menuburger_first"><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span><span style="background-color:#c62197;"></span></button>
-                        </div>
-                    </div>
+    <header>
+        <div class="burger-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <a href="index.html" class="logo">BLACKMARK</a>
+        <a href="https://vk.com/black_mark_pvk" target="_blank" class="social-link">VK</a>
+    </header>
 
-                    <div class="t451__centerside t451__side">
-                        <div class="t451__logo__container t451__textlogo__container">
-                            <div class="t451__logo__content">
-                                <a class="t451__logo" href="index.html">
-                                    <div class="t-heading t-heading_xs" style="color:#c62197; font-size:40px;">BLACKMARK</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <a href="contakty.html" class="float-btn">КОНТАКТЫ</a>
 
-                    <div class="t451__rightside t451__side t451__side_socials">
-                        <div class="t-sociallinks">
-                            <ul role="list" class="t-sociallinks__wrapper">
-                                <li class="t-sociallinks__item"><a href="https://vk.com/black_mark_pvk" target="_blank" style="color:#c62197; font-weight:bold;">VK</a></li>
-                            </ul>
-                        </div>
+
+    <section class="care-intro">
+        <div class="container">
+            <h1 class="care-title">Как и какими средствами ухаживать за твоей новой тату?</h1>
+            <div class="care-subtitle">Давай разбираться!</div>
+        </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ПРАВИЛЬНЫЙ УХОД — ЗАЛОГ ЯРКОЙ ТАТУИРОВКИ &nbsp;&nbsp; • &nbsp;&nbsp; НЕ ЧЕСАТЬ! НЕ СДИРАТЬ! &nbsp;&nbsp; • &nbsp;&nbsp; СОБЛЮДАЙ ИНСТРУКЦИЮ</div>
+    </div>
+
+
+    <section class="accordion-section">
+        <div class="container">
+            
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    Заживление мазью и одноразовыми пеленками
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p><strong>1. Снятие компресса:</strong> Через 3-4 часа (максимум 5) после сеанса снимите пленку.</p>
+                        <p><strong>2. Промывание:</strong> Тщательно промойте татуировку теплой водой с жидким мылом, чтобы смыть всю сукровицу и остатки вазелина. Промокните бумажным полотенцем (не тереть!).</p>
+                        <p><strong>3. Обработка:</strong> Нанесите тонкий слой заживляющей мази (например, Doctor Pro, Бепантен Плюс или Д-Пантенол). Не используйте Левомеколь или Спасатель!</p>
+                        <p><strong>4. Новый компресс:</strong> Закройте татуировку новой одноразовой детской впитывающей пеленкой. Зафиксируйте пластырем или сетчатым бинтом.</p>
+                        <p><strong>Режим:</strong> Повторяйте процедуру (промыть -> промокнуть -> намазать -> закрыть) каждые 4-5 часов в течение первых 3-4 дней. На ночь обязательно делать свежий компресс.</p>
+                        <p><strong>Далее:</strong> С 4-5 дня перестаньте делать компрессы. Просто промывайте и мажьте тату 3-4 раза в день, пока она полностью не заживет. Не давайте коже сохнуть!</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    Заживление специальной пленкой (Suprasorb F)
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p><strong>Как это работает:</strong> Пленка клеится мастером один раз сразу после сеанса или на следующий день. Она дышит, но не пропускает воду и бактерии.</p>
+                        <p><strong>Срок ношения:</strong> Пленку нужно носить 4-5 дней не снимая.</p>
+                        <p><strong>Что происходит под пленкой:</strong> Под ней может скапливаться сукровица и краска (выглядит как "грязная лужа"). Это нормально, не пугайтесь и не протыкайте пленку!</p>
+                        <p><strong>Как снимать:</strong> На 5-й день аккуратно снимите пленку под струей теплой воды, растягивая её в стороны (параллельно коже), а не отрывая вверх.</p>
+                        <p><strong>После снятия:</strong> Промойте тату с мылом. Начните мазать увлажняющим кремом или той же мазью (Бепантен) 3-4 раза в день еще около недели, пока кожа полностью не обновится.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    Ограничения после нанесения (Важно!)
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>АЛКОГОЛЬ:</strong> Исключить за сутки ДО и 2-3 дня ПОСЛЕ сеанса. Он разжижает кровь и вымывает пигмент.</li>
+                            <li><strong>БАНЯ / САУНА / ГОРЯЧАЯ ВАННА:</strong> Запрещено распаривать тату в течение 2-3 недель. Только теплый душ.</li>
+                            <li><strong>СПОРТ:</strong> Исключить тяжелые физические нагрузки на 5-7 дней (пот раздражает свежую тату).</li>
+                            <li><strong>СОЛНЦЕ / СОЛЯРИЙ:</strong> Категорически запрещено загорать с незажившей тату. В будущем всегда используйте крем SPF 50+.</li>
+                            <li><strong>ОДЕЖДА:</strong> Носите свободную одежду из хлопка. Никакой синтетики и шерсти на месте тату.</li>
+                            <li><strong>ЧЕСАТЬСЯ:</strong> Татуировка будет чесаться при заживлении. ЧЕСАТЬ НЕЛЬЗЯ! Можно слегка похлопать.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    Рекомендации после полного заживления
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <p>Даже когда татуировка зажила, за ней нужно следить, чтобы она оставалась яркой долгие годы:</p>
+                        <ul>
+                            <li><strong>Увлажнение:</strong> Периодически увлажняйте кожу кремом, особенно после душа. Сухая кожа делает тату тусклой.</li>
+                            <li><strong>Защита от солнца:</strong> Солнце — главный враг татуировки. Пигмент выгорает. Всегда мажьте тату солнцезащитным кремом (SPF 50) на пляже или при длительном нахождении на солнце.</li>
+                            <li><strong>Коррекция:</strong> Спустя месяц-полтора после сеанса отправьте фото мастеру. Возможно, потребуется небольшая коррекция (это нормально и часто бесплатно).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="marquee-wrap">
+        <div class="marquee-text">ТВОЯ ТАТУИРОВКА — ЭТО НАВСЕГДА &nbsp;&nbsp; • &nbsp;&nbsp; БЕРЕГИ ЕЁ &nbsp;&nbsp; • &nbsp;&nbsp; МЫ ВСЕГДА НА СВЯЗИ</div>
+    </div>
+
+
+    <section class="info-bg">
+        <div class="info-bg-content">
+            
+            <div class="info-text-intro">
+                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно. Мы уделяем особое внимание каждому клиенту и стараемся сделать процесс нанесения татуировки или пирсинга максимально приятным и безболезненным.
             </div>
             
-            <div class="t451 t451m t451m__left">
-                <button type="button" class="t451m__close-button t451m__close"><div class="t451m__close_icon" style="color:#ffffff;"><span></span><span></span><span></span><span></span></div></button>
-                <div class="t451m__container t-align_left">
-                    <div class="t451m__top">
-                        <nav class="t451m__menu">
-                            <ul class="t451m__list t-menu__list">
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="index.html">Главная</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_tatu.html">Портфолио Тату</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="portfolio_pirsing.html">Портфолио Пирсинг</a></li>
-                                <li class="t451m__list_item"><a class="t-menu__link-item" href="contakty.html" style="color:#c62197;">Контакты</a></li> </ul>
-                        </nav>
-                    </div>
-                </div>
+            <div class="info-divider"></div>
+            
+            <div class="info-oval oval-static">
+                Работаем для вас: с 11:00-20:00
             </div>
-        </div>
-        
-        <div id="rec768468878" class="r t-rec" data-record-type="898">
-            <div class="t898 t898_pos_left t898_animate">
-                <div class="t898__btn" style="bottom:20px;left:10px;">
-                    <label class="t898__btn_label" style="background:#c62197;">
-                        <span class="t898__btn-text t-name t-name_xs">КОНТАКТЫ</span>
-                    </label>
-                </div>
+            
+            <div class="info-oval oval-static">
+                Все сеансы проходят по предварительной записи
             </div>
-        </div>
-    </div>
+            
+            <a href="https://vk.com/gim105478249" target="_blank" class="info-oval oval-link">
+                НАПИСАТЬ В VK (СТУДИЯ)
+            </a>
 
-    <div class="contacts-hero">
-        <div class="contacts-overlay"></div>
-        <div class="contacts-content">
-            <h1 style="font-family:'Georgia'; font-weight:700; font-size:42px; margin-bottom:20px;">Black Mark - тату и пирсинг студия</h1>
-            <div style="background-color: #fff; height: 1px; width: 60px; margin: 20px auto; opacity: 0.6;"></div>
-            <p style="font-size:16px; margin-bottom:30px;">
-                В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно. Мы уделяем особое внимание каждому клиенту.
-            </p>
-            <div style="margin-bottom: 20px;">
-                <span style="background:#fff; color:#000; padding:5px 15px; border-radius:20px; font-size:14px; display:inline-block; margin:5px;">Работаем для вас: с 11:00-20:00</span>
-                <span style="background:#fff; color:#000; padding:5px 15px; border-radius:20px; font-size:14px; display:inline-block; margin:5px;">Только по записи</span>
+            <a href="https://vk.com/id819592651" target="_blank" class="info-oval oval-link">
+                Егор Хэлл (Пирсинг)
+            </a>
+
+            <a href="https://vk.com/m.morro" target="_blank" class="info-oval oval-link">
+                Марина Морро (Тату)
+            </a>
+
+        </div>
+    </section>
+
+
+    <div class="contacts-flex">
+        <div class="map-wrapper">
+             <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" style="filter: grayscale(100%) invert(100%);"></iframe>
+        </div>
+        <div class="contact-data">
+            <h2 style="margin-bottom: 30px;">НАШИ КОНТАКТЫ</h2>
+            
+            <div class="contact-row">
+                <a href="tel:+79935245578" class="phone-link" style="color: #fff;">+7 993 524 55 78</a>
+                <span class="phone-desc">Тату / Обучение</span>
             </div>
-            <div class="contacts-links">
-                <a href="https://vk.com/gim105478249" target="_blank">Написать VK</a>
-                <a href="https://vk.com/tonyshtil" target="_blank">Антон Штиль (Пирсинг)</a>
-                <a href="https://vk.com/m.morro" target="_blank">Марина Морро (Тату)</a>
+
+            <div class="contact-row">
+                <a href="tel:+79956763408" class="phone-link" style="color: var(--pink);">+7 995 676 34 08</a>
+                <span class="phone-desc">Пирсинг</span>
             </div>
-        </div>
-    </div>
 
-    <div class="marquee-container">
-        <div class="marquee-text">ЗАХОДИ НЕ БОЙСЯ! УХОДИ НЕ ПЛАЧЬ! &nbsp;&nbsp;&nbsp; ЗАХОДИ НЕ БОЙСЯ! УХОДИ НЕ ПЛАЧЬ! &nbsp;&nbsp;&nbsp; ЗАХОДИ НЕ БОЙСЯ! УХОДИ НЕ ПЛАЧЬ!</div>
-    </div>
+            <div class="contact-row">
+                <a href="tel:+79025010782" class="phone-link" style="color: #ccc; text-decoration: underline;">+7 902 501 07 82</a>
+                <span class="phone-desc">Лазерное удаление</span>
+            </div>
 
-    <div class="map-section">
-        <div class="map-container">
-            <iframe src="https://yandex.ru/map-widget/v1/?ll=59.962841%2C56.915621&z=16&pt=59.962841%2C56.915621,pm2dnl&text=Black%20Mark" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="filter: grayscale(100%) invert(100%);"></iframe>
-        </div>
-        
-        <div class="info-container">
-            <div class="info-content">
-                <h2 class="t-heading t-heading_sm" style="color:#fff; margin-bottom:30px;">Наши контакты:</h2>
-                
-                <div style="margin-bottom: 20px;">
-                    <a href="tel:+79956763408">+7 995 676 34 08</a>
-                    <div style="font-size:14px; color:#aaa; margin-top:5px;">Если нужен пирсинг</div>
-                </div>
-
-                <div style="margin-bottom: 20px;">
-                    <a href="tel:+79935245578">+7 993 524 55 78</a>
-                    <div style="font-size:14px; color:#aaa; margin-top:5px;">Сюда за тату</div>
-                </div>
-
-                <div style="margin-bottom: 40px;">
-                    <a href="tel:+79025010782">+7 902 501 07 82</a>
-                    <div style="font-size:14px; color:#aaa; margin-top:5px;">Если нужно удалить тату</div>
-                </div>
-
-                <div class="t-text t-text_sm" style="color:#ddd; line-height:1.6;">
-                    <strong>Свердловская область, г. Первоуральск, ул. Вайнера 45В</strong><br><br>
-                    Встаете лицом к магазину «ПРИЗМА», вход слева за углом (стеклянная дверь).<br>
-                    Заходите, справа увидите лестницу.<br>
-                    Поднимаетесь на второй этаж, направо черная дверь.<br>
-                    <strong>Вы пришли!</strong>
-                </div>
+            <div style="font-size: 18px; line-height: 1.5; margin-top: 10px;">
+                г. Первоуральск, ул. Вайнера 45В<br>
+                <span style="font-size: 14px; color: #777;">Встаете лицом к магазину «ПРИЗМА», вход слева за углом, 2 этаж.</span>
             </div>
         </div>
     </div>
 
-    <div id="rec867611554" class="r t-rec" style="background-color:#292929; padding: 20px 0;" data-record-type="463">
-        <div class="t463">
-            <div class="t463__maincontainer">
-                <div class="t463__content">
-                    <div class="t463__colwrapper">
-                        <div class="t463__col t463__col_center t-align_center">
-                            <div class="t463__typo t463__copyright t-name t-name_xs" style="color:#ffffff;">
-                                © Разработка и продвижение сайта-Антон Штиль
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <footer>
+        © 2016-2024 Black Mark Studio | Разработка — Егор Хэлл
+    </footer>
 
     <script>
-        t_onReady(function() {
-            t_onFuncLoad('t_menuburger_init', function(){
-                var rec = document.querySelector('#rec717252900');
-                if(!rec) return;
-                var burger = rec.querySelectorAll('.t-menuburger');
-                var menu = document.querySelector('.t451m');
-                var closeBtn = document.querySelector('.t451m__close');
-                
-                Array.prototype.forEach.call(burger, function(b) {
-                    b.addEventListener('click', function() {
-                        menu.classList.add('t451m_opened');
-                        menu.style.display = 'block';
-                    });
-                });
-                
-                if(closeBtn) {
-                    closeBtn.addEventListener('click', function() {
-                        menu.classList.remove('t451m_opened');
-                        setTimeout(function(){ menu.style.display = 'none'; }, 300);
-                    });
-                }
-            });
-        });
+        // Меню
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+            document.querySelector('.burger-btn').classList.toggle('active');
+        }
+
+        // Аккордеон
+        function toggleAccordion(element) {
+            // Переключаем класс active у родителя
+            element.parentElement.classList.toggle('active');
+            
+            // Находим контент
+            var content = element.nextElementSibling;
+            
+            // Если открыто - закрываем, если закрыто - открываем (считаем высоту)
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
     </script>
 
 </body>
