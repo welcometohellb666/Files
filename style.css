@@ -430,69 +430,62 @@ footer {
 .fab-item.vk { background: #0077FF; }
 /* Звонок (Зеленый) */
 .fab-item.call { background: #00c853; }
-/* ==================================================
-   МОБИЛЬНЫЙ ФИКС (ВСТАВИТЬ В САМЫЙ НИЗ STYLE.CSS)
-   Ничего выше менять не нужно. Это исправит отступы.
-================================================== */
 
+/* =======================================================
+   МОБИЛЬНЫЙ ФИКС (ДОБАВЛЕНО ВНИЗУ, ЧТОБЫ ПЕРЕБИТЬ ВСЁ)
+======================================================= */
 @media (max-width: 900px) {
-    /* 1. Принудительный отступ сверху для всех главных блоков */
-    /* Перечисляем классы всех первых экранов с разных страниц */
-    .hero-section,
-    .hero-third,
-    .healer-hero,
-    .learn-piercing-hero,
-    .care-hero,
-    .cs-hero,
-    .hero-section-piercing,
-    .hero-section-learn,
-    .hero-section-hair,
-    .hero-section-laser {
-        padding-top: 160px !important;   /* Мощный отступ от шапки */
-        padding-bottom: 60px !important; /* Отступ снизу */
-        height: auto !important;         /* Разрешаем блоку растягиваться под текст */
-        min-height: auto !important;     /* Убираем жесткие ограничения высоты */
+    /* Исправляем перекрытие шапкой на ВСЕХ внутренних страницах */
+    .hero-section, .hero-third, .healer-hero, .learn-piercing-hero, .care-hero, .cs-hero, .contact-section-third {
+        padding-top: 140px !important; /* Увеличили отступ */
+        padding-bottom: 60px !important;
+        min-height: auto !important;
+        height: auto !important;
         display: flex !important;
-        flex-direction: column !important; /* Выстраиваем контент в колонку */
+        flex-direction: column !important;
         justify-content: flex-start !important;
     }
 
-    /* 2. Тексты заголовков делаем читаемыми и по центру */
-    .hero-text-col,
-    .hero-title,
-    .lp-title,
-    .cs-title,
-    .healer-title,
-    .care-title {
+    /* Исправляем заголовки, которые улетали за край */
+    .hero-title, .lp-title, .cs-title, .healer-title, .care-title {
+        font-size: 32px !important;
+        white-space: normal !important; /* Разрешить перенос слов */
+        word-wrap: break-word !important;
         text-align: center !important;
-        padding-right: 0 !important;
-        width: 100% !important;
-        font-size: 30px !important;      /* Чуть уменьшаем шрифт, чтобы влезал */
-        white-space: normal !important;  /* Разрешаем перенос слов, чтобы не уходили за экран */
         line-height: 1.3 !important;
-    }
-
-    /* 3. Исправляем блоки с картинками/ромбами, чтобы не перекрывали текст */
-    .hero-photo-col {
-        position: relative !important;   /* Возвращаем в поток */
         width: 100% !important;
-        height: 300px !important;        /* Фиксированная высота для фото */
-        margin-top: 30px !important;
-        top: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        left: auto !important;
     }
 
-    /* 4. Убираем обрезку ромбом на мобиле (делаем скругленный квадрат) */
+    /* Исправляем текст, который уходил под картинку или шапку */
+    .hero-text-col {
+        width: 100% !important;
+        padding-right: 0 !important;
+        text-align: center !important;
+    }
+
+    /* Картинки и ромбы (вниз и без обрезки) */
+    .hero-photo-col {
+        position: relative !important;
+        width: 100% !important;
+        height: 300px !important;
+        margin-top: 30px !important;
+        top: auto !important; right: auto !important; bottom: auto !important; left: auto !important;
+    }
     .rhombus-img-container {
-        clip-path: none !important;
+        clip-path: none !important; /* Убираем ромб на мобиле */
         border-radius: 20px !important;
     }
+
+    /* Контакты в столбик */
+    .phone-oval {
+        height: auto !important;
+        padding: 15px !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
     
-    /* 5. Фикс для треугольника на странице обучения */
+    /* Фикс для треугольника на обучении */
     .learn-piercing-content {
-        min-height: auto !important;
         padding-top: 40px !important;
     }
 }
