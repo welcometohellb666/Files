@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -66,10 +67,9 @@
         
     </script>
 
-    <section style="position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;">
+    <section style="position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;">
         
-        <div class="placeholder-hero-bg">ФОТО: ГЛАВНАЯ 1</div>
-        
+<div class="placeholder-hero-bg" style="background: url('bmnp/preview.jpg') center/cover no-repeat; opacity: 0.4;"></div></div></div>
         <div style="position: relative; z-index: 2; padding: 20px; max-width: 800px;">
             <h1 class="hero-title" style="margin-bottom: 20px;">BLACK MARK</h1>
             <h2 style="font-size: 20px; color: #eee; line-height: 1.6; font-weight: 600; margin-bottom: 40px; font-family: 'Nunito', sans-serif;">
@@ -116,8 +116,7 @@
                 </div>
                 <a href="https://vk.com/m.morro" target="_blank" class="btn-pink">Написать Марине</a>
             </div>
-            <div class="master-photo"><div class="placeholder-circle">ФОТО МАРИНЫ</div></div>
-        </div>
+<div class="placeholder-circle" style="background: url('bmnp/marina_glavnaya.jpg') center/cover no-repeat; padding: 0;"></div>        </div>
 
         <div class="master-row">
             <div class="master-text">
@@ -128,8 +127,7 @@
                 </div>
                 <a href="https://vk.com/semerapsqdtattoo" target="_blank" class="btn-pink">Написать Олесе</a>
             </div>
-            <div class="master-photo"><div class="placeholder-circle">ФОТО ОЛЕСИ</div></div>
-        </div>
+<div class="placeholder-circle" style="background: url('bmnp/olesa_glavnaya.jpg') center/cover no-repeat; padding: 0;"></div>        </div>
 
         <div class="master-row">
             <div class="master-text">
@@ -140,8 +138,7 @@
                 </div>
                 <a href="https://vk.com/id819592651" target="_blank" class="btn-pink">Написать Егору</a>
             </div>
-            <div class="master-photo"><div class="placeholder-circle">ФОТО ЕГОРА</div></div>
-        </div>
+<div class="placeholder-circle" style="background: url('bmnp/egor_glavnaya.jpg') center/cover no-repeat; padding: 0;"></div>        </div>
 
         <div class="master-row">
             <div class="master-text">
@@ -152,8 +149,7 @@
                 </div>
                 <a href="https://vk.com/m_oshnyag_a" target="_blank" class="btn-pink">Написать Яне</a>
             </div>
-            <div class="master-photo"><div class="placeholder-circle">ФОТО ЯНЫ</div></div>
-        </div>
+<div class="placeholder-circle" style="background: url('bmnp/yana_glavnaya.jpg') center/cover no-repeat; padding: 0;"></div>        </div>
     </section>
 
 
@@ -174,8 +170,11 @@
 
 
     <section class="info-section-wrapper">
-        <div class="info-bg-placeholder">ФОТО: ГЛАВНАЯ 1</div>
-        
+<div class="info-bg-placeholder" 
+     style="background: url('bmnp/infoblok.jpg') center/cover no-repeat; 
+            opacity: 0.5;  
+            z-index: 0;">
+</div>        
         <div class="info-content">
             <div class="info-text-main">
                 В нашей студии вы найдете дружелюбную атмосферу, в которой каждый клиент чувствует себя комфортно и уверенно. Мы уделяем особое внимание каждому клиенту и стараемся сделать процесс нанесения татуировки или пирсинга максимально приятным и безболезненным.
@@ -279,5 +278,43 @@
             if (burgerBtn) burgerBtn.classList.toggle('active');
         }
     </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>

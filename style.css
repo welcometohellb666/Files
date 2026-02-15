@@ -435,17 +435,21 @@ footer {
    МОБИЛЬНЫЙ ФИКС (ДОБАВЛЕНО ВНИЗУ, ЧТОБЫ ПЕРЕБИТЬ ВСЁ)
 ======================================================= */
 @media (max-width: 900px) {
-    /* Исправляем перекрытие шапкой на ВСЕХ внутренних страницах */
-    .hero-section, .hero-third, .healer-hero, .learn-piercing-hero, .care-hero, .cs-hero, .contact-section-third {
-        padding-top: 140px !important; /* Увеличили отступ */
-        padding-bottom: 60px !important;
-        min-height: auto !important;
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
+    @media (max-width: 900px) {
+    .hero-section {
+        padding-top: 80px !important; /* Отступ под шапку */
+        height: calc(100vh - 40px) !important; /* Высота экрана минус высота бегущей строки */
+        min-height: 500px !important;
+        position: relative !important;
+        overflow: hidden !important;
     }
-
+    
+    /* Чтобы текст не перекрывал всё фото, если его много */
+    .hero-title {
+        font-size: 32px !important;
+        margin-top: 20px;
+    }
+}
     /* Исправляем заголовки, которые улетали за край */
     .hero-title, .lp-title, .cs-title, .healer-title, .care-title {
         font-size: 32px !important;
@@ -487,5 +491,70 @@ footer {
     /* Фикс для треугольника на обучении */
     .learn-piercing-content {
         padding-top: 40px !important;
+    }
+}
+/* =======================================================
+   МОБИЛЬНЫЙ ФИКС (ВСТАВИТЬ В САМЫЙ НИЗ STYLE.CSS)
+======================================================= */
+@media (max-width: 900px) {
+    /* 1. Исправляем наезд шапки на контент */
+    /* Добавляем отступ всем первым блокам на страницах */
+    .hero-section, 
+    .hero-third, 
+    .healer-hero, 
+    .learn-piercing-hero, 
+    .care-hero, 
+    .cs-hero, 
+    .contact-section-third,
+    .hero-section-piercing,
+    .hero-section-learn,
+    .hero-section-hair,
+    .hero-section-laser {
+        padding-top: 140px !important; /* Насильно опускаем вниз */
+        height: auto !important;
+        min-height: 400px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+
+    /* 2. Подставляем мобильное фото для фона на главной */
+    /* Предполагаем, что фон лежит в .rhombus-img-container или .placeholder-hero-bg */
+    .rhombus-img-container, .placeholder-hero-bg {
+        background-image: url('bmnp/preview.mob.jpg') !important; /* Твоя мобильная фотка */
+        background-size: cover !important;
+        background-position: center !important;
+        clip-path: none !important; /* Убираем ромб, чтобы не резало фото на узком экране */
+    }
+
+    /* 3. Исправляем заголовки (чтобы не вылезали за края экрана) */
+    .hero-title, .lp-title, .cs-title, .healer-title, .care-title, .neon-title {
+        font-size: 28px !important; /* Уменьшаем размер */
+        white-space: normal !important; /* Разрешаем перенос на новую строку */
+        word-wrap: break-word !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    /* 4. Контакты и кнопки в столбик, чтобы не слипались */
+    .phone-oval, .c-oval {
+        width: 95% !important;
+        height: auto !important;
+        padding: 15px !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+    }
+
+    /* 5. Мастера (фото сверху, текст снизу) */
+    .master-row {
+        flex-direction: column-reverse !important;
+    }
+    
+    /* Убираем лишние отступы, из-за которых текст уходил вправо */
+    .hero-text-col {
+        padding-right: 0 !important;
+        text-align: center !important;
     }
 }
